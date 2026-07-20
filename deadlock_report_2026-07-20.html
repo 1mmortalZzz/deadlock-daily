@@ -72,6 +72,34 @@ h1 { color: var(--text); font-size: 26px; font-weight: 800; letter-spacing: -0.5
                   color: var(--text2); transition: all 0.2s; }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ── Stats overview card ── */
+.stats-overview-card { background: var(--surface); border: 1px solid var(--border);
+                        border-radius: 14px; margin-bottom: 18px; overflow: hidden; }
+.stats-overview-header { background: var(--surface2); padding: 10px 16px;
+                          font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--border2); }
+.stats-overview-header .icon { margin-right: 6px; }
+.stats-overview-grid { display: grid; grid-template-columns: repeat(4, 1fr);
+                         padding: 14px 16px; gap: 12px; }
+.stat-item { text-align: center; }
+.stat-number { font-size: 22px; font-weight: 700; color: var(--accent);
+                font-family: 'SF Mono', 'Consolas', monospace; line-height: 1.2; }
+.stat-label { font-size: 10px; color: var(--text3); margin-top: 3px; text-transform: uppercase;
+               letter-spacing: 0.5px; }
+
+/* ── Hot thread list ── */
+.hot-thread-list { padding: 4px 0; }
+.hot-thread-row { display: flex; align-items: flex-start; gap: 10px;
+                    padding: 9px 16px; border-bottom: 1px solid var(--border2); transition: background 0.15s; }
+.hot-thread-row:last-child { border-bottom: none; }
+.hot-thread-row:hover { background: var(--surface2); }
+.hot-thread-rank { font-size: 13px; font-weight: 700; color: var(--text3);
+                     min-width: 20px; text-align: center; padding-top: 1px; }
+.hot-thread-info { flex: 1; min-width: 0; }
+.hot-thread-title { font-size: 13px; color: var(--text2); text-decoration: none; line-height: 1.4;
+                      display: block; word-break: break-word; }
+.hot-thread-title:hover { color: var(--accent); }
+.hot-thread-meta { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
 /* ── Layout ── */
 .main-grid { display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
 @media (max-width: 960px) { .main-grid { grid-template-columns: 1fr; } }
@@ -575,8 +603,32 @@ tr:hover .rank { color: var(--accent); }
         </tr></tbody>
         </table>
       </div>
+      <div class="stats-overview-card">
+      <div class="stats-overview-header"><span class="icon">📊</span> 今日数据概览</div>
+      <div class="stats-overview-grid">
+        <div class="stat-item">
+          <div class="stat-number">97</div>
+          <div class="stat-label">抓取帖数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">251</div>
+          <div class="stat-label">平均 👍</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">34</div>
+          <div class="stat-label">平均 💬</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1,500</div>
+          <div class="stat-label">最高 👍</div>
+        </div>
+      </div>
     </div>
-    
+      <div class="card">
+      <div class="card-header"><span class="icon">💬</span> 热议帖 TOP 5（评论最多）</div>
+      <div class="hot-thread-list"><div class="hot-thread-row"><span class="hot-thread-rank">1</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1us0h3w/deadlock_minor_update_07092026/" target="_blank" class="hot-thread-title">Deadlock - Minor Update - 07-09-2026</a><div class="hot-thread-meta">💬 696 &nbsp; by /u/SketchyJJ</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">2</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uuna5w/weekly_feedback_topic_48_street_brawl/" target="_blank" class="hot-thread-title">Weekly Feedback Topic #48 - Street Brawl</a><div class="hot-thread-meta">💬 263 &nbsp; by /u/Grelgn</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">3</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1v0innk/positions_and_roles_cheat_sheet/" target="_blank" class="hot-thread-title">Positions and Roles Cheat Sheet</a><div class="hot-thread-meta">💬 196 &nbsp; by /u/BadguyAsSpy</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">4</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1v07w0u/do_you_think_majestic_leap_needs_a_buff/" target="_blank" class="hot-thread-title">Do you think majestic leap needs a buff</a><div class="hot-thread-meta">💬 169 &nbsp; by /u/Megamodpod</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">5</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1v0tota/discussion_on_abilities_you_wish_behaved/" target="_blank" class="hot-thread-title">Discussion on abilities you wish behaved differently.</a><div class="hot-thread-meta">💬 131 &nbsp; by /u/LionCashDispenser</div></div></div></div>
+    </div>
+    </div>
     <div class="right-col">
       <!-- Type distribution -->
       <div class="card">
@@ -767,7 +819,7 @@ tr:hover .rank { color: var(--accent); }
 
   <div class="footer">
     由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
-    数据来源: r/DeadlockTheGame · 更新于 2026-07-20T04:40:00+08:00
+    数据来源: r/DeadlockTheGame · 更新于 2026-07-20T06:22:41+08:00
   </div>
 </div>
 
