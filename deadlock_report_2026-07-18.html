@@ -40,6 +40,32 @@ h1 { color: var(--text); font-size: 26px; font-weight: 800; letter-spacing: -0.5
 .meta-row span { background: var(--surface2); border: 1px solid var(--border2); padding: 4px 12px; border-radius: 20px; }
 .meta-row strong { color: var(--blue); }
 
+/* Date picker dropdown */
+.date-picker { position: relative; cursor: pointer; user-select: none;
+                background: var(--surface2); border: 1px solid var(--border2);
+                padding: 4px 12px; border-radius: 20px;
+                display: inline-flex; align-items: center; gap: 6px; }
+.date-picker:hover { border-color: var(--accent); }
+.date-picker-arrow { font-size: 10px; color: var(--text3); transition: transform 0.2s; }
+.date-picker.open .date-picker-arrow { transform: rotate(180deg); }
+.date-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+                  transform: translateX(-50%); min-width: 220px; max-height: 360px;
+                  overflow-y: auto; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+                  z-index: 100; padding: 6px; }
+.date-picker.open .date-dropdown { display: block; }
+.date-dropdown-header { padding: 10px 12px 6px; font-size: 11px; font-weight: 600;
+                         color: var(--text3); text-transform: uppercase; letter-spacing: 1px;
+                         border-bottom: 1px solid var(--border2); margin-bottom: 4px; }
+.date-option { display: flex; justify-content: space-between; align-items: center;
+                padding: 8px 12px; border-radius: 6px; color: var(--text2);
+                font-size: 13px; text-decoration: none; transition: background 0.15s; }
+.date-option:hover { background: var(--surface2); color: var(--accent); }
+.date-option.current { background: rgba(255,69,0,0.12); color: var(--accent); font-weight: 600; }
+.date-option-date { font-family: 'SF Mono', 'Consolas', monospace; }
+.date-option-tag { font-size: 10px; color: var(--text3); }
+.date-option.current .date-option-tag { color: var(--accent); }
+
 /* Theme toggle */
 .theme-toggle { background: var(--surface2); border: 1px solid var(--border2);
                   border-radius: 8px; padding: 6px 14px; cursor: pointer; font-size: 12px;
@@ -217,7 +243,14 @@ tr:hover .rank { color: var(--accent); }
         <div class="subreddit">r/DeadlockTheGame</div>
         <h1>每日热点追踪</h1>
         <div class="meta-row">
-          <span>📅 2026-07-18</span>
+          <div class="date-picker" id="datePicker" onclick="toggleDateDropdown(event)">
+            <span>📅 2026-07-18</span>
+            <span class="date-picker-arrow">▾</span>
+            <div class="date-dropdown" id="dateDropdown">
+              <div class="date-dropdown-header">📅 查看历史报告</div>
+              <a href="deadlock_report_2026-07-20.html" class="date-option"><span class="date-option-date">2026-07-20</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-07-19.html" class="date-option"><span class="date-option-date">2026-07-19</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-07-18.html" class="date-option current"><span class="date-option-date">2026-07-18</span><span class="date-option-tag">今天</span></a><a href="deadlock_report_2026-07-17.html" class="date-option"><span class="date-option-date">2026-07-17</span><span class="date-option-tag">查看 →</span></a>
+            </div>
+          </div>
           <span>📊 有效数据 <strong>98/100</strong> 帖</span>
         </div>
       </div>
@@ -568,7 +601,7 @@ tr:hover .rank { color: var(--accent); }
       <!-- Archives -->
       <div class="card">
         <div class="card-header"><span class="icon">📁</span> 历史归档</div>
-        <div class="archive-row"><a href="deadlock_report_2026-07-17.html" class="archive-link">07-17</a></div>
+        <div class="archive-row"><a href="deadlock_report_2026-07-20.html" class="archive-link">07-20</a><a href="deadlock_report_2026-07-19.html" class="archive-link">07-19</a><a href="deadlock_report_2026-07-18.html" class="archive-link">07-18</a><a href="deadlock_report_2026-07-17.html" class="archive-link">07-17</a></div>
       </div>
       <!-- Hot list -->
       <div class="card">
@@ -593,7 +626,7 @@ tr:hover .rank { color: var(--accent); }
 
   <div class="footer">
     由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
-    数据来源: r/DeadlockTheGame · 更新于 2026-07-18T02:03:43+08:00
+    数据来源: r/DeadlockTheGame · 更新于 2026-07-20T04:40:41+08:00
   </div>
 </div>
 
@@ -635,6 +668,17 @@ function applyFilter() {
     : '';
 }
 applyFilter();
+
+// ── Date picker dropdown ──
+function toggleDateDropdown(e) {
+  e.stopPropagation();
+  const dp = document.getElementById('datePicker');
+  dp.classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  const dp = document.getElementById('datePicker');
+  if (dp && !dp.contains(e.target)) dp.classList.remove('open');
+});
 </script>
 </body>
 </html>

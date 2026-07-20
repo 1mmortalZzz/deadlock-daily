@@ -40,6 +40,32 @@ h1 { color: var(--text); font-size: 26px; font-weight: 800; letter-spacing: -0.5
 .meta-row span { background: var(--surface2); border: 1px solid var(--border2); padding: 4px 12px; border-radius: 20px; }
 .meta-row strong { color: var(--blue); }
 
+/* Date picker dropdown */
+.date-picker { position: relative; cursor: pointer; user-select: none;
+                background: var(--surface2); border: 1px solid var(--border2);
+                padding: 4px 12px; border-radius: 20px;
+                display: inline-flex; align-items: center; gap: 6px; }
+.date-picker:hover { border-color: var(--accent); }
+.date-picker-arrow { font-size: 10px; color: var(--text3); transition: transform 0.2s; }
+.date-picker.open .date-picker-arrow { transform: rotate(180deg); }
+.date-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+                  transform: translateX(-50%); min-width: 220px; max-height: 360px;
+                  overflow-y: auto; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+                  z-index: 100; padding: 6px; }
+.date-picker.open .date-dropdown { display: block; }
+.date-dropdown-header { padding: 10px 12px 6px; font-size: 11px; font-weight: 600;
+                         color: var(--text3); text-transform: uppercase; letter-spacing: 1px;
+                         border-bottom: 1px solid var(--border2); margin-bottom: 4px; }
+.date-option { display: flex; justify-content: space-between; align-items: center;
+                padding: 8px 12px; border-radius: 6px; color: var(--text2);
+                font-size: 13px; text-decoration: none; transition: background 0.15s; }
+.date-option:hover { background: var(--surface2); color: var(--accent); }
+.date-option.current { background: rgba(255,69,0,0.12); color: var(--accent); font-weight: 600; }
+.date-option-date { font-family: 'SF Mono', 'Consolas', monospace; }
+.date-option-tag { font-size: 10px; color: var(--text3); }
+.date-option.current .date-option-tag { color: var(--accent); }
+
 /* Theme toggle */
 .theme-toggle { background: var(--surface2); border: 1px solid var(--border2);
                   border-radius: 8px; padding: 6px 14px; cursor: pointer; font-size: 12px;
@@ -217,7 +243,14 @@ tr:hover .rank { color: var(--accent); }
         <div class="subreddit">r/DeadlockTheGame</div>
         <h1>每日热点追踪</h1>
         <div class="meta-row">
-          <span>📅 2026-07-17</span>
+          <div class="date-picker" id="datePicker" onclick="toggleDateDropdown(event)">
+            <span>📅 2026-07-17</span>
+            <span class="date-picker-arrow">▾</span>
+            <div class="date-dropdown" id="dateDropdown">
+              <div class="date-dropdown-header">📅 查看历史报告</div>
+              <a href="deadlock_report_2026-07-20.html" class="date-option"><span class="date-option-date">2026-07-20</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-07-19.html" class="date-option"><span class="date-option-date">2026-07-19</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-07-18.html" class="date-option"><span class="date-option-date">2026-07-18</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-07-17.html" class="date-option current"><span class="date-option-date">2026-07-17</span><span class="date-option-tag">今天</span></a>
+            </div>
+          </div>
           <span>📊 有效数据 <strong>98/100</strong> 帖</span>
         </div>
       </div>
@@ -246,30 +279,6 @@ tr:hover .rank { color: var(--accent); }
 
   <!-- Weekly block -->
   
-        <div class="card weekly-card">
-          <div class="card-header"><span class="icon">📊</span> 本周趋势分析 · 07/10 — 07/17</div>
-          <div class="weekly-body">
-            <div class="weekly-grid">
-              <div class="week-col">
-                <div class="week-section-title">🔥 本周热门主题</div>
-                <div class="trend-tags"><span class="trend-tag">英雄讨论</span><span class="trend-tag">同人创作</span><span class="trend-tag">版本更新</span><span class="trend-tag">攻略技巧</span></div>
-                <div class="week-section-title" style="margin-top:14px">📈 各日均热度</div>
-                <div class="day-bars"><div class="day-bar"><div class="day-label">07-10</div><div class="bar-wrap"><div class="bar-fill" style="width:94%"></div></div><div class="bar-num">765</div></div><div class="day-bar"><div class="day-label">07-13</div><div class="bar-wrap"><div class="bar-fill" style="width:20%"></div></div><div class="bar-num">166</div></div><div class="day-bar"><div class="day-label">07-16</div><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><div class="bar-num">812</div></div><div class="day-bar"><div class="day-label">07-17</div><div class="bar-wrap"><div class="bar-fill" style="width:20%"></div></div><div class="bar-num">162</div></div></div>
-                <div class="week-section-title" style="margin-top:14px">🔤 热词云</div>
-                <div class="word-cloud" style="margin-top:6px"></div>
-              </div>
-              <div class="week-col">
-                <div class="week-section-title">🏅 活跃创作者</div>
-                <div class="author-list"><div class="author-item"><span class="author-name">/u/Open-Advisor6819</span><span class="author-count">×2 篇</span><span class="author-avg">均 107 👍</span></div><div class="author-item"><span class="author-name">/u/Altruistic-Might-370</span><span class="author-count">×2 篇</span><span class="author-avg">均 919 👍</span></div><div class="author-item"><span class="author-name">/u/OlivanderTheSwift</span><span class="author-count">×2 篇</span><span class="author-avg">均 277 👍</span></div><div class="author-item"><span class="author-name">/u/AlexActualll</span><span class="author-count">×2 篇</span><span class="author-avg">均 19 👍</span></div><div class="author-item"><span class="author-name">/u/DeucesDummies</span><span class="author-count">×2 篇</span><span class="author-avg">均 8 👍</span></div><div class="author-item"><span class="author-name">/u/Grelgn</span><span class="author-count">×1 篇</span><span class="author-avg">均 166 👍</span></div><div class="author-item"><span class="author-name">/u/SketchyJJ</span><span class="author-count">×1 篇</span><span class="author-avg">均 765 👍</span></div><div class="author-item"><span class="author-name">/u/fyemo</span><span class="author-count">×1 篇</span><span class="author-avg">均 188 👍</span></div></div>
-                <div class="week-section-title" style="margin-top:14px">📋 类型分布</div>
-                <div class="type-list"><div class="type-item"><span class="type-name">其他</span><span class="type-pct">72%</span></div><div class="type-item"><span class="type-name">同人创作</span><span class="type-pct">9%</span></div><div class="type-item"><span class="type-name">游戏视频</span><span class="type-pct">6%</span></div><div class="type-item"><span class="type-name">攻略求助</span><span class="type-pct">6%</span></div><div class="type-item"><span class="type-name">趣味投票</span><span class="type-pct">3%</span></div><div class="type-item"><span class="type-name">版本更新</span><span class="type-pct">2%</span></div><div class="type-item"><span class="type-name">梗图/Meme</span><span class="type-pct">1%</span></div></div>
-                <div style="margin-top:10px"><svg viewBox="0 0 110 118" width="160" height="170" style="display:block;margin:0 auto 8px"><path d="M 50 50 L 50.0 5.0 A 45 45 0 1 1 5.8 58.4 Z" fill="#6b7280" opacity="0.85"/><path d="M 50 50 L 5.8 58.4 A 45 45 0 0 1 8.2 33.4 Z" fill="#a78bfa" opacity="0.85"/><path d="M 50 50 L 8.2 33.4 A 45 45 0 0 1 17.2 19.2 Z" fill="#38bdf8" opacity="0.85"/><path d="M 50 50 L 17.2 19.2 A 45 45 0 0 1 30.8 9.3 Z" fill="#60a5fa" opacity="0.85"/><path d="M 50 50 L 30.8 9.3 A 45 45 0 0 1 38.8 6.4 Z" fill="#fb923c" opacity="0.85"/><path d="M 50 50 L 38.8 6.4 A 45 45 0 0 1 44.4 5.4 Z" fill="#34d399" opacity="0.85"/><path d="M 50 50 L 44.4 5.4 A 45 45 0 0 1 47.2 5.1 Z" fill="#fbbf24" opacity="0.85"/><path d="M 50 50 L 47.2 5.1 A 45 45 0 0 1 50.0 5.0 Z" fill="#f87171" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="#101018"/><rect x="4" y="104" width="8" height="8" rx="2" fill="#6b7280"/><text x="14" y="112" font-size="8" fill="#888">其他</text><rect x="42" y="104" width="8" height="8" rx="2" fill="#a78bfa"/><text x="52" y="112" font-size="8" fill="#888">同人创作</text><rect x="80" y="104" width="8" height="8" rx="2" fill="#38bdf8"/><text x="90" y="112" font-size="8" fill="#888">游戏视频</text><rect x="118" y="104" width="8" height="8" rx="2" fill="#60a5fa"/><text x="128" y="112" font-size="8" fill="#888">攻略求助</text><rect x="156" y="104" width="8" height="8" rx="2" fill="#fb923c"/><text x="166" y="112" font-size="8" fill="#888">趣味投票</text><rect x="194" y="104" width="8" height="8" rx="2" fill="#34d399"/><text x="204" y="112" font-size="8" fill="#888">版本更新</text><rect x="232" y="104" width="8" height="8" rx="2" fill="#fbbf24"/><text x="242" y="112" font-size="8" fill="#888">梗图/M</text><rect x="270" y="104" width="8" height="8" rx="2" fill="#f87171"/><text x="280" y="112" font-size="8" fill="#888">Bug反</text></svg></div>
-              </div>
-            </div>
-            <div class="week-section-title">🚀 本周新晋热帖</div><div class="rising-list"><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uyg89z/vindicta_should_have_a_passive_that_makes_her/" target="_blank">Vindicta should have a passive that make</a> (612 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uyfocf/i_hate_how_bad_mo_is_at_traversing_the_tunnels/" target="_blank">I hate how bad mo is at traversing the t</a> (494 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uyc3ru/paiiiiiiiigeeeee_my_beloved/" target="_blank">PAIIIIIIIIGEEEEE MY BELOVED</a> (335 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uyh8q3/it_took_me_almost_a_year_to_get_the_reference/" target="_blank">It took me almost a year to get the refe</a> (299 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1uyordc/mina_ha_losing_streak_sticker/" target="_blank">MINA HA (LOSING STREAK) STICKER</a> (255 👍)</div></div>
-            <div class="week-footer">📅 共收录 100 篇，平均热度 383 👍，单帖最高 3,150 👍</div>
-          </div>
-        </div>
 
   <div class="main-grid">
     <div>
@@ -592,7 +601,7 @@ tr:hover .rank { color: var(--accent); }
       <!-- Archives -->
       <div class="card">
         <div class="card-header"><span class="icon">📁</span> 历史归档</div>
-        <div class="archive-row"><a href="deadlock_report_2026-07-17.html" class="archive-link">07-17</a></div>
+        <div class="archive-row"><a href="deadlock_report_2026-07-20.html" class="archive-link">07-20</a><a href="deadlock_report_2026-07-19.html" class="archive-link">07-19</a><a href="deadlock_report_2026-07-18.html" class="archive-link">07-18</a><a href="deadlock_report_2026-07-17.html" class="archive-link">07-17</a></div>
       </div>
       <!-- Hot list -->
       <div class="card">
@@ -733,7 +742,7 @@ tr:hover .rank { color: var(--accent); }
 
   <div class="footer">
     由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
-    数据来源: r/DeadlockTheGame · 更新于 2026-07-17T10:09:38+08:00
+    数据来源: r/DeadlockTheGame · 更新于 2026-07-20T04:40:35+08:00
   </div>
 </div>
 
@@ -775,6 +784,17 @@ function applyFilter() {
     : '';
 }
 applyFilter();
+
+// ── Date picker dropdown ──
+function toggleDateDropdown(e) {
+  e.stopPropagation();
+  const dp = document.getElementById('datePicker');
+  dp.classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  const dp = document.getElementById('datePicker');
+  if (dp && !dp.contains(e.target)) dp.classList.remove('open');
+});
 </script>
 </body>
 </html>
