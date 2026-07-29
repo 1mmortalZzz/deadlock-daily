@@ -307,6 +307,19 @@ tr:hover .rank { color: var(--accent); }
 .news-empty { padding: 28px 18px; text-align: center; color: var(--text3); font-size: 12px; }
 @media (max-width: 600px) { .news-item { flex-wrap: wrap; }
   .news-btn { align-self: flex-end; margin-left: 32px; } }
+
+/* ── Original News Section ── */
+.orig-news-item { background: var(--surface2); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+.orig-news-meta { margin-bottom: 8px; }
+.orig-badge {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5); color: white; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px; margin-left: 6px; vertical-align: middle;
+}
+.orig-news-title { font-size: 15px; font-weight: 700; color: var(--text1); margin: 6px 0 10px; line-height: 1.4; }
+.orig-news-img-wrap { border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+.orig-news-img-wrap img { width: 100%; max-height: 220px; object-fit: cover; display: block; }
+.orig-news-body { font-size: 13px; color: var(--text2); line-height: 1.7; }
+
 </style>
 </head>
 <body>
@@ -1036,9 +1049,56 @@ tr:hover .rank { color: var(--accent); }
   </div>
 </div>
 
+  <!-- Original AI News -->
+  <div class="news-card">
+  <div class="news-card-header">
+    <span class="news-icon">✍️</span>
+    <span>Deadlock 原创新闻</span>
+    <span class="news-date">2026-07-29 · AI 模仿 · 每日四条</span>
+  </div>
+  <div class="news-list">
+<div class="orig-news-item">
+  <div class="orig-news-meta">
+    <span class="news-tag">PATCH</span>
+    <span class="orig-badge">🤖 AI 原创</span>
+  </div>
+  <h3 class="orig-news-title">温盾（Kelvin）重做归来：冰霜之墙彻底改变团战格局</h3>
+  <div class="orig-news-img-wrap"><img src="news_1.png" alt="温盾（Kelvin）重做归来：冰霜之墙彻底改变团战格局" loading="lazy" /></div>
+  <p class="orig-news-body">Valve 今日推送了 Deadlock 的重磅补丁，核心改动指向了玩家社区呼声最高的温盾（Kelvin）。这位以冰霜系技能闻名的前排英雄，在本次&quot;Old Gods New Blood&quot;更新中迎来了机制级别的重做——尤其是他的终极技能「冰霜之墙」，现在可以制造一面长达 20 米的可破坏冰墙，持续整整 8 秒，直接将对手分割成两个战场。<br><br>玩家社区迅速发现了这一改动的战术潜力：在近期职业选手的直播中，已经有人利用这道冰墙实现了&quot;诱导冲锋、关门打狗&quot;的经典配合，将 Bebop 的钩子变成了对方的死亡陷阱。Reddit 热帖惊呼：温盾终于从&quot;下水道&quot;走了出来。<br><br>不过本次补丁对 Shiv 的削弱延续了上一版的思路——Valve 似乎仍在摸索这位 ADC 的平衡区间，核心技能 CD 略有延长，线上压制力小幅下滑。部分玩家认为 Valve 对 Shiv 的&quot;执念式调整&quot;已经持续了三个版本，是否该换个方向了？</p>
+</div>
+<div class="orig-news-item">
+  <div class="orig-news-meta">
+    <span class="news-tag">META</span>
+    <span class="orig-badge">🤖 AI 原创</span>
+  </div>
+  <h3 class="orig-news-title">Bebop 登顶版本之子：滚雪球机制改动让炸弹流成为主流</h3>
+  <div class="orig-news-img-wrap"><img src="news_2.png" alt="Bebop 登顶版本之子：滚雪球机制改动让炸弹流成为主流" loading="lazy" /></div>
+  <p class="orig-news-body">自上次&quot;停止滚雪球&quot;更新试图削弱经济碾压以来，社区没想到等来的却是 Bebop 的时代。这位携带电磁炸弹的冲锋英雄，在新版本中凭借技能组的协同效应一跃成为 T0 选择，各大直播间的 top pick 率在 72 小时内从 18% 飙升至 41%。<br><br>核心原因在于 Bebop 的 E 技能「粘性炸弹」与温盾重做的冰墙形成了完美 Combo——冰墙封路后投掷炸弹几乎是必中，而 6 秒后的爆炸还能触发范围沉默。有玩家在 Reddit 晒出了一局 34/2/9 的战绩截图，配文：&quot;现在不是 Bebop 强，是冰墙让他的炸弹成了核弹。&quot;<br><br>Valve 的平衡团队目前尚未对 Bebop 的超标问题发表官方声明，但从历史规律看，重大削弱补丁通常会在 7-14 天内到来。想要冲分的玩家可以抓紧当前窗口期。</p>
+</div>
+<div class="orig-news-item">
+  <div class="orig-news-meta">
+    <span class="news-tag">COMMUNITY</span>
+    <span class="orig-badge">🤖 AI 原创</span>
+  </div>
+  <h3 class="orig-news-title">Deadlock 愿望单登顶 Steam 热门榜：内测口碑正在转化为商业势能</h3>
+  <div class="orig-news-img-wrap"><img src="news_3.png" alt="Deadlock 愿望单登顶 Steam 热门榜：内测口碑正在转化为商业势能" loading="lazy" /></div>
+  <p class="orig-news-body">沉寂已久的 Steam 愿望单排行榜在本周迎来了一匹黑马——Deadlock 凭借连续三周的稳定内容更新，空降全球愿望单榜首，将原本的卫冕冠军《丝之歌 2》挤至第二。<br><br>根据第三方数据网站 SteamDB 的追踪，Deadlock 近 30 天日均愿望单新增量达到 12,400 次，这一数字在内测游戏（非正式发布）中极为罕见。考虑到 Valve 此前从未为任何游戏开启如此规模的预热节奏，社区普遍认为正式版发布窗口已经不远。<br><br>更值得玩味的是，愿望单数据的地域分布显示东南亚地区增长尤为迅猛，多家游戏媒体猜测这与 Valve 在该地区加大了服务器投入有关。内测玩家社区也报告称，跨服匹配延迟从此前的 180ms 下降至约 90ms，网络体验的改善或许正是这波增长的底层驱动力。</p>
+</div>
+<div class="orig-news-item">
+  <div class="orig-news-meta">
+    <span class="news-tag">ESPORTS</span>
+    <span class="orig-badge">🤖 AI 原创</span>
+  </div>
+  <h3 class="orig-news-title">社区自制锦标赛周末开打：Valve 罕见点赞背后的电竞生态萌芽</h3>
+  <div class="orig-news-img-wrap"><img src="news_4.png" alt="社区自制锦标赛周末开打：Valve 罕见点赞背后的电竞生态萌芽" loading="lazy" /></div>
+  <p class="orig-news-body">上周末由社区自发组织的&quot;Deadlock Community Clash&quot;在 Twitch 同步直播中落下帷幕，总计 48 支战队、超过 300 名玩家参与了这场非官方赛事，最终由欧洲战队 FrostByte 夺冠，将社区冠军腰带收入囊中。<br><br>值得注意的是，Valve 官方账号罕见地在 Twitter 为此次社区锦标赛点赞并转发，配文仅有两个字：&quot;Keep building.&quot;这一举动被电竞观察人士解读为 Valve 正在释放信号——有意将 Deadlock 打造成电竞生态项目，而非单纯的内测营销工具。<br><br>比赛期间还发生了一段小插曲：决赛第五局的 Urn 机制（游戏内的核心争夺目标）出现罕见 bug，导致该局比赛被裁定为重赛，引发了参赛选手与观众的激烈讨论。Valve 在赛后 6 小时内即发布热修补丁修复了该问题，展现了运营团队的响应速度。</p>
+</div>
+  </div>
+</div>
+
   <div class="footer">
     由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
-    数据来源: r/DeadlockTheGame · 更新于 2026-07-29T07:48:06+08:00
+    数据来源: r/DeadlockTheGame · 更新于 2026-07-29T08:39:35+08:00
   </div>
 </div>
 
