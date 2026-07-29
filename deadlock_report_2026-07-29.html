@@ -265,6 +265,48 @@ tr:hover .rank { color: var(--accent); }
 .footer a { color: var(--text3); }
 .footer a:hover { color: var(--accent); }
 .hidden { display: none; }
+
+/* ── News Section ── */
+.news-card { background: var(--surface); border: 1px solid var(--border);
+               border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
+.news-card-header { padding: 14px 18px; border-bottom: 1px solid var(--border2);
+                      display: flex; align-items: center; gap: 10px;
+                      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+                      font-size: 11px; font-weight: 700; color: var(--text3);
+                      text-transform: uppercase; letter-spacing: 1.5px; }
+.news-icon { font-size: 16px; }
+.news-date { margin-left: auto; font-size: 10px; color: var(--accent);
+               background: rgba(255,69,0,0.1); padding: 3px 10px; border-radius: 12px;
+               font-weight: 600; letter-spacing: 0; text-transform: none; }
+.news-list { padding: 4px 0; }
+.news-item { display: flex; align-items: flex-start; gap: 12px;
+               padding: 12px 18px; border-bottom: 1px solid var(--border2);
+               transition: background 0.15s; }
+.news-item:last-child { border-bottom: none; }
+.news-item:hover { background: var(--surface2); }
+.news-rank { font-size: 13px; font-weight: 800; color: var(--border2);
+                min-width: 20px; text-align: center; padding-top: 2px; flex-shrink: 0; }
+.news-item:hover .news-rank { color: var(--accent); }
+.news-body { flex: 1; min-width: 0; }
+.news-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.news-tag { background: var(--tag-bg); border: 1px solid var(--tag-border);
+              border-radius: 20px; padding: 2px 8px; font-size: 10px; color: var(--accent);
+              font-weight: 600; white-space: nowrap; }
+.news-source { font-size: 11px; color: var(--blue); font-weight: 500; }
+.news-time { font-size: 10px; color: var(--text3); margin-left: auto; }
+.news-title { color: var(--text2); font-size: 13px; font-weight: 500; line-height: 1.4;
+                display: block; word-break: break-word; text-decoration: none; }
+.news-title:hover { color: var(--accent); }
+.news-snippet { color: var(--text3); font-size: 11px; margin-top: 4px; line-height: 1.5;
+                   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+                   overflow: hidden; }
+.news-btn { background: var(--surface2); color: var(--text3); border: 1px solid var(--border2);
+              border-radius: 6px; padding: 4px 10px; font-size: 10px; text-decoration: none;
+              white-space: nowrap; flex-shrink: 0; align-self: center; }
+.news-btn:hover { color: var(--accent); border-color: var(--accent); }
+.news-empty { padding: 28px 18px; text-align: center; color: var(--text3); font-size: 12px; }
+@media (max-width: 600px) { .news-item { flex-wrap: wrap; }
+  .news-btn { align-self: flex-end; margin-left: 32px; } }
 </style>
 </head>
 <body>
@@ -845,6 +887,175 @@ tr:hover .rank { color: var(--accent); }
 
   <div class="separator"></div>
 
+  <!-- Deadlock Daily News -->
+  <div class="news-card">
+  <div class="news-card-header">
+    <span class="news-icon">📰</span>
+    <span>全网 Deadlock 新闻</span>
+    <span class="news-date">2026-07-29 · 每日十条 · 多源聚合</span>
+  </div>
+  <div class="news-list">
+<div class="news-item">
+  <div class="news-rank">1</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">Zhihu</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://zhuanlan.zhihu.com/p/2025247949215506641" target="_blank" class="news-title">V社新游《Deadlock》怎么样了？ - 知乎</a>
+    <div class="news-snippet">1. 前言 Valve 旗下MOBA融合射击新作 《Deadlock》 （中文称 《异锁》）于2024年8月开启测试，凭借 MOBA×射击 的创新玩法组合，上线初期即获得较高市场关注度。 测试阶段内，游戏除初期热度峰值外，2025年仅在9月有小幅增长，用户规模与活跃度增长相对平缓。</div>
+  </div>
+  <a href="https://zhuanlan.zhihu.com/p/2025247949215506641" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">2</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">DEADLOCK</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://deadlock.wiki/Deadlock_Wiki/zh-hans" target="_blank" class="news-title">Deadlock Wiki/zh-hans - The Deadlock Wiki</a>
+    <div class="news-snippet">The king-of-the-hill objective has been reworked and separated from the Soul Urn and is now known as Unstable Rift.</div>
+  </div>
+  <a href="https://deadlock.wiki/Deadlock_Wiki/zh-hans" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">3</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">BiliBili</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://www.bilibili.com/video/BV1EPvQeRECm/" target="_blank" class="news-title">一分钟教你deadlock测试资格的获取与传火操作指南！以及deadlock游戏的下载流程详解！</a>
+    <div class="news-snippet">《死锁/DeadLock》，V社新游Deadlock全面0基础入坑教学和获取内测传火资格方法，deadlock新手教学1：全英雄介绍，哪些是轮椅？ ，2026年，你为什么一定要入坑Deadlock？ ，将CS2的模型和地图导入Deadlock！ 这下看懂了！ ，一分钟学会死锁DEADLOCK测试资格领取/传 ...</div>
+  </div>
+  <a href="https://www.bilibili.com/video/BV1EPvQeRECm/" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">4</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">Google</span>
+      <span class="news-time">03-27 23:00</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQV1dSU0hhcmM5YkYycElSNWFjRzZ1aTB0SG95MTQ3SXlEWHc4b0NEVkpLQUxsaVFETm9PRHpKMTFmUk5rYVVXRmI0a3hSOHhqNVNSTk5kaktjOHA1Ql83OWVlT1U3SWNRa0NITkdiTW9KQlpOQ0FBNkNLX2JPazBCVTlHUFlYR3NxOHFxOGdjYkNTMG5qZVJ6cNIBngFBVV95cUxPb0V2My1rdkNaRGZSc2VLeFJqaUV5MDhhYTdHMjZMdlRrVjRaYU03UTl4ZUZpMWxtNVUxbVZuUHd5dUhqblZZWG9oeld2VnQwREJLT2JsNXZlV09mRzRpcmxrcm9semNsV2doeV9xeE1XX3dubmxSMHdRbGdPMWR2bE1SOUZKdzBWTDB3TTRVQUN6VGVIRFl2QW9LT1Z3Zw?oc=5" target="_blank" class="news-title">Valve is developing a PvE mode for Deadlock in the spirit of Risk of Rain - insider - ixbt.games</a>
+    <div class="news-snippet">Valve is developing a PvE mode for Deadlock in the spirit of Risk of Rain - insider  ixbt.games</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxQV1dSU0hhcmM5YkYycElSNWFjRzZ1aTB0SG95MTQ3SXlEWHc4b0NEVkpLQUxsaVFETm9PRHpKMTFmUk5rYVVXRmI0a3hSOHhqNVNSTk5kaktjOHA1Ql83OWVlT1U3SWNRa0NITkdiTW9KQlpOQ0FBNkNLX2JPazBCVTlHUFlYR3NxOHFxOGdjYkNTMG5qZVJ6cNIBngFBVV95cUxPb0V2My1rdkNaRGZSc2VLeFJqaUV5MDhhYTdHMjZMdlRrVjRaYU03UTl4ZUZpMWxtNVUxbVZuUHd5dUhqblZZWG9oeld2VnQwREJLT2JsNXZlV09mRzRpcmxrcm9semNsV2doeV9xeE1XX3dubmxSMHdRbGdPMWR2bE1SOUZKdzBWTDB3TTRVQUN6VGVIRFl2QW9LT1Z3Zw?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">5</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Google</span>
+      <span class="news-time">03-12 23:00</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFB0bk1VYmgtSGx2LXdGS2RIOUhhOW9PcE1pRU90MUJnU25vS1hrYzdoQ3I2dFFHLXhSbTBldVhDRzZRVW51c293bnJtYjFKYUdiRjBtUlVmaWpRUzZxd2NKRG01SWtDQlp3c0RjQmZUdFVvaFd1cW9Tc0cxcXo?oc=5" target="_blank" class="news-title">Deadlock has just had a major update - Gamereactor UK</a>
+    <div class="news-snippet">Deadlock has just had a major update  Gamereactor UK</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMifEFVX3lxTFB0bk1VYmgtSGx2LXdGS2RIOUhhOW9PcE1pRU90MUJnU25vS1hrYzdoQ3I2dFFHLXhSbTBldVhDRzZRVW51c293bnJtYjFKYUdiRjBtUlVmaWpRUzZxd2NKRG01SWtDQlp3c0RjQmZUdFVvaFd1cW9Tc0cxcXo?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">6</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">Google</span>
+      <span class="news-time">03-18 23:00</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE5wX2pTb1B2ZkZzVDF3VEtzMWwyRG5teHlQOEhsUnB0Rml0VGlENG4xczhiZXNoVXlCWm1qbEpldVVqQTdocXMxNlM4am03bnRKNnQ4NVBlVHhGTko2ajZlRnV0YlpQaUpEU0tONGdYckxPcTlxLWxhODVsRQ?oc=5" target="_blank" class="news-title">Is Deadlock Still Invite Only? Answered - Turtle Beach</a>
+    <div class="news-snippet">Is Deadlock Still Invite Only? Answered  Turtle Beach</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE5wX2pTb1B2ZkZzVDF3VEtzMWwyRG5teHlQOEhsUnB0Rml0VGlENG4xczhiZXNoVXlCWm1qbEpldVVqQTdocXMxNlM4am03bnRKNnQ4NVBlVHhGTko2ajZlRnV0YlpQaUpEU0tONGdYckxPcTlxLWxhODVsRQ?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">7</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">STATLOCK</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://statlocker.gg/" target="_blank" class="news-title">Statlocker - Deadlock Stats Tracker &amp; Match Analytics</a>
+    <div class="news-snippet">Track your Deadlock rank, MMR, and matches. Real-time stats, hero tier lists, build guides, and performance analytics.</div>
+  </div>
+  <a href="https://statlocker.gg/" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">8</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">Zhihu</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://zhuanlan.zhihu.com/p/10417943180" target="_blank" class="news-title">射击3.0时代来临？简单聊一聊DeadLock - 知乎</a>
+    <div class="news-snippet">DEADLOCK固然有很多问题，但足够有趣足够差异化，不仅仅把我拉回了16年的暑假组排守望先锋的时光（现在赶到战场的是，漫威争锋！ ），同时也把我拉回了14年，那段认认真真苦练 技术研究 理解在LOL上分的日子</div>
+  </div>
+  <a href="https://zhuanlan.zhihu.com/p/10417943180" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">9</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">HERO</span>
+      <span class="news-source">TRACKLOC</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://tracklock.gg/" target="_blank" class="news-title">Deadlock Stats, Match Tracking, and Hero Analysis - tracklock.gg</a>
+    <div class="news-snippet">Tracklock is your go-to resource for Deadlock match tracking, tier lists, and hero statistics. Explore detailed hero win rates, player stats, match history, and rankings.</div>
+  </div>
+  <a href="https://tracklock.gg/" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">10</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">DEADLOCK</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://deadlock.coach/zh-CN/wiki" target="_blank" class="news-title">欢迎来到《Deadlock》游戏百科</a>
+    <div class="news-snippet">欢迎来到《Deadlock》游戏百科 《Deadlock教练》提供关于V社游戏Deadlock的完整百科。 获取Deadlock最新38英雄与173装备情报。 我们的百科助你精通游戏机制、提升操作水平、享受更多乐趣！</div>
+  </div>
+  <a href="https://deadlock.coach/zh-CN/wiki" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">11</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">DEADLOCK</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://deadlock.wiki/" target="_blank" class="news-title">The Deadlock Wiki</a>
+    <div class="news-snippet">The player-written resource for Deadlock that anyone can edit, with 1,360 articles and counting.</div>
+  </div>
+  <a href="https://deadlock.wiki/" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">12</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">GENERAL</span>
+      <span class="news-source">Baidu</span>
+      <span class="news-time"></span>
+    </div>
+    <a href="https://baike.baidu.com/item/Deadlock/64898864" target="_blank" class="news-title">Deadlock（Valve开发的3D多人在线战术射击游戏）_百度百科</a>
+    <div class="news-snippet">《Deadlock》是由Valve（V社）开发的一款第三人称视角的3D射击游戏，融合了多人在线战术竞技（MOBA）与团队射击的核心玩法。 游戏采用6v6对战模式，玩家需操作拥有独特技能的角色，通过摧毁敌方圣坛或防御塔等目标取得胜利。</div>
+  </div>
+  <a href="https://baike.baidu.com/item/Deadlock/64898864" target="_blank" class="news-btn">原文</a>
+</div>
+  </div>
+</div>
+
+  <div class="separator"></div>
+
   <div class="card">
     <div class="card-header"><span class="icon">📋</span> 全部 Hot 帖 · 100 篇</div>
     <table id="allTable">
@@ -855,7 +1066,7 @@ tr:hover .rank { color: var(--accent); }
 
   <div class="footer">
     由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
-    数据来源: r/DeadlockTheGame · 更新于 2026-07-29T01:32:58+08:00
+    数据来源: r/DeadlockTheGame · 更新于 2026-07-29T06:46:17+08:00
   </div>
 </div>
 
