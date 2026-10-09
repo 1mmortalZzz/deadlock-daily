@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>r/DeadlockTheGame 每日热点 — 2026-10-09</title>
+<style>
+/* ── Theme Variables ── */
+:root[data-theme="dark"] {
+  --bg: #0a0a0f; --surface: #101018; --surface2: #13131c;
+  --border: #1c1c28; --border2: #22222e;
+  --text: #e0e0e0; --text2: #aaa; --text3: #666;
+  --accent: #ff4500; --accent2: #ff6b00;
+  --blue: #4fc3f7; --green: #69db7c; --red: #ff6b6b; --yellow: #fbbf24;
+  --tag-bg: #1c1c30; --tag-border: #33334a;
+}
+:root[data-theme="light"] {
+  --bg: #f5f5f8; --surface: #ffffff; --surface2: #f0f0f5;
+  --border: #e0e0e8; --border2: #d0d0d8;
+  --text: #1a1a22; --text2: #555; --text3: #999;
+  --accent: #e84000; --accent2: #cc3300;
+  --blue: #0077cc; --green: #16a34a; --red: #dc2626; --yellow: #d97706;
+  --tag-bg: #e8e8f4; --tag-border: #c0c0d4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: var(--bg); color: var(--text); min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1180px; margin: 0 auto; padding: 20px 24px 40px; }
+
+/* ── Header ── */
+header { text-align: left; padding: 12px 24px 22px;
+          border-bottom: 1px solid var(--border); margin-bottom: 28px;
+          display: flex; flex-direction: column; align-items: flex-start; gap: 24px;
+          max-width: 1180px; margin-left: auto; margin-right: auto; }
+.header-top { display: flex; align-items: center; gap: 14px; width: 100%; justify-content: space-between; max-width: 1120px; }
+.subreddit { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; white-space: nowrap; }
+h1 { color: var(--text); font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 18px 0; }
+.meta-row { display: flex; gap: 10px; font-size: 12px; color: var(--text3); flex-wrap: wrap; justify-content: flex-start; }
+.meta-row span { background: var(--surface2); border: 1px solid var(--border2); padding: 4px 12px; border-radius: 20px; }
+.meta-row strong { color: var(--blue); }
+
+/* Date picker dropdown */
+.date-picker { position: relative; cursor: pointer; user-select: none;
+                background: var(--surface2); border: 1px solid var(--border2);
+                padding: 4px 12px; border-radius: 20px;
+                display: inline-flex; align-items: center; gap: 6px; }
+.date-picker:hover { border-color: var(--accent); }
+.date-picker-arrow { font-size: 10px; color: var(--text3); transition: transform 0.2s; }
+.date-picker.open .date-picker-arrow { transform: rotate(180deg); }
+.date-dropdown { display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+                  transform: translateX(-50%); min-width: 220px; max-height: 360px;
+                  overflow-y: auto; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+                  z-index: 100; padding: 6px; }
+.date-picker.open .date-dropdown { display: block; }
+.date-dropdown-header { padding: 10px 12px 6px; font-size: 11px; font-weight: 600;
+                         color: var(--text3); text-transform: uppercase; letter-spacing: 1px;
+                         border-bottom: 1px solid var(--border2); margin-bottom: 4px; }
+.date-option { display: flex; justify-content: space-between; align-items: center;
+                padding: 8px 12px; border-radius: 6px; color: var(--text2);
+                font-size: 13px; text-decoration: none; transition: background 0.15s; }
+.date-option:hover { background: var(--surface2); color: var(--accent); }
+.date-option.current { background: rgba(255,69,0,0.12); color: var(--accent); font-weight: 600; }
+.date-option-date { font-family: 'SF Mono', 'Consolas', monospace; }
+.date-option-tag { font-size: 10px; color: var(--text3); }
+.date-option.current .date-option-tag { color: var(--accent); }
+
+/* Theme toggle */
+.theme-toggle { background: var(--surface2); border: 1px solid var(--border2);
+                  border-radius: 8px; padding: 6px 14px; cursor: pointer; font-size: 12px;
+                  color: var(--text2); transition: all 0.2s; }
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Stats overview card ── */
+.stats-overview-card { background: var(--surface); border: 1px solid var(--border);
+                        border-radius: 14px; margin-bottom: 18px; overflow: hidden; }
+.stats-overview-header { background: var(--surface2); padding: 10px 16px;
+                          font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--border2); }
+.stats-overview-header .icon { margin-right: 6px; }
+.stats-overview-grid { display: grid; grid-template-columns: repeat(4, 1fr);
+                         padding: 14px 16px; gap: 12px; }
+.stat-item { text-align: center; }
+.stat-number { font-size: 22px; font-weight: 700; color: var(--accent);
+                font-family: 'SF Mono', 'Consolas', monospace; line-height: 1.2; }
+.stat-label { font-size: 10px; color: var(--text3); margin-top: 3px; text-transform: uppercase;
+               letter-spacing: 0.5px; }
+
+/* ── Hot thread list ── */
+.hot-thread-list { padding: 4px 0; }
+.hot-thread-row { display: flex; align-items: flex-start; gap: 10px;
+                    padding: 9px 16px; border-bottom: 1px solid var(--border2); transition: background 0.15s; }
+.hot-thread-row:last-child { border-bottom: none; }
+.hot-thread-row:hover { background: var(--surface2); }
+.hot-thread-rank { font-size: 13px; font-weight: 700; color: var(--text3);
+                     min-width: 20px; text-align: center; padding-top: 1px; }
+.hot-thread-info { flex: 1; min-width: 0; }
+.hot-thread-title { font-size: 13px; color: var(--text2); text-decoration: none; line-height: 1.4;
+                      display: block; word-break: break-word; }
+.hot-thread-title:hover { color: var(--accent); }
+.hot-thread-meta { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+/* ── Layout ── */
+.main-grid { display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
+@media (max-width: 960px) { .main-grid { grid-template-columns: 1fr; } }
+.right-col { display: flex; flex-direction: column; gap: 18px; }
+
+/* ── Filter bar ── */
+.filter-bar { background: var(--surface); border: 1px solid var(--border);
+               border-radius: 12px; padding: 14px 18px; margin-bottom: 20px;
+               display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.filter-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.filter-slider-wrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 180px; }
+.filter-slider { flex: 1; -webkit-appearance: none; height: 4px; border-radius: 2px;
+                   background: var(--border2); outline: none; cursor: pointer; }
+.filter-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px;
+                    border-radius: 50%; background: var(--accent); cursor: pointer; }
+.filter-value { font-size: 12px; color: var(--accent); font-weight: 600; min-width: 50px; text-align: right; }
+.filter-hint { font-size: 10px; color: var(--text3); }
+
+/* ── Milestone cards ── */
+.milestone-row { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 18px; }
+.milestone-card { background: var(--surface); border: 1px solid var(--border);
+                   border-radius: 10px; padding: 12px 14px; min-width: 180px; flex-shrink: 0; }
+.ms-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.ms-title { font-size: 12px; color: var(--text2); line-height: 1.3; margin-bottom: 4px; word-break: break-word; }
+.ms-title a { color: var(--text2); }
+.ms-title a:hover { color: var(--accent); }
+.ms-stat { font-size: 11px; color: var(--text3); }
+
+/* ── Cards ── */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.card-header { padding: 14px 18px; border-bottom: 1px solid var(--border);
+                font-size: 11px; font-weight: 700; color: var(--text3);
+                text-transform: uppercase; letter-spacing: 1.5px;
+                display: flex; align-items: center; gap: 8px; }
+.icon { font-size: 15px; }
+
+/* ── Top 25 Table ── */
+table { width: 100%; border-collapse: collapse; }
+th { padding: 10px 14px; text-align: left; font-size: 10px; color: var(--text3);
+     text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); font-weight: 600; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--surface2); }
+.rank { font-size: 18px; font-weight: 800; color: var(--border2); width: 34px; text-align: center; }
+tr:hover .rank { color: var(--accent); }
+.title-cell { width: 100%; max-width: 0; }
+.post-title { color: var(--text2); font-size: 13px; font-weight: 500; line-height: 1.4; word-break: break-word; }
+.post-desc { color: #9ca3af; font-size: 12px; font-weight: 400; margin-top: 5px; line-height: 1.5; letter-spacing: 0.2px; }
+[data-theme="light"] .post-desc { color: #555; }
+.author { color: var(--blue); font-size: 11px; white-space: nowrap; }
+.stat { font-size: 12px; font-weight: 600; white-space: nowrap; text-align: center; color: var(--text2); }
+.btn { background: var(--surface2); color: var(--text3); border: 1px solid var(--border2);
+        border-radius: 6px; padding: 3px 10px; font-size: 11px; text-decoration: none; white-space: nowrap; }
+.btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-sm { background: transparent; color: var(--text3); border: 1px solid var(--border2);
+           border-radius: 4px; padding: 2px 8px; font-size: 11px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+.btn-sm:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── Change badges ── */
+.change-badge { display: inline-block; border-radius: 4px; padding: 1px 5px;
+                 font-size: 9px; font-weight: 700; margin-right: 5px; vertical-align: middle; }
+.change-badge.new { background: #1a3a1a; color: #4ade80; border: 1px solid #4ade80; }
+.change-badge.up { background: #1a1a2a; color: #60a5fa; }
+.change-badge.down { background: #2a1a1a; color: #f87171; }
+
+/* ── Champion ── */
+.champion-card { background: linear-gradient(135deg, #1a0800 0%, var(--surface) 100%);
+                   border: 1px solid var(--accent); border-radius: 14px;
+                   padding: 22px; margin-bottom: 18px; }
+.champ-label { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: 2px;
+                text-transform: uppercase; margin-bottom: 8px; }
+.champ-title { color: var(--text); font-size: 19px; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+.champ-stats { display: flex; gap: 14px; font-size: 13px; color: var(--text3); margin-bottom: 10px; }
+.champ-desc { color: var(--text3); font-size: 12px; line-height: 1.5; margin-bottom: 14px; }
+.btn-champ { display: inline-block; background: var(--accent); color: #fff; padding: 7px 18px;
+               border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: 600; }
+.btn-champ:hover { background: var(--accent2); }
+
+/* ── Hot list ── */
+.hot-list { padding: 4px 0; }
+.hot-item { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-bottom: 1px solid var(--border); }
+.hot-item:last-child { border-bottom: none; }
+.hot-item:hover { background: var(--surface2); }
+.hot-rank { font-size: 14px; font-weight: 800; color: var(--border2); width: 22px; flex-shrink: 0; text-align: center; }
+.hot-item:hover .hot-rank { color: var(--accent); }
+.hot-content { flex: 1; min-width: 0; }
+.hot-title { color: var(--text2); font-size: 12px; font-weight: 500; line-height: 1.3;
+               white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hot-meta { color: var(--text3); font-size: 10px; margin-top: 2px; }
+.hot-meta strong { color: var(--green); }
+
+/* ── Hero ranking sidebar ── */
+.hero-row { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.hero-row:last-child { border-bottom: none; }
+.hero-row:hover { background: var(--surface2); }
+.hero-name { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 3px; }
+.hero-badge { font-size: 9px; font-weight: 700; border-radius: 4px; padding: 1px 5px; color: #fff; flex-shrink: 0; }
+.hero-meta { font-size: 11px; color: var(--text3); margin-bottom: 2px; }
+.hero-posts { color: var(--accent); }
+.hero-top { font-size: 10px; color: var(--text3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-top a { color: var(--text3); }
+.hero-top a:hover { color: var(--blue); }
+
+/* ── Type distribution ── */
+.type-bar-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 11px; }
+.type-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.type-name { color: var(--text2); min-width: 60px; }
+.type-pct-bar { flex: 1; height: 5px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+.type-fill { height: 100%; border-radius: 3px; opacity: 0.7; }
+.type-num { color: var(--text3); font-size: 10px; min-width: 28px; text-align: right; }
+
+/* ── Word cloud ── */
+.word-cloud { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; padding: 4px 0; }
+.word-tag { color: var(--text3); padding: 2px 6px; border-radius: 4px; transition: color 0.2s; cursor: default; }
+.word-tag:hover { color: var(--accent); }
+.no-data { color: var(--text3); font-size: 12px; padding: 12px 0; text-align: center; }
+
+/* ── Weekly section ── */
+.weekly-card { margin-bottom: 24px; border-color: #2a2040; }
+.weekly-body { padding: 18px; }
+.weekly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 700px) { .weekly-grid { grid-template-columns: 1fr; } }
+.week-section-title { color: var(--text3); font-size: 10px; font-weight: 700;
+                        text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.trend-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.trend-tag { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px;
+               padding: 4px 12px; font-size: 12px; color: var(--text2); }
+.day-bars { display: flex; flex-direction: column; gap: 6px; }
+.day-bar { display: flex; align-items: center; gap: 8px; }
+.day-label { font-size: 11px; color: var(--text3); width: 28px; flex-shrink: 0; text-align: right; }
+.bar-wrap { flex: 1; background: var(--surface2); border-radius: 3px; height: 8px; overflow: hidden; }
+.bar-fill { background: linear-gradient(90deg, var(--accent), #ff8c00); border-radius: 3px; height: 100%; min-width: 4px; }
+.bar-num { font-size: 11px; color: var(--text3); width: 40px; flex-shrink: 0; }
+.author-list { display: flex; flex-direction: column; gap: 6px; }
+.author-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.author-name { color: var(--blue); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.author-count { color: var(--text3); font-size: 11px; }
+.author-avg { color: var(--red); font-size: 11px; }
+.type-list { display: flex; flex-direction: column; gap: 6px; }
+.type-item { display: flex; justify-content: space-between; font-size: 12px; color: var(--text2); }
+.type-pct { color: var(--text3); font-size: 11px; }
+.rising-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.rising-item { font-size: 12px; color: var(--text3); }
+.rising-item a { color: var(--blue); }
+.rising-item a:hover { color: var(--accent); }
+.week-footer { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text3); }
+
+/* ── Archives ── */
+.archive-row { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px; }
+.archive-link { background: var(--surface2); border: 1px solid var(--border2);
+                  border-radius: 6px; padding: 3px 10px; font-size: 11px; color: var(--text3);
+                  text-decoration: none; }
+.archive-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Misc ── */
+.all-title { color: var(--text2); font-size: 13px; }
+.separator { height: 1px; background: var(--border); margin: 28px 0; }
+.footer { text-align: center; padding: 28px 0; color: var(--text3); font-size: 11px; margin-top: 20px; }
+.footer a { color: var(--text3); }
+.footer a:hover { color: var(--accent); }
+.hidden { display: none; }
+
+/* ── News Section ── */
+.news-card { background: var(--surface); border: 1px solid var(--border);
+               border-radius: 14px; overflow: hidden; margin-bottom: 24px; }
+.news-card-header { padding: 14px 18px; border-bottom: 1px solid var(--border2);
+                      display: flex; align-items: center; gap: 10px;
+                      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+                      font-size: 11px; font-weight: 700; color: var(--text3);
+                      text-transform: uppercase; letter-spacing: 1.5px; }
+.news-icon { font-size: 16px; }
+.news-date { margin-left: auto; font-size: 10px; color: var(--accent);
+               background: rgba(255,69,0,0.1); padding: 3px 10px; border-radius: 12px;
+               font-weight: 600; letter-spacing: 0; text-transform: none; }
+.news-list { padding: 4px 0; }
+.news-item { display: flex; align-items: flex-start; gap: 12px;
+               padding: 12px 18px; border-bottom: 1px solid var(--border2);
+               transition: background 0.15s; }
+.news-item:last-child { border-bottom: none; }
+.news-item:hover { background: var(--surface2); }
+.news-rank { font-size: 13px; font-weight: 800; color: var(--border2);
+                min-width: 20px; text-align: center; padding-top: 2px; flex-shrink: 0; }
+.news-item:hover .news-rank { color: var(--accent); }
+.news-body { flex: 1; min-width: 0; }
+.news-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.news-tag { background: var(--tag-bg); border: 1px solid var(--tag-border);
+              border-radius: 20px; padding: 2px 8px; font-size: 10px; color: var(--accent);
+              font-weight: 600; white-space: nowrap; }
+.news-source { font-size: 11px; color: var(--blue); font-weight: 500; }
+.news-time { font-size: 10px; color: var(--text3); margin-left: auto; }
+.news-title { color: var(--text2); font-size: 13px; font-weight: 500; line-height: 1.4;
+                display: block; word-break: break-word; text-decoration: none; }
+.news-title:hover { color: var(--accent); }
+.news-snippet { color: var(--text3); font-size: 11px; margin-top: 4px; line-height: 1.5;
+                   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+                   overflow: hidden; }
+.news-btn { background: var(--surface2); color: var(--text3); border: 1px solid var(--border2);
+              border-radius: 6px; padding: 4px 10px; font-size: 10px; text-decoration: none;
+              white-space: nowrap; flex-shrink: 0; align-self: center; }
+.news-btn:hover { color: var(--accent); border-color: var(--accent); }
+.news-empty { padding: 28px 18px; text-align: center; color: var(--text3); font-size: 12px; }
+@media (max-width: 600px) { .news-item { flex-wrap: wrap; }
+  .news-btn { align-self: flex-end; margin-left: 32px; } }
+
+/* ── Original News Section ── */
+.orig-news-item { background: var(--surface2); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+.orig-news-meta { margin-bottom: 8px; }
+.orig-badge {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5); color: white; font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px; margin-left: 6px; vertical-align: middle;
+}
+.orig-news-title { font-size: 15px; font-weight: 700; color: var(--text1); margin: 6px 0 10px; line-height: 1.4; }
+.orig-news-img-wrap { border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+.orig-news-img-wrap img { width: 100%; max-height: 220px; object-fit: cover; display: block; }
+.orig-thumb-wrap { position: relative; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+.orig-thumb-wrap img { width: 100%; max-height: 220px; object-fit: cover; display: block; }
+.yt-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.75); color: white; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; text-decoration: none; }
+.yt-badge:hover { background: #ff0000; }
+.orig-news-body { font-size: 13px; color: var(--text2); line-height: 1.7; }
+.orig-banner-wrap { border-radius: 10px; overflow: hidden; margin-bottom: 18px; }
+.orig-banner-wrap img { width: 100%; max-height: 380px; object-fit: cover; display: block; }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-top">
+      <div>
+        <div class="subreddit">r/DeadlockTheGame</div>
+        <h1>每日热点追踪</h1>
+        <div class="meta-row">
+          <div class="date-picker" id="datePicker" onclick="toggleDateDropdown(event)">
+            <span>📅 2026-10-09</span>
+            <span class="date-picker-arrow">▾</span>
+            <div class="date-dropdown" id="dateDropdown">
+              <div class="date-dropdown-header">📅 查看历史报告</div>
+              <a href="deadlock_report_2026-10-09.html" class="date-option current"><span class="date-option-date">2026-10-09</span><span class="date-option-tag">今天</span></a><a href="deadlock_report_2026-10-08.html" class="date-option"><span class="date-option-date">2026-10-08</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-07.html" class="date-option"><span class="date-option-date">2026-10-07</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-05.html" class="date-option"><span class="date-option-date">2026-10-05</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-04.html" class="date-option"><span class="date-option-date">2026-10-04</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-03.html" class="date-option"><span class="date-option-date">2026-10-03</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-02.html" class="date-option"><span class="date-option-date">2026-10-02</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-10-01.html" class="date-option"><span class="date-option-date">2026-10-01</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-30.html" class="date-option"><span class="date-option-date">2026-09-30</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-29.html" class="date-option"><span class="date-option-date">2026-09-29</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-28.html" class="date-option"><span class="date-option-date">2026-09-28</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-27.html" class="date-option"><span class="date-option-date">2026-09-27</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-26.html" class="date-option"><span class="date-option-date">2026-09-26</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-25.html" class="date-option"><span class="date-option-date">2026-09-25</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-24.html" class="date-option"><span class="date-option-date">2026-09-24</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-23.html" class="date-option"><span class="date-option-date">2026-09-23</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-22.html" class="date-option"><span class="date-option-date">2026-09-22</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-21.html" class="date-option"><span class="date-option-date">2026-09-21</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-20.html" class="date-option"><span class="date-option-date">2026-09-20</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-18.html" class="date-option"><span class="date-option-date">2026-09-18</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-17.html" class="date-option"><span class="date-option-date">2026-09-17</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-16.html" class="date-option"><span class="date-option-date">2026-09-16</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-15.html" class="date-option"><span class="date-option-date">2026-09-15</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-14.html" class="date-option"><span class="date-option-date">2026-09-14</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-13.html" class="date-option"><span class="date-option-date">2026-09-13</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-12.html" class="date-option"><span class="date-option-date">2026-09-12</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-11.html" class="date-option"><span class="date-option-date">2026-09-11</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-10.html" class="date-option"><span class="date-option-date">2026-09-10</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-09.html" class="date-option"><span class="date-option-date">2026-09-09</span><span class="date-option-tag">查看 →</span></a><a href="deadlock_report_2026-09-08.html" class="date-option"><span class="date-option-date">2026-09-08</span><span class="date-option-tag">查看 →</span></a>
+            </div>
+          </div>
+          <span>📊 有效数据 <strong>100/100</strong> 帖</span>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">🌙 深色</button>
+    </div>
+  </header>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <span class="filter-label">🔍 筛选</span>
+    <div class="filter-slider-wrap">
+      <span class="filter-label">最低 👍</span>
+      <input type="range" class="filter-slider" id="upSlider" min="0" max="3000" value="0" step="50" oninput="applyFilter()">
+      <span class="filter-value" id="upVal">0</span>
+    </div>
+    <div class="filter-slider-wrap">
+      <span class="filter-label">最低 💬</span>
+      <input type="range" class="filter-slider" id="cmSlider" min="0" max="500" value="0" step="10" oninput="applyFilter()">
+      <span class="filter-value" id="cmVal">0</span>
+    </div>
+    <span class="filter-hint" id="filterCount"></span>
+  </div>
+
+  <!-- Milestone cards -->
+  <div class="milestone-row"><div class="milestone-card" style="border-color:ff4500"><div class="ms-label" style="color:ff4500">🔥 首次破 5000 赞</div><div class="ms-title"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank">My process Celeste (by Kaya Hoshi)</a></div><div class="ms-stat">👍 5,296 · 💬 282</div></div></div>
+
+  <!-- Weekly block -->
+  
+        <div class="card weekly-card">
+          <div class="card-header"><span class="icon">📊</span> 本周趋势分析 · 10/03 — 10/09</div>
+          <div class="weekly-body">
+            <div class="weekly-grid">
+              <div class="week-col">
+                <div class="week-section-title">🔥 本周热门主题</div>
+                <div class="trend-tags"><span class="trend-tag">英雄讨论</span><span class="trend-tag">同人创作</span><span class="trend-tag">版本更新</span><span class="trend-tag">梗图Meme</span><span class="trend-tag">Bug反馈</span><span class="trend-tag">攻略技巧</span></div>
+                <div class="week-section-title" style="margin-top:14px">📈 各日均热度</div>
+                <div class="day-bars"><div class="day-bar"><div class="day-label">10-03</div><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><div class="bar-num">2,173</div></div><div class="day-bar"><div class="day-label">10-04</div><div class="bar-wrap"><div class="bar-fill" style="width:84%"></div></div><div class="bar-num">1,833</div></div><div class="day-bar"><div class="day-label">10-05</div><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div><div class="bar-num">292</div></div><div class="day-bar"><div class="day-label">10-06</div><div class="bar-wrap"><div class="bar-fill" style="width:99%"></div></div><div class="bar-num">2,164</div></div><div class="day-bar"><div class="day-label">10-07</div><div class="bar-wrap"><div class="bar-fill" style="width:54%"></div></div><div class="bar-num">1,191</div></div><div class="day-bar"><div class="day-label">10-08</div><div class="bar-wrap"><div class="bar-fill" style="width:38%"></div></div><div class="bar-num">838</div></div><div class="day-bar"><div class="day-label">10-09</div><div class="bar-wrap"><div class="bar-fill" style="width:13%"></div></div><div class="bar-num">298</div></div></div>
+                <div class="week-section-title" style="margin-top:14px">🔤 热词云</div>
+                <div class="word-cloud" style="margin-top:6px"></div>
+              </div>
+              <div class="week-col">
+                <div class="week-section-title">🏅 活跃创作者</div>
+                <div class="author-list"><div class="author-item"><span class="author-name">/u/Hanna_Bjorn</span><span class="author-count">×13 篇</span><span class="author-avg">均 2,403 👍</span></div><div class="author-item"><span class="author-name">/u/Mashaaaaaaaaa</span><span class="author-count">×7 篇</span><span class="author-avg">均 933 👍</span></div><div class="author-item"><span class="author-name">/u/Altruistic-Might-370</span><span class="author-count">×7 篇</span><span class="author-avg">均 1,073 👍</span></div><div class="author-item"><span class="author-name">/u/Grelgn</span><span class="author-count">×4 篇</span><span class="author-avg">均 57 👍</span></div><div class="author-item"><span class="author-name">/u/NewConstruction3755</span><span class="author-count">×4 篇</span><span class="author-avg">均 614 👍</span></div><div class="author-item"><span class="author-name">/u/Peplemaister</span><span class="author-count">×3 篇</span><span class="author-avg">均 1,714 👍</span></div><div class="author-item"><span class="author-name">/u/BL4CKPL4T3</span><span class="author-count">×2 篇</span><span class="author-avg">均 609 👍</span></div><div class="author-item"><span class="author-name">/u/ginger6616</span><span class="author-count">×2 篇</span><span class="author-avg">均 422 👍</span></div></div>
+                <div class="week-section-title" style="margin-top:14px">📋 类型分布</div>
+                <div class="type-list"><div class="type-item"><span class="type-name">其他</span><span class="type-pct">80%</span></div><div class="type-item"><span class="type-name">趣味投票</span><span class="type-pct">9%</span></div><div class="type-item"><span class="type-name">版本更新</span><span class="type-pct">4%</span></div><div class="type-item"><span class="type-name">同人创作</span><span class="type-pct">2%</span></div><div class="type-item"><span class="type-name">攻略求助</span><span class="type-pct">2%</span></div><div class="type-item"><span class="type-name">梗图/Meme</span><span class="type-pct">2%</span></div><div class="type-item"><span class="type-name">游戏视频</span><span class="type-pct">1%</span></div></div>
+                <div style="margin-top:10px"><svg viewBox="0 0 100 100" width="140" height="140" style="display:block;margin:0 auto 12px"><path d="M 50 50 L 50.0 5.0 A 45 45 0 1 1 6.8 37.4 Z" fill="#6b7280" opacity="0.85"/><path d="M 50 50 L 6.8 37.4 A 45 45 0 0 1 20.2 16.2 Z" fill="#fb923c" opacity="0.85"/><path d="M 50 50 L 20.2 16.2 A 45 45 0 0 1 28.3 10.6 Z" fill="#34d399" opacity="0.85"/><path d="M 50 50 L 28.3 10.6 A 45 45 0 0 1 34.8 7.7 Z" fill="#a78bfa" opacity="0.85"/><path d="M 50 50 L 34.8 7.7 A 45 45 0 0 1 39.5 6.2 Z" fill="#60a5fa" opacity="0.85"/><path d="M 50 50 L 39.5 6.2 A 45 45 0 0 1 43.7 5.4 Z" fill="#fbbf24" opacity="0.85"/><path d="M 50 50 L 43.7 5.4 A 45 45 0 0 1 46.5 5.1 Z" fill="#38bdf8" opacity="0.85"/><path d="M 50 50 L 46.5 5.1 A 45 45 0 0 1 48.6 5.0 Z" fill="#c084fc" opacity="0.85"/><path d="M 50 50 L 48.6 5.0 A 45 45 0 0 1 50.0 5.0 Z" fill="#f87171" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="#101018"/></svg></div>
+              </div>
+            </div>
+            <div class="week-section-title">🚀 本周新晋热帖</div><div class="rising-list"><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzibk7/hangin_out_with_kindamom/" target="_blank">hangin out with kinda-mom</a> (7,135 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzu0p6/testing_out_my_mina_face_rig_gonna_animate_some/" target="_blank">Testing out my Mina face rig, gonna anim</a> (6,486 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank">My process Celeste (by Kaya Hoshi)</a> (5,296 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzzy26/the_remnants_of_the_past/" target="_blank">The remnants of the past</a> (5,081 👍)</div><div class="rising-item">↑ <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0407u/stay_in_character/" target="_blank">Stay in character</a> (5,029 👍)</div></div>
+            <div class="week-footer">📅 共收录 400 篇，平均热度 962 👍，单帖最高 8,646 👍</div>
+          </div>
+        </div>
+
+  <div class="main-grid">
+    <div>
+      <div class="champion-card">
+          <div class="champ-label">🏆 今日冠军</div>
+          <div class="champ-title">My process Celeste (by Kaya Hoshi)</div>
+          <div class="champ-stats">
+            <span>👍 5,296</span>
+            <span>💬 282</span>
+            <span>/u/coconu_kaya_nilson</span>
+          </div>
+          <div class="champ-desc"></div>
+          <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank" class="btn-champ">查看原帖 →</a>
+        </div>
+      <div class="card">
+        <div class="card-header"><span class="icon">🔥</span> Top 25 热门帖</div>
+        <table id="top25Table">
+          <thead><tr><th>#</th><th>标题 / 内容概括</th><th>作者</th><th>👍</th><th>💬</th><th></th></tr></thead>
+          <tbody>
+        <tr class="post-row" data-id="1x0n34c">
+          <td class="rank">1</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>My process Celeste (by Kaya Hoshi)</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/coconu_kaya_nilson</td>
+          <td class="stat upvotes">5,296</td>
+          <td class="stat comments">282</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1wzzy26">
+          <td class="rank">2</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>The remnants of the past</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Hanna_Bjorn</td>
+          <td class="stat upvotes">5,081</td>
+          <td class="stat comments">93</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzzy26/the_remnants_of_the_past/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0407u">
+          <td class="rank">3</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Stay in character</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/No_Ones_Records</td>
+          <td class="stat upvotes">5,029</td>
+          <td class="stat comments">46</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0407u/stay_in_character/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0cmy9">
+          <td class="rank">4</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>NURSE HARROW VOTERS! THIS IS HOW WE CAN STILL WIN 3RD PLACE!</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Inaros060671</td>
+          <td class="stat upvotes">4,198</td>
+          <td class="stat comments">178</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0cmy9/nurse_harrow_voters_this_is_how_we_can_still_win/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x017yd">
+          <td class="rank">5</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>I am making a prediction</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Old-Maximum-50</td>
+          <td class="stat upvotes">3,812</td>
+          <td class="stat comments">268</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x017yd/i_am_making_a_prediction/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0tsl4">
+          <td class="rank">6</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Crazy how one voiceline turned Kelvin from being kinda boring to one of the most interesting characters in Deadlock</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/BartoTheTrashLord</td>
+          <td class="stat upvotes">3,347</td>
+          <td class="stat comments">279</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tsl4/crazy_how_one_voiceline_turned_kelvin_from_being/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0ly9d">
+          <td class="rank">7</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>We need an absolute psycho Friends of Humanity religious dude as a character</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Pyroshark_Gamingtf2</td>
+          <td class="stat upvotes">3,238</td>
+          <td class="stat comments">629</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ly9d/we_need_an_absolute_psycho_friends_of_humanity/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0hz11">
+          <td class="rank">8</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>BabaFeedViolet.gif</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Lemonasty71770763</td>
+          <td class="stat upvotes">3,151</td>
+          <td class="stat comments">25</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hz11/babafeedvioletgif/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0dmn4">
+          <td class="rank">9</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Art my gf drew in honor of baba winning the vote.</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Faln_</td>
+          <td class="stat upvotes">3,027</td>
+          <td class="stat comments">17</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0dmn4/art_my_gf_drew_in_honor_of_baba_winning_the_vote/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0vud3">
+          <td class="rank">10</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>The battle for 4th will be legendary</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Snakevenom60</td>
+          <td class="stat upvotes">2,884</td>
+          <td class="stat comments">160</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vud3/the_battle_for_4th_will_be_legendary/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0qwbj">
+          <td class="rank">11</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Hands are weird</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/DougSpummoni2</td>
+          <td class="stat upvotes">2,851</td>
+          <td class="stat comments">42</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0qwbj/hands_are_weird/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0y7gi">
+          <td class="rank">12</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Now we know who taught Rem to use brick pillow</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/__MindFlayer__</td>
+          <td class="stat upvotes">2,806</td>
+          <td class="stat comments">30</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0y7gi/now_we_know_who_taught_rem_to_use_brick_pillow/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0qxgm">
+          <td class="rank">13</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>we&#39;re on a boat, all at sea, and we see, we are the same. the same, but different.</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/slightlylessthananon</td>
+          <td class="stat upvotes">2,699</td>
+          <td class="stat comments">77</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0qxgm/were_on_a_boat_all_at_sea_and_we_see_we_are_the/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0hrza">
+          <td class="rank">14</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>when infernus gettin his tail back?</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/MojaveOverlander</td>
+          <td class="stat upvotes">2,443</td>
+          <td class="stat comments">142</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hrza/when_infernus_gettin_his_tail_back/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0dhrc">
+          <td class="rank">15</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Rat King Ult should scale based on teammates. Fits into the rats together strong theme.</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/ConfidentDivide</td>
+          <td class="stat upvotes">2,212</td>
+          <td class="stat comments">96</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0dhrc/rat_king_ult_should_scale_based_on_teammates_fits/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x11w4i">
+          <td class="rank">16</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Can’t wait for the nurse to win the vote on Friday because Solomon and Danny voters were too busy spreading their propaganda to actually vote</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/NewConstruction3755</td>
+          <td class="stat upvotes">2,018</td>
+          <td class="stat comments">119</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x11w4i/cant_wait_for_the_nurse_to_win_the_vote_on_friday/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0aavw">
+          <td class="rank">17</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Baba has the lowest winrate on the highest and lowest MMR ranks.</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Regular-Bid6812</td>
+          <td class="stat upvotes">2,004</td>
+          <td class="stat comments">565</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x073qx">
+          <td class="rank">18</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Rem, Graves and Apollo | Art by @becstaples</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Altruistic-Might-370</td>
+          <td class="stat upvotes">1,976</td>
+          <td class="stat comments">11</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x073qx/rem_graves_and_apollo_art_by_becstaples/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1wze6x0">
+          <td class="rank">19</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Deadlock Update - 06 Oct 2026 - Mind the Birds!</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Anihillator</td>
+          <td class="stat upvotes">1,760</td>
+          <td class="stat comments">437</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wze6x0/deadlock_update_06_oct_2026_mind_the_birds/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0c9g6">
+          <td class="rank">20</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>Not All Stories Have A Happy Ending</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Esuka</td>
+          <td class="stat upvotes">1,624</td>
+          <td class="stat comments">44</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0c9g6/not_all_stories_have_a_happy_ending/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0p3om">
+          <td class="rank">21</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>holy hell</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/turnipsniffer321</td>
+          <td class="stat upvotes">1,461</td>
+          <td class="stat comments">22</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0p3om/holy_hell/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0e5i4">
+          <td class="rank">22</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge up">↑</span>baba as that eagle picture</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/MoreoOreo</td>
+          <td class="stat upvotes">1,317</td>
+          <td class="stat comments">5</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0e5i4/baba_as_that_eagle_picture/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0s4vk">
+          <td class="rank">23</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>Probably said before, but would be nice if they added a feature where i didnt have to change this setting everytime i log onto the game</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/Pilskayy</td>
+          <td class="stat upvotes">1,265</td>
+          <td class="stat comments">56</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0s4vk/probably_said_before_but_would_be_nice_if_they/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x13fuq">
+          <td class="rank">24</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>paradox&#39;s life rules</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/fIowIe</td>
+          <td class="stat upvotes">1,244</td>
+          <td class="stat comments">15</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13fuq/paradoxs_life_rules/" target="_blank" class="btn">查看</a></td>
+        </tr>
+        <tr class="post-row" data-id="1x0uuvm">
+          <td class="rank">25</td>
+          <td class="title-cell">
+            <div class="post-title"><span class="change-badge new">NEW ↑</span>66k vote on youtube</div>
+            <div class="post-desc"></div>
+          </td>
+          <td class="author">/u/DeadlockGreed</td>
+          <td class="stat upvotes">1,166</td>
+          <td class="stat comments">273</td>
+          <td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0uuvm/66k_vote_on_youtube/" target="_blank" class="btn">查看</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+      <div class="stats-overview-card">
+      <div class="stats-overview-header"><span class="icon">📊</span> 今日数据概览</div>
+      <div class="stats-overview-grid">
+        <div class="stat-item">
+          <div class="stat-number">100</div>
+          <div class="stat-label">抓取帖数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">855</div>
+          <div class="stat-label">平均 👍</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">56</div>
+          <div class="stat-label">平均 💬</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5,296</div>
+          <div class="stat-label">最高 👍</div>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+      <div class="card-header"><span class="icon">💬</span> 热议帖 TOP 5（评论最多）</div>
+      <div class="hot-thread-list"><div class="hot-thread-row"><span class="hot-thread-rank">1</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ly9d/we_need_an_absolute_psycho_friends_of_humanity/" target="_blank" class="hot-thread-title">We need an absolute psycho Friends of Humanity religious dud…</a><div class="hot-thread-meta">💬 629 &nbsp; by /u/Pyroshark_Gamingtf2</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">2</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="hot-thread-title">Baba has the lowest winrate on the highest and lowest MMR ra…</a><div class="hot-thread-meta">💬 565 &nbsp; by /u/Regular-Bid6812</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">3</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wze6x0/deadlock_update_06_oct_2026_mind_the_birds/" target="_blank" class="hot-thread-title">Deadlock Update - 06 Oct 2026 - Mind the Birds!</a><div class="hot-thread-meta">💬 437 &nbsp; by /u/Anihillator</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">4</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank" class="hot-thread-title">My process Celeste (by Kaya Hoshi)</a><div class="hot-thread-meta">💬 282 &nbsp; by /u/coconu_kaya_nilson</div></div></div><div class="hot-thread-row"><span class="hot-thread-rank">5</span><div class="hot-thread-info"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tsl4/crazy_how_one_voiceline_turned_kelvin_from_being/" target="_blank" class="hot-thread-title">Crazy how one voiceline turned Kelvin from being kinda borin…</a><div class="hot-thread-meta">💬 279 &nbsp; by /u/BartoTheTrashLord</div></div></div></div>
+    </div>
+    </div>
+    <div class="right-col">
+      <!-- Type distribution -->
+      <div class="card">
+        <div class="card-header"><span class="icon">📊</span> 类型分布</div>
+        <div style="padding:14px 16px">
+          <svg viewBox="0 0 100 100" width="140" height="140" style="display:block;margin:0 auto 12px"><path d="M 50 50 L 50.0 5.0 A 45 45 0 1 1 7.2 36.1 Z" fill="#6b7280" opacity="0.85"/><path d="M 50 50 L 7.2 36.1 A 45 45 0 0 1 25.9 12.0 Z" fill="#fb923c" opacity="0.85"/><path d="M 50 50 L 25.9 12.0 A 45 45 0 0 1 33.4 8.2 Z" fill="#60a5fa" opacity="0.85"/><path d="M 50 50 L 33.4 8.2 A 45 45 0 0 1 41.6 5.8 Z" fill="#a78bfa" opacity="0.85"/><path d="M 50 50 L 41.6 5.8 A 45 45 0 0 1 47.2 5.1 Z" fill="#34d399" opacity="0.85"/><path d="M 50 50 L 47.2 5.1 A 45 45 0 0 1 50.0 5.0 Z" fill="#f87171" opacity="0.85"/><circle cx="50" cy="50" r="22" fill="#101018"/></svg>
+          <div class="type-bars"><div class="type-bar-row"><span class="type-dot" style="background:#6b7280"></span><span class="type-name">其他</span><span class="type-pct-bar"><span class="type-fill" style="width:80%;background:#6b7280"></span></span><span class="type-num">80%</span></div><div class="type-bar-row"><span class="type-dot" style="background:#fb923c"></span><span class="type-name">趣味投票</span><span class="type-pct-bar"><span class="type-fill" style="width:11%;background:#fb923c"></span></span><span class="type-num">11%</span></div><div class="type-bar-row"><span class="type-dot" style="background:#60a5fa"></span><span class="type-name">攻略求助</span><span class="type-pct-bar"><span class="type-fill" style="width:3%;background:#60a5fa"></span></span><span class="type-num">3%</span></div><div class="type-bar-row"><span class="type-dot" style="background:#a78bfa"></span><span class="type-name">同人创作</span><span class="type-pct-bar"><span class="type-fill" style="width:3%;background:#a78bfa"></span></span><span class="type-num">3%</span></div><div class="type-bar-row"><span class="type-dot" style="background:#34d399"></span><span class="type-name">版本更新</span><span class="type-pct-bar"><span class="type-fill" style="width:2%;background:#34d399"></span></span><span class="type-num">2%</span></div><div class="type-bar-row"><span class="type-dot" style="background:#f87171"></span><span class="type-name">Bug反馈</span><span class="type-pct-bar"><span class="type-fill" style="width:1%;background:#f87171"></span></span><span class="type-num">1%</span></div></div>
+        </div>
+      </div>
+      <!-- Hero heat -->
+      <div class="card">
+        <div class="card-header"><span class="icon">⚔️</span> 英雄热度排行</div>
+        <div class="hero-list"><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#ff4500">#1</span> Deadlock</div><div class="hero-meta"><span class="hero-posts">8 帖</span> · 均 850 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tsl4/crazy_how_one_voiceline_turned_kelvin_from_being/" target="_blank">Crazy how one voiceline turned Kelvin from being kinda ...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#33334a">#2</span> Infernus</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 2,443 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hrza/when_infernus_gettin_his_tail_back/" target="_blank">when infernus gettin his tail back?...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#33334a">#3</span> Paradox</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 1,244 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13fuq/paradoxs_life_rules/" target="_blank">paradox&#39;s life rules...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#4</span> Abrams</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 1,118 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vuvg/it_appears_that_the_1_second_of_unstoppable/" target="_blank">It appears that the 1 second of unstoppable removed fro...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#5</span> Lich</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 826 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0sqxr/deadman_danny_is_a_lich_and_the_urn_is_his/" target="_blank">Deadman Danny is a lich and the urn is his phylactery...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#6</span> Haze</div><div class="hero-meta"><span class="hero-posts">2 帖</span> · 均 246 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15y7e/breaking_oliver_vaquer_sevens_voice_actor_has/" target="_blank">BREAKING: Oliver Vaquer, Seven&#39;s voice actor, has offic...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#7</span> Seven</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 243 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0spwf/based_off_that_one_mina_and_seven_interaction/" target="_blank">based off that one mina and seven interaction...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#8</span> Mo &amp; Krill</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 223 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0rmpi/goodbye_krill_baba_is_my_new_best_friend/" target="_blank">Goodbye Krill, Baba is my new best friend...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#9</span> Dynamo</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 192 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0owv3/is_dynamo_rotund_by_choice_or_is_there_a/" target="_blank">Is Dynamo rotund by choice or is there a different reas...</a></div></div><div class="hero-row"><div class="hero-name"><span class="hero-badge" style="background:#1e1e2e">#10</span> Vindicta</div><div class="hero-meta"><span class="hero-posts">1 帖</span> · 均 35 👍</div><div class="hero-top"><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13mdn/vindicta_fan_art/" target="_blank">vindicta fan art...</a></div></div></div>
+      </div>
+      <!-- Hot words -->
+      <div class="card">
+        <div class="card-header"><span class="icon">🔤</span> 热词 TOP 20</div>
+        <div style="padding:12px 16px">
+          <div class="word-cloud"><span class="word-tag" style="font-size:28.5px;opacity:1.00">baba</span><span class="word-tag" style="font-size:24.0px;opacity:1.00">vote</span><span class="word-tag" style="font-size:24.0px;opacity:1.00">deadlock</span><span class="word-tag" style="font-size:22.5px;opacity:1.00">danny</span><span class="word-tag" style="font-size:19.5px;opacity:1.00">king</span><span class="word-tag" style="font-size:19.5px;opacity:1.00">her</span><span class="word-tag" style="font-size:19.5px;opacity:1.00">rat</span><span class="word-tag" style="font-size:18.0px;opacity:0.90">who</span><span class="word-tag" style="font-size:18.0px;opacity:0.90">rem</span><span class="word-tag" style="font-size:18.0px;opacity:0.90">kelvin</span><span class="word-tag" style="font-size:18.0px;opacity:0.90">ult</span><span class="word-tag" style="font-size:18.0px;opacity:0.90">deadman</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">hero</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">win</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">too</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">his</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">graves</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">theory</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">made</span><span class="word-tag" style="font-size:16.5px;opacity:0.80">reason</span></div>
+        </div>
+      </div>
+      <!-- Archives -->
+      <div class="card">
+        <div class="card-header"><span class="icon">📁</span> 历史归档</div>
+        <div class="archive-row"><a href="deadlock_report_2026-10-08.html" class="archive-link">10-08</a><a href="deadlock_report_2026-10-07.html" class="archive-link">10-07</a><a href="deadlock_report_2026-10-05.html" class="archive-link">10-05</a><a href="deadlock_report_2026-10-04.html" class="archive-link">10-04</a><a href="deadlock_report_2026-10-03.html" class="archive-link">10-03</a><a href="deadlock_report_2026-10-02.html" class="archive-link">10-02</a><a href="deadlock_report_2026-10-01.html" class="archive-link">10-01</a><a href="deadlock_report_2026-09-30.html" class="archive-link">09-30</a><a href="deadlock_report_2026-09-29.html" class="archive-link">09-29</a><a href="deadlock_report_2026-09-28.html" class="archive-link">09-28</a><a href="deadlock_report_2026-09-27.html" class="archive-link">09-27</a><a href="deadlock_report_2026-09-26.html" class="archive-link">09-26</a><a href="deadlock_report_2026-09-25.html" class="archive-link">09-25</a><a href="deadlock_report_2026-09-24.html" class="archive-link">09-24</a></div>
+      </div>
+      <!-- Hot list -->
+      <div class="card">
+        <div class="card-header"><span class="icon">💬</span> 讨论最热</div>
+        <div class="hot-list"><div class="hot-item"><div class="hot-rank">#1</div><div class="hot-content"><div class="hot-title" title="We need an absolute psycho Friends of Humanity religious dude as a character">We need an absolute psycho Friends of H...</div><div class="hot-meta"><span>/u/Pyroshark_Gamingtf2</span> · <strong>629</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ly9d/we_need_an_absolute_psycho_friends_of_humanity/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#2</div><div class="hot-content"><div class="hot-title" title="Baba has the lowest winrate on the highest and lowest MMR ranks.">Baba has the lowest winrate on the high...</div><div class="hot-meta"><span>/u/Regular-Bid6812</span> · <strong>565</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#3</div><div class="hot-content"><div class="hot-title" title="Deadlock Update - 06 Oct 2026 - Mind the Birds!">Deadlock Update - 06 Oct 2026 - Mind th...</div><div class="hot-meta"><span>/u/Anihillator</span> · <strong>437</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wze6x0/deadlock_update_06_oct_2026_mind_the_birds/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#4</div><div class="hot-content"><div class="hot-title" title="My process Celeste (by Kaya Hoshi)">My process Celeste (by Kaya Hoshi)</div><div class="hot-meta"><span>/u/coconu_kaya_nilson</span> · <strong>282</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#5</div><div class="hot-content"><div class="hot-title" title="Crazy how one voiceline turned Kelvin from being kinda boring to one of the most interesting characters in Deadlock">Crazy how one voiceline turned Kelvin f...</div><div class="hot-meta"><span>/u/BartoTheTrashLord</span> · <strong>279</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tsl4/crazy_how_one_voiceline_turned_kelvin_from_being/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#6</div><div class="hot-content"><div class="hot-title" title="66k vote on youtube">66k vote on youtube</div><div class="hot-meta"><span>/u/DeadlockGreed</span> · <strong>273</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0uuvm/66k_vote_on_youtube/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#7</div><div class="hot-content"><div class="hot-title" title="I am making a prediction">I am making a prediction</div><div class="hot-meta"><span>/u/Old-Maximum-50</span> · <strong>268</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x017yd/i_am_making_a_prediction/" target="_blank" class="btn-sm">查看</a></div><div class="hot-item"><div class="hot-rank">#8</div><div class="hot-content"><div class="hot-title" title="It appears that the 1 second of unstoppable removed from Abrams Ult was in fact load-bearing">It appears that the 1 second of unstopp...</div><div class="hot-meta"><span>/u/Educational_Guava697</span> · <strong>194</strong></div></div><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vuvg/it_appears_that_the_1_second_of_unstoppable/" target="_blank" class="btn-sm">查看</a></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PogPog Monitor Panel (full-width) -->
+  
+    <div class="monitor-card">
+        <div class="monitor-header">
+            <span class="icon">📊</span> PogPog 产品露出机会
+            <span class="monitor-date">2026-10-09</span>
+        </div>
+        
+        <div class="monitor-body">
+            <div class="monitor-grid">
+                <div class="monitor-col">
+                    <div class="section-title">🔍 竞品截图监控</div>
+                    <div class="empty-state">今日未检测到竞品网站截图或提及</div>
+                </div>
+                
+                <div class="monitor-col">
+                    <div class="section-title">🔤 关键词机会</div>
+                    
+            <div class="keyword-block">
+                <div class="keyword-header">🔤 "match" (1 帖)</div>
+                <div class="monitor-list"><div class="monitor-row">
+                    <div class="monitor-title">How do I get over the anxiety to play an actual match?</div>
+                    <div class="monitor-meta">
+                        <span class="ups">28 👍</span>
+                        <span class="comments">76 💬</span>
+                    </div>
+                    <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x10uux/how_do_i_get_over_the_anxiety_to_play_an_actual/" target="_blank" class="btn-sm">评论机会</a>
+                </div></div>
+            </div>
+            <div class="keyword-block">
+                <div class="keyword-header">🔤 "rank" (1 帖)</div>
+                <div class="monitor-list"><div class="monitor-row">
+                    <div class="monitor-title">Baba has the lowest winrate on the highest and lowest M</div>
+                    <div class="monitor-meta">
+                        <span class="ups">2,004 👍</span>
+                        <span class="comments">565 💬</span>
+                    </div>
+                    <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="btn-sm">评论机会</a>
+                </div></div>
+            </div>
+                </div>
+            </div>
+            
+            
+        <div class="high-value-section">
+            <div class="section-title">🎯 高价值目标 (50+ 👍 提及关键词)</div>
+            <div class="high-value-list"><div class="high-value-row">
+                <div class="hv-title">Baba has the lowest winrate on the highest and low</div>
+                <div class="hv-stats">
+                    <span class="hv-ups">2,004 👍</span>
+                    <span class="hv-comments">565 💬</span>
+                </div>
+                <a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="btn-promote">去留言</a>
+            </div></div>
+        </div>
+            
+            <div class="promo-banner">
+                💡 <strong>留言提示：</strong>在相关帖子下评论，介绍 <a href="https://lock.pogpog.gg" target="_blank">PogPog Deadlock Stats</a> 
+                — 提供更全面的数据分析、战绩查询、英雄统计等功能。
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    .monitor-card { background: #1a1428; border: 2px solid #ff4500; border-radius: 14px; margin: 24px 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(255,69,0,0.15); }
+    .monitor-header { padding: 16px 22px; border-bottom: 1px solid #3a2a4a;
+                      display: flex; align-items: center; gap: 10px;
+                      background: linear-gradient(135deg, #2a1840 0%, #1a1428 100%);
+                      font-size: 18px; font-weight: 700; color: #ffffff; }
+    .monitor-header .icon { font-size: 20px; }
+    .monitor-header .monitor-date { margin-left: auto; font-size: 12px; color: #ff8c66; background: #2a1f3a; padding: 4px 12px; border-radius: 12px; font-weight: 500; }
+    .monitor-body { padding: 22px; color: #e0e0e0; }
+    .monitor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+    @media (max-width: 900px) { .monitor-grid { grid-template-columns: 1fr; } }
+    .monitor-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+    .section-title { font-size: 12px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+    
+    .competitor-block, .keyword-block { background: #2a1f3a; border-radius: 10px; padding: 14px; border: 1px solid #3a2a4a; }
+    .competitor-header, .keyword-header { font-size: 14px; font-weight: 600; color: #e0e0e0; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #3a2a4a; }
+    .monitor-list { display: flex; flex-direction: column; gap: 8px; }
+    .monitor-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #1a1428; border-radius: 6px; border: 1px solid #2a2a3a; }
+    .monitor-row:hover { background: rgba(255,69,0,0.08); border-color: #ff4500; }
+    .monitor-title { flex: 1; font-size: 13px; color: #e0e0e0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+    .monitor-meta { display: flex; gap: 10px; font-size: 11px; color: #aaa; white-space: nowrap; }
+    .ups { color: #ff4500; }
+    .comments { color: #4fc3f7; }
+    .btn-sm { background: #2a2a3a; color: #aaa; border: 1px solid #3a3a4a; border-radius: 4px; padding: 3px 8px; font-size: 10px; text-decoration: none; white-space: nowrap; }
+    .btn-sm:hover { color: #ff4500; border-color: #ff4500; }
+    .btn-promote { background: linear-gradient(135deg, #ff4500 0%, #ff6b00 100%); color: #fff; border: none; border-radius: 4px; padding: 4px 10px; font-size: 11px; font-weight: 600; text-decoration: none; }
+    .btn-promote:hover { opacity: 0.9; }
+    .empty-state { color: #aaa; font-size: 12px; padding: 20px; text-align: center; background: #2a1f3a; border-radius: 10px; border: 1px dashed #3a2a4a; }
+    
+    .high-value-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 10px; padding: 14px; margin-bottom: 16px; border: 1px solid #2a3a5a; }
+    .high-value-list { display: flex; flex-direction: column; gap: 8px; }
+    .high-value-row { display: flex; align-items: center; gap: 12px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border-left: 3px solid #ff4500; }
+    .hv-title { flex: 1; font-size: 13px; color: #e0e0e0; }
+    .hv-stats { display: flex; gap: 10px; font-size: 12px; }
+    .hv-ups { color: #ff4500; font-weight: 600; }
+    .hv-comments { color: #4fc3f7; }
+    
+    .promo-banner { background: rgba(255,69,0,0.08); border: 1px dashed rgba(255,69,0,0.3); border-radius: 10px; padding: 14px 16px; font-size: 12px; color: #aaa; line-height: 1.6; }
+    .promo-banner a { color: #ff4500; font-weight: 600; }
+    .promo-banner a:hover { text-decoration: underline; }
+    </style>
+
+  <div class="separator"></div>
+
+  <div class="card">
+    <div class="card-header"><span class="icon">📋</span> 全部 Hot 帖 · 100 篇</div>
+    <table id="allTable">
+      <thead><tr><th>#</th><th>标题</th><th>作者</th><th>👍</th><th>💬</th><th>发布时间 (BJ)</th><th></th></tr></thead>
+      <tbody><tr><td>1</td><td class="all-title">Which hero are you voting for next? - Hero Vote #3</td><td class="author">/u/Grelgn</td><td class="stat upvotes">68</td><td class="stat comments">142</td><td>10-07 05:09</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzedj7/which_hero_are_you_voting_for_next_hero_vote_3/" target="_blank" class="btn">查看</a></td></tr><tr><td>2</td><td class="all-title">Deadlock Update - 06 Oct 2026 - Mind the Birds!</td><td class="author">/u/Anihillator</td><td class="stat upvotes">1,760</td><td class="stat comments">437</td><td>10-07 05:01</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wze6x0/deadlock_update_06_oct_2026_mind_the_birds/" target="_blank" class="btn">查看</a></td></tr><tr><td>3</td><td class="all-title">Can’t wait for the nurse to win the vote on Friday because Solomon and Danny voters were too busy spreading their propaganda to actually vote</td><td class="author">/u/NewConstruction3755</td><td class="stat upvotes">2,018</td><td class="stat comments">119</td><td>10-09 04:30</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x11w4i/cant_wait_for_the_nurse_to_win_the_vote_on_friday/" target="_blank" class="btn">查看</a></td></tr><tr><td>4</td><td class="all-title">Now we know who taught Rem to use brick pillow</td><td class="author">/u/__MindFlayer__</td><td class="stat upvotes">2,806</td><td class="stat comments">30</td><td>10-09 02:11</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0y7gi/now_we_know_who_taught_rem_to_use_brick_pillow/" target="_blank" class="btn">查看</a></td></tr><tr><td>5</td><td class="all-title">paradox&#39;s life rules</td><td class="author">/u/fIowIe</td><td class="stat upvotes">1,244</td><td class="stat comments">15</td><td>10-09 05:31</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13fuq/paradoxs_life_rules/" target="_blank" class="btn">查看</a></td></tr><tr><td>6</td><td class="all-title">The battle for 4th will be legendary</td><td class="author">/u/Snakevenom60</td><td class="stat upvotes">2,884</td><td class="stat comments">160</td><td>10-09 00:41</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vud3/the_battle_for_4th_will_be_legendary/" target="_blank" class="btn">查看</a></td></tr><tr><td>7</td><td class="all-title">Crazy how one voiceline turned Kelvin from being kinda boring to one of the most interesting characters in Deadlock</td><td class="author">/u/BartoTheTrashLord</td><td class="stat upvotes">3,347</td><td class="stat comments">279</td><td>10-08 23:23</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tsl4/crazy_how_one_voiceline_turned_kelvin_from_being/" target="_blank" class="btn">查看</a></td></tr><tr><td>8</td><td class="all-title">Why did Lenny sell his soul? Is he stupid?</td><td class="author">/u/Miserable-Midnight75</td><td class="stat upvotes">869</td><td class="stat comments">39</td><td>10-09 04:39</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x124lc/why_did_lenny_sell_his_soul_is_he_stupid/" target="_blank" class="btn">查看</a></td></tr><tr><td>9</td><td class="all-title">BREAKING: Oliver Vaquer, Seven&#39;s voice actor, has officially come out as a Haze main</td><td class="author">/u/AlgerianTrash</td><td class="stat upvotes">474</td><td class="stat comments">18</td><td>10-09 07:22</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15y7e/breaking_oliver_vaquer_sevens_voice_actor_has/" target="_blank" class="btn">查看</a></td></tr><tr><td>10</td><td class="all-title">Graves plz fix the ixian supremacist prince</td><td class="author">/u/last_kebab24</td><td class="stat upvotes">723</td><td class="stat comments">18</td><td>10-09 05:01</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x12os1/graves_plz_fix_the_ixian_supremacist_prince/" target="_blank" class="btn">查看</a></td></tr><tr><td>11</td><td class="all-title">Hands are weird</td><td class="author">/u/DougSpummoni2</td><td class="stat upvotes">2,851</td><td class="stat comments">42</td><td>10-08 21:26</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0qwbj/hands_are_weird/" target="_blank" class="btn">查看</a></td></tr><tr><td>12</td><td class="all-title">we&#39;re on a boat, all at sea, and we see, we are the same. the same, but different.</td><td class="author">/u/slightlylessthananon</td><td class="stat upvotes">2,699</td><td class="stat comments">77</td><td>10-08 21:28</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0qxgm/were_on_a_boat_all_at_sea_and_we_see_we_are_the/" target="_blank" class="btn">查看</a></td></tr><tr><td>13</td><td class="all-title">My process Celeste (by Kaya Hoshi)</td><td class="author">/u/coconu_kaya_nilson</td><td class="stat upvotes">5,296</td><td class="stat comments">282</td><td>10-08 18:08</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0n34c/my_process_celeste_by_kaya_hoshi/" target="_blank" class="btn">查看</a></td></tr><tr><td>14</td><td class="all-title">It appears that the 1 second of unstoppable removed from Abrams Ult was in fact load-bearing</td><td class="author">/u/Educational_Guava697</td><td class="stat upvotes">1,118</td><td class="stat comments">194</td><td>10-09 00:42</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vuvg/it_appears_that_the_1_second_of_unstoppable/" target="_blank" class="btn">查看</a></td></tr><tr><td>15</td><td class="all-title">66k vote on youtube</td><td class="author">/u/DeadlockGreed</td><td class="stat upvotes">1,166</td><td class="stat comments">273</td><td>10-09 00:03</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0uuvm/66k_vote_on_youtube/" target="_blank" class="btn">查看</a></td></tr><tr><td>16</td><td class="all-title">Probably said before, but would be nice if they added a feature where i didnt have to change this setting everytime i log onto the game</td><td class="author">/u/Pilskayy</td><td class="stat upvotes">1,265</td><td class="stat comments">56</td><td>10-08 22:18</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0s4vk/probably_said_before_but_would_be_nice_if_they/" target="_blank" class="btn">查看</a></td></tr><tr><td>17</td><td class="all-title">Instead of farming between lanes sometimes you just gotta bust a move (OC)</td><td class="author">/u/Handburgerhobo</td><td class="stat upvotes">440</td><td class="stat comments">25</td><td>10-09 04:00</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x113za/instead_of_farming_between_lanes_sometimes_you/" target="_blank" class="btn">查看</a></td></tr><tr><td>18</td><td class="all-title">We need an absolute psycho Friends of Humanity religious dude as a character</td><td class="author">/u/Pyroshark_Gamingtf2</td><td class="stat upvotes">3,238</td><td class="stat comments">629</td><td>10-08 16:55</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ly9d/we_need_an_absolute_psycho_friends_of_humanity/" target="_blank" class="btn">查看</a></td></tr><tr><td>19</td><td class="all-title">holy hell</td><td class="author">/u/turnipsniffer321</td><td class="stat upvotes">1,461</td><td class="stat comments">22</td><td>10-08 20:02</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0p3om/holy_hell/" target="_blank" class="btn">查看</a></td></tr><tr><td>20</td><td class="all-title">Deadman Danny is a lich and the urn is his phylactery</td><td class="author">/u/FewExperience3559</td><td class="stat upvotes">826</td><td class="stat comments">59</td><td>10-08 22:42</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0sqxr/deadman_danny_is_a_lich_and_the_urn_is_his/" target="_blank" class="btn">查看</a></td></tr><tr><td>21</td><td class="all-title">ignore the lore update</td><td class="author">/u/FeelBoie</td><td class="stat upvotes">576</td><td class="stat comments">42</td><td>10-08 23:53</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ul65/ignore_the_lore_update/" target="_blank" class="btn">查看</a></td></tr><tr><td>22</td><td class="all-title">The King of the rats</td><td class="author">/u/Hanna_Bjorn</td><td class="stat upvotes">159</td><td class="stat comments">3</td><td>10-09 06:44</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15492/the_king_of_the_rats/" target="_blank" class="btn">查看</a></td></tr><tr><td>23</td><td class="all-title">BABA - Deadlock Edit</td><td class="author">/u/RestrainedFN</td><td class="stat upvotes">826</td><td class="stat comments">18</td><td>10-08 21:41</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0r8ny/baba_deadlock_edit/" target="_blank" class="btn">查看</a></td></tr><tr><td>24</td><td class="all-title">Were announcers ever confirmed to be the Patrons themselves or their middle men?</td><td class="author">/u/friedfeesh_comics</td><td class="stat upvotes">104</td><td class="stat comments">17</td><td>10-09 08:52</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x17tjk/were_announcers_ever_confirmed_to_be_the_patrons/" target="_blank" class="btn">查看</a></td></tr><tr><td>25</td><td class="all-title">harrow</td><td class="author">/u/kreyU_U</td><td class="stat upvotes">279</td><td class="stat comments">2</td><td>10-09 03:09</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0zrwh/harrow/" target="_blank" class="btn">查看</a></td></tr><tr><td>26</td><td class="all-title">im rooting for the underdog! VOTE 4 DA DEADMAN!</td><td class="author">/u/YLASRO</td><td class="stat upvotes">152</td><td class="stat comments">57</td><td>10-09 06:02</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x146yd/im_rooting_for_the_underdog_vote_4_da_deadman/" target="_blank" class="btn">查看</a></td></tr><tr><td>27</td><td class="all-title">Hot take: Am i the only one who is not fully convinced by the &quot;Kelvin is not the real Kelvin&quot; theory, especially over one single vague voiceline? (arguments in the description)</td><td class="author">/u/AlgerianTrash</td><td class="stat upvotes">514</td><td class="stat comments">116</td><td>10-08 23:25</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tuoc/hot_take_am_i_the_only_one_who_is_not_fully/" target="_blank" class="btn">查看</a></td></tr><tr><td>28</td><td class="all-title">pov. You are in a mayoral postition in new york</td><td class="author">/u/Watteripatteri</td><td class="stat upvotes">241</td><td class="stat comments">14</td><td>10-09 03:27</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x108hg/pov_you_are_in_a_mayoral_postition_in_new_york/" target="_blank" class="btn">查看</a></td></tr><tr><td>29</td><td class="all-title">I call this piece &quot;Sisyphus of the cursed apple&quot;</td><td class="author">/u/mranonymous24690</td><td class="stat upvotes">188</td><td class="stat comments">16</td><td>10-09 04:36</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x121lj/i_call_this_piece_sisyphus_of_the_cursed_apple/" target="_blank" class="btn">查看</a></td></tr><tr><td>30</td><td class="all-title">deadlock new heroes</td><td class="author">/u/Acceptable_Captain67</td><td class="stat upvotes">500</td><td class="stat comments">35</td><td>10-08 22:56</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0t3oq/deadlock_new_heroes/" target="_blank" class="btn">查看</a></td></tr><tr><td>31</td><td class="all-title">BabaFeedViolet.gif</td><td class="author">/u/Lemonasty71770763</td><td class="stat upvotes">3,151</td><td class="stat comments">25</td><td>10-08 12:46</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hz11/babafeedvioletgif/" target="_blank" class="btn">查看</a></td></tr><tr><td>32</td><td class="all-title">Triple baka</td><td class="author">/u/slepyisa</td><td class="stat upvotes">92</td><td class="stat comments">13</td><td>10-09 07:01</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15i4k/triple_baka/" target="_blank" class="btn">查看</a></td></tr><tr><td>33</td><td class="all-title">Rattania Truth</td><td class="author">/u/Kataluxx</td><td class="stat upvotes">205</td><td class="stat comments">3</td><td>10-09 02:24</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ykoy/rattania_truth/" target="_blank" class="btn">查看</a></td></tr><tr><td>34</td><td class="all-title">THEY WILL LEARN TO FEAR ME</td><td class="author">/u/Mabitemmonzbi</td><td class="stat upvotes">1,144</td><td class="stat comments">14</td><td>10-08 16:58</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0m089/they_will_learn_to_fear_me/" target="_blank" class="btn">查看</a></td></tr><tr><td>35</td><td class="all-title">Feel like I&#39;m the only one who voted for her the past week</td><td class="author">/u/Ok_Trade_8706</td><td class="stat upvotes">90</td><td class="stat comments">66</td><td>10-09 06:31</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x14ucb/feel_like_im_the_only_one_who_voted_for_her_the/" target="_blank" class="btn">查看</a></td></tr><tr><td>36</td><td class="all-title">when infernus gettin his tail back?</td><td class="author">/u/MojaveOverlander</td><td class="stat upvotes">2,443</td><td class="stat comments">142</td><td>10-08 12:35</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hrza/when_infernus_gettin_his_tail_back/" target="_blank" class="btn">查看</a></td></tr><tr><td>37</td><td class="all-title">...She...won? @6rillyf on X</td><td class="author">/u/-Sloth_King-</td><td class="stat upvotes">488</td><td class="stat comments">9</td><td>10-08 20:53</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0q5lh/shewon_6rillyf_on_x/" target="_blank" class="btn">查看</a></td></tr><tr><td>38</td><td class="all-title">Only four left 🎉</td><td class="author">/u/_the_wall_</td><td class="stat upvotes">103</td><td class="stat comments">4</td><td>10-09 05:02</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x12pyf/only_four_left/" target="_blank" class="btn">查看</a></td></tr><tr><td>39</td><td class="all-title">Jean (D&#39;arc) the Vampire Knight</td><td class="author">/u/PrettyStupidWeeb</td><td class="stat upvotes">125</td><td class="stat comments">29</td><td>10-09 03:56</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x1106v/jean_darc_the_vampire_knight/" target="_blank" class="btn">查看</a></td></tr><tr><td>40</td><td class="all-title">I made a concept for custom Deadlock intro. Valve, please add this creepy guy from your games. (Download link below)</td><td class="author">/u/Mitokovo</td><td class="stat upvotes">177</td><td class="stat comments">20</td><td>10-09 01:38</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0xcbv/i_made_a_concept_for_custom_deadlock_intro_valve/" target="_blank" class="btn">查看</a></td></tr><tr><td>41</td><td class="all-title">One can only dream</td><td class="author">/u/Gelly_furry</td><td class="stat upvotes">126</td><td class="stat comments">9</td><td>10-09 03:19</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x101ci/one_can_only_dream/" target="_blank" class="btn">查看</a></td></tr><tr><td>42</td><td class="all-title">Baba Cookin (@Nimphuny)</td><td class="author">/u/Nymfunny</td><td class="stat upvotes">481</td><td class="stat comments">6</td><td>10-08 19:47</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0othd/baba_cookin_nimphuny/" target="_blank" class="btn">查看</a></td></tr><tr><td>43</td><td class="all-title">FOR DANNY TOMORROW; VOTE FOR DANNY</td><td class="author">/u/fazrail</td><td class="stat upvotes">85</td><td class="stat comments">4</td><td>10-09 05:06</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x12thx/for_danny_tomorrow_vote_for_danny/" target="_blank" class="btn">查看</a></td></tr><tr><td>44</td><td class="all-title">NURSE HARROW VOTERS! THIS IS HOW WE CAN STILL WIN 3RD PLACE!</td><td class="author">/u/Inaros060671</td><td class="stat upvotes">4,198</td><td class="stat comments">178</td><td>10-08 08:12</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0cmy9/nurse_harrow_voters_this_is_how_we_can_still_win/" target="_blank" class="btn">查看</a></td></tr><tr><td>45</td><td class="all-title">In a few interactions Kelvin insists on calling himself &quot;revenant&quot;. No other hero calls him that</td><td class="author">/u/Spiritual_Jacket1415</td><td class="stat upvotes">152</td><td class="stat comments">21</td><td>10-09 01:42</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0xgmi/in_a_few_interactions_kelvin_insists_on_calling/" target="_blank" class="btn">查看</a></td></tr><tr><td>46</td><td class="all-title">I lob Baba</td><td class="author">/u/JackTries</td><td class="stat upvotes">566</td><td class="stat comments">12</td><td>10-08 18:30</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0nfzn/i_lob_baba/" target="_blank" class="btn">查看</a></td></tr><tr><td>47</td><td class="all-title">Cast your vote wisely mf</td><td class="author">/u/MrUnderman</td><td class="stat upvotes">223</td><td class="stat comments">9</td><td>10-08 23:30</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0tzc7/cast_your_vote_wisely_mf/" target="_blank" class="btn">查看</a></td></tr><tr><td>48</td><td class="all-title">I truly love what I do ♡</td><td class="author">/u/amihtoys</td><td class="stat upvotes">111</td><td class="stat comments">19</td><td>10-09 03:07</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0zq3g/i_truly_love_what_i_do/" target="_blank" class="btn">查看</a></td></tr><tr><td>49</td><td class="all-title">based off that one mina and seven interaction</td><td class="author">/u/nyoompng</td><td class="stat upvotes">243</td><td class="stat comments">1</td><td>10-08 22:41</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0spwf/based_off_that_one_mina_and_seven_interaction/" target="_blank" class="btn">查看</a></td></tr><tr><td>50</td><td class="all-title">They&#39;re smiling for an AMAZING reason!</td><td class="author">/u/Practical_Ad107</td><td class="stat upvotes">84</td><td class="stat comments">5</td><td>10-09 04:27</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x11tco/theyre_smiling_for_an_amazing_reason/" target="_blank" class="btn">查看</a></td></tr><tr><td>51</td><td class="all-title">Art my gf drew in honor of baba winning the vote.</td><td class="author">/u/Faln_</td><td class="stat upvotes">3,027</td><td class="stat comments">17</td><td>10-08 09:01</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0dmn4/art_my_gf_drew_in_honor_of_baba_winning_the_vote/" target="_blank" class="btn">查看</a></td></tr><tr><td>52</td><td class="all-title">Painted Mina Ha with Gouache</td><td class="author">/u/paruparocho</td><td class="stat upvotes">590</td><td class="stat comments">7</td><td>10-08 16:43</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0lrwl/painted_mina_ha_with_gouache/" target="_blank" class="btn">查看</a></td></tr><tr><td>53</td><td class="all-title">Goodbye Krill, Baba is my new best friend</td><td class="author">/u/Hand-of-King-Midas</td><td class="stat upvotes">223</td><td class="stat comments">6</td><td>10-08 21:58</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0rmpi/goodbye_krill_baba_is_my_new_best_friend/" target="_blank" class="btn">查看</a></td></tr><tr><td>54</td><td class="all-title">I went to rat too hard</td><td class="author">/u/digitalk_jr</td><td class="stat upvotes">130</td><td class="stat comments">21</td><td>10-09 00:39</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vt1k/i_went_to_rat_too_hard/" target="_blank" class="btn">查看</a></td></tr><tr><td>55</td><td class="all-title">Are animal hybrids treated like second class citizens?</td><td class="author">/u/ginger6616</td><td class="stat upvotes">88</td><td class="stat comments">41</td><td>10-09 02:42</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0z1is/are_animal_hybrids_treated_like_second_class/" target="_blank" class="btn">查看</a></td></tr><tr><td>56</td><td class="all-title">BABA</td><td class="author">/u/LynertDG</td><td class="stat upvotes">136</td><td class="stat comments">11</td><td>10-09 00:20</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vani/baba/" target="_blank" class="btn">查看</a></td></tr><tr><td>57</td><td class="all-title">&quot;Deadlock for Dummies&quot; - Book 1: How to Frontline &amp; be Frontlined</td><td class="author">/u/Mental_Half-Giant</td><td class="stat upvotes">60</td><td class="stat comments">12</td><td>10-09 04:34</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x11zzg/deadlock_for_dummies_book_1_how_to_frontline_be/" target="_blank" class="btn">查看</a></td></tr><tr><td>58</td><td class="all-title">Rat King Ult should scale based on teammates. Fits into the rats together strong theme.</td><td class="author">/u/ConfidentDivide</td><td class="stat upvotes">2,212</td><td class="stat comments">96</td><td>10-08 08:54</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0dhrc/rat_king_ult_should_scale_based_on_teammates_fits/" target="_blank" class="btn">查看</a></td></tr><tr><td>59</td><td class="all-title">I really hope Billy is revealed to have to the absolute saddest backstory in the roster</td><td class="author">/u/FewExperience3559</td><td class="stat upvotes">44</td><td class="stat comments">10</td><td>10-09 06:05</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x148up/i_really_hope_billy_is_revealed_to_have_to_the/" target="_blank" class="btn">查看</a></td></tr><tr><td>60</td><td class="all-title">How it feels pretending to be a voter knowing damn well that my laptop is too weak to run Deadlock at higher than 10fps:</td><td class="author">/u/green_teef</td><td class="stat upvotes">111</td><td class="stat comments">8</td><td>10-09 00:31</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0vl8j/how_it_feels_pretending_to_be_a_voter_knowing/" target="_blank" class="btn">查看</a></td></tr><tr><td>61</td><td class="all-title">Theory: Bryce (Paige&#39;s brother) might be Victor&#39;s creator.</td><td class="author">/u/RequirementUnited887</td><td class="stat upvotes">1,004</td><td class="stat comments">78</td><td>10-08 12:31</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hpcl/theory_bryce_paiges_brother_might_be_victors/" target="_blank" class="btn">查看</a></td></tr><tr><td>62</td><td class="all-title">Rat king finds an infinite food glitch (Bonus doodle on 2nd pic)</td><td class="author">/u/Bartimeus97351</td><td class="stat upvotes">49</td><td class="stat comments">2</td><td>10-09 04:47</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x12cld/rat_king_finds_an_infinite_food_glitch_bonus/" target="_blank" class="btn">查看</a></td></tr><tr><td>63</td><td class="all-title">Some more deadman Danny propaganda</td><td class="author">/u/Frances_Lee83</td><td class="stat upvotes">664</td><td class="stat comments">35</td><td>10-08 13:51</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0j2u8/some_more_deadman_danny_propaganda/" target="_blank" class="btn">查看</a></td></tr><tr><td>64</td><td class="all-title">Violet enters her ult and drops the hardest bar &quot;i am Violence and i am evil!&quot;🔥🔥🔥✍️</td><td class="author">/u/PolymerEater</td><td class="stat upvotes">28</td><td class="stat comments">5</td><td>10-09 07:00</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15hbx/violet_enters_her_ult_and_drops_the_hardest_bar_i/" target="_blank" class="btn">查看</a></td></tr><tr><td>65</td><td class="all-title">So it seems like a good build for Baba has been figured out</td><td class="author">/u/Mashaaaaaaaaa</td><td class="stat upvotes">132</td><td class="stat comments">75</td><td>10-08 22:35</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0sktw/so_it_seems_like_a_good_build_for_baba_has_been/" target="_blank" class="btn">查看</a></td></tr><tr><td>66</td><td class="all-title">vindicta fan art</td><td class="author">/u/jpxfer</td><td class="stat upvotes">35</td><td class="stat comments">1</td><td>10-09 05:39</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13mdn/vindicta_fan_art/" target="_blank" class="btn">查看</a></td></tr><tr><td>67</td><td class="all-title">Secret Rem tech</td><td class="author">/u/Serena_Star</td><td class="stat upvotes">60</td><td class="stat comments">3</td><td>10-09 02:27</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0ymvj/secret_rem_tech/" target="_blank" class="btn">查看</a></td></tr><tr><td>68</td><td class="all-title">He so sleepy. (Drawn and edited by me)</td><td class="author">/u/Woomy935</td><td class="stat upvotes">29</td><td class="stat comments">1</td><td>10-09 06:15</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x14hlm/he_so_sleepy_drawn_and_edited_by_me/" target="_blank" class="btn">查看</a></td></tr><tr><td>69</td><td class="all-title">Sinclair x Yoshi toxic Yaouri</td><td class="author">/u/Both_Bank4769</td><td class="stat upvotes">22</td><td class="stat comments">5</td><td>10-09 07:43</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x16eiq/sinclair_x_yoshi_toxic_yaouri/" target="_blank" class="btn">查看</a></td></tr><tr><td>70</td><td class="all-title">baba as that eagle picture</td><td class="author">/u/MoreoOreo</td><td class="stat upvotes">1,317</td><td class="stat comments">5</td><td>10-08 09:27</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0e5i4/baba_as_that_eagle_picture/" target="_blank" class="btn">查看</a></td></tr><tr><td>71</td><td class="all-title">Is Dynamo rotund by choice or is there a different reason?</td><td class="author">/u/Intelligent-Movie38</td><td class="stat upvotes">192</td><td class="stat comments">46</td><td>10-08 19:52</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0owv3/is_dynamo_rotund_by_choice_or_is_there_a/" target="_blank" class="btn">查看</a></td></tr><tr><td>72</td><td class="all-title">Graves Sketch Portrait</td><td class="author">/u/Kazaarte</td><td class="stat upvotes">276</td><td class="stat comments">3</td><td>10-08 17:33</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0mjh5/graves_sketch_portrait/" target="_blank" class="btn">查看</a></td></tr><tr><td>73</td><td class="all-title">I drew that one image.</td><td class="author">/u/r1y4nnlol</td><td class="stat upvotes">124</td><td class="stat comments">5</td><td>10-08 21:51</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0rh18/i_drew_that_one_image/" target="_blank" class="btn">查看</a></td></tr><tr><td>74</td><td class="all-title">Not All Stories Have A Happy Ending</td><td class="author">/u/Esuka</td><td class="stat upvotes">1,624</td><td class="stat comments">44</td><td>10-08 07:55</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0c9g6/not_all_stories_have_a_happy_ending/" target="_blank" class="btn">查看</a></td></tr><tr><td>75</td><td class="all-title">Stay in character</td><td class="author">/u/No_Ones_Records</td><td class="stat upvotes">5,029</td><td class="stat comments">46</td><td>10-08 02:18</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0407u/stay_in_character/" target="_blank" class="btn">查看</a></td></tr><tr><td>76</td><td class="all-title">Made some custom conversations after hearing about the feature on the VLV</td><td class="author">/u/Theodocious65</td><td class="stat upvotes">53</td><td class="stat comments">5</td><td>10-09 02:05</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0y225/made_some_custom_conversations_after_hearing/" target="_blank" class="btn">查看</a></td></tr><tr><td>77</td><td class="all-title">Baba has the lowest winrate on the highest and lowest MMR ranks.</td><td class="author">/u/Regular-Bid6812</td><td class="stat upvotes">2,004</td><td class="stat comments">565</td><td>10-08 06:26</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0aavw/baba_has_the_lowest_winrate_on_the_highest_and/" target="_blank" class="btn">查看</a></td></tr><tr><td>78</td><td class="all-title">I made a bunch of Rem Emotes</td><td class="author">/u/WhippyB_</td><td class="stat upvotes">72</td><td class="stat comments">4</td><td>10-09 00:13</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0v3z6/i_made_a_bunch_of_rem_emotes/" target="_blank" class="btn">查看</a></td></tr><tr><td>79</td><td class="all-title">Here’s where I’d live in America if I was the Djinn.</td><td class="author">/u/theseafoodmanager</td><td class="stat upvotes">42</td><td class="stat comments">6</td><td>10-09 03:02</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0zkfe/heres_where_id_live_in_america_if_i_was_the_djinn/" target="_blank" class="btn">查看</a></td></tr><tr><td>80</td><td class="all-title">Theory: Baba threw the brick at NYC mayor William O’Dwyer</td><td class="author">/u/OhHeyAZombie</td><td class="stat upvotes">24</td><td class="stat comments">8</td><td>10-09 06:02</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x146s5/theory_baba_threw_the_brick_at_nyc_mayor_william/" target="_blank" class="btn">查看</a></td></tr><tr><td>81</td><td class="all-title">Rat King looking at what he did to Sinclair</td><td class="author">/u/sus_MEAT</td><td class="stat upvotes">26</td><td class="stat comments">1</td><td>10-09 05:29</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13edb/rat_king_looking_at_what_he_did_to_sinclair/" target="_blank" class="btn">查看</a></td></tr><tr><td>82</td><td class="all-title">Who’s backing Danny?</td><td class="author">/u/Level_Show_2741</td><td class="stat upvotes">44</td><td class="stat comments">10</td><td>10-09 02:36</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0yvgo/whos_backing_danny/" target="_blank" class="btn">查看</a></td></tr><tr><td>83</td><td class="all-title">Hello? Housekeeping. (Doorman🛎️ fanart by me)</td><td class="author">/u/kumakooo00</td><td class="stat upvotes">29</td><td class="stat comments">1</td><td>10-09 04:43</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x128og/hello_housekeeping_doorman_fanart_by_me/" target="_blank" class="btn">查看</a></td></tr><tr><td>84</td><td class="all-title">How would YOU make a FoH ocultist work?</td><td class="author">/u/rutare64</td><td class="stat upvotes">32</td><td class="stat comments">55</td><td>10-09 04:10</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x11du0/how_would_you_make_a_foh_ocultist_work/" target="_blank" class="btn">查看</a></td></tr><tr><td>85</td><td class="all-title">Looking for any and all RatKing memes/fanart</td><td class="author">/u/DieUhRia</td><td class="stat upvotes">18</td><td class="stat comments">1</td><td>10-09 07:06</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15m0z/looking_for_any_and_all_ratking_memesfanart/" target="_blank" class="btn">查看</a></td></tr><tr><td>86</td><td class="all-title">&quot;My main goal is to blow up&quot; - Deadman Danny</td><td class="author">/u/hefestow</td><td class="stat upvotes">33</td><td class="stat comments">1</td><td>10-09 03:41</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x10m6l/my_main_goal_is_to_blow_up_deadman_danny/" target="_blank" class="btn">查看</a></td></tr><tr><td>87</td><td class="all-title">New player here. Looking for characters that scare you when they show up</td><td class="author">/u/PM_Me_An_Ekans</td><td class="stat upvotes">15</td><td class="stat comments">49</td><td>10-09 07:54</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x16m7i/new_player_here_looking_for_characters_that_scare/" target="_blank" class="btn">查看</a></td></tr><tr><td>88</td><td class="all-title">Deadlock Was My Reason</td><td class="author">/u/Spiritual-Pause-328</td><td class="stat upvotes">25</td><td class="stat comments">34</td><td>10-09 05:05</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x12srk/deadlock_was_my_reason/" target="_blank" class="btn">查看</a></td></tr><tr><td>89</td><td class="all-title">Which one</td><td class="author">/u/woke_mob_infinity</td><td class="stat upvotes">538</td><td class="stat comments">15</td><td>10-08 12:24</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0hl0a/which_one/" target="_blank" class="btn">查看</a></td></tr><tr><td>90</td><td class="all-title">OMG! There is literally NOTHING more I could have done to help my team win in this situation!!!</td><td class="author">/u/WeekendAcceptable498</td><td class="stat upvotes">11</td><td class="stat comments">3</td><td>10-09 09:18</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x18cp4/omg_there_is_literally_nothing_more_i_could_have/" target="_blank" class="btn">查看</a></td></tr><tr><td>91</td><td class="all-title">GIVE HER TO ME, GIVE HER TO ME JUST GIVE HER TO ME DAMNNNN</td><td class="author">/u/FormfulOedon</td><td class="stat upvotes">21</td><td class="stat comments">2</td><td>10-09 05:27</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13cm9/give_her_to_me_give_her_to_me_just_give_her_to_me/" target="_blank" class="btn">查看</a></td></tr><tr><td>92</td><td class="all-title">How do I get over the anxiety to play an actual match?</td><td class="author">/u/Barricade386</td><td class="stat upvotes">28</td><td class="stat comments">76</td><td>10-09 03:51</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x10uux/how_do_i_get_over_the_anxiety_to_play_an_actual/" target="_blank" class="btn">查看</a></td></tr><tr><td>93</td><td class="all-title">Victor WIP | By @FellOutOfBed2</td><td class="author">/u/BoneOfDio</td><td class="stat upvotes">43</td><td class="stat comments">2</td><td>10-09 01:25</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x0wzz1/victor_wip_by_felloutofbed2/" target="_blank" class="btn">查看</a></td></tr><tr><td>94</td><td class="all-title">Using &quot;kingme&quot; mid-Celeste ult causes an access violation in the server code</td><td class="author">/u/LeBreezyAF</td><td class="stat upvotes">11</td><td class="stat comments">3</td><td>10-09 08:44</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x17o7d/using_kingme_midceleste_ult_causes_an_access/" target="_blank" class="btn">查看</a></td></tr><tr><td>95</td><td class="all-title">People would be insanely disappointed with haze if she came out today</td><td class="author">/u/mylizard</td><td class="stat upvotes">19</td><td class="stat comments">14</td><td>10-09 05:46</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x13snw/people_would_be_insanely_disappointed_with_haze/" target="_blank" class="btn">查看</a></td></tr><tr><td>96</td><td class="all-title">My Rat King spent almost 30 minutes under the map</td><td class="author">/u/alex-worm</td><td class="stat upvotes">18</td><td class="stat comments">6</td><td>10-09 05:58</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x1433l/my_rat_king_spent_almost_30_minutes_under_the_map/" target="_blank" class="btn">查看</a></td></tr><tr><td>97</td><td class="all-title">The remnants of the past</td><td class="author">/u/Hanna_Bjorn</td><td class="stat upvotes">5,081</td><td class="stat comments">93</td><td>10-07 23:45</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1wzzy26/the_remnants_of_the_past/" target="_blank" class="btn">查看</a></td></tr><tr><td>98</td><td class="all-title">Rem, Graves and Apollo | Art by @becstaples</td><td class="author">/u/Altruistic-Might-370</td><td class="stat upvotes">1,976</td><td class="stat comments">11</td><td>10-08 04:20</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x073qx/rem_graves_and_apollo_art_by_becstaples/" target="_blank" class="btn">查看</a></td></tr><tr><td>99</td><td class="all-title">I am making a prediction</td><td class="author">/u/Old-Maximum-50</td><td class="stat upvotes">3,812</td><td class="stat comments">268</td><td>10-08 00:33</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x017yd/i_am_making_a_prediction/" target="_blank" class="btn">查看</a></td></tr><tr><td>100</td><td class="all-title">Warm birthday congratulations from Drifter to Baba</td><td class="author">/u/Motor-Design-4932</td><td class="stat upvotes">13</td><td class="stat comments">4</td><td>10-09 06:54</td><td><a href="https://www.reddit.com/r/DeadlockTheGame/comments/1x15c1k/warm_birthday_congratulations_from_drifter_to_baba/" target="_blank" class="btn">查看</a></td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="separator"></div>
+
+  <!-- Deadlock Daily News -->
+  <div class="news-card">
+  <div class="news-card-header">
+    <span class="news-icon">📰</span>
+    <span>全网 Deadlock 新闻</span>
+    <span class="news-date">2026-10-09 · 每日十条 · 多源聚合</span>
+  </div>
+  <div class="news-list">
+<div class="news-item">
+  <div class="news-rank">1</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">ESPORTS</span>
+      <span class="news-source">Google</span>
+      <span class="news-time">10-07</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxNNTAyeGdhYjkxSXIyc0dCUFkxUlZvejh2ajlKN2RJNjZuMjJQSk9OajJOUExZdW0yZ2N2bFBmVjk0WEQ3b1VsbHJvVm15d2ZxVVo0U0JzZjlqMTIyVVg2NWpOVFdNTE1YTWlubEQ4T1RBQVVtRG45STZyYzg0ZTlGUG50OGhEWmh5Wm9kbFl5dGFFc0ZxdEctQVh1WkFBVVZpeU9Dd3V2WnpsdGxOekRkd0U0dUUyai13VUlYbi0zT05qNEtuZlplTnB2bTRpOTZEeGYzVUhZdlpDZTdSbDZDc2p6TlllQdIB6wFBVV95cUxPNE5JWFhBQVJUbWNCVjVqc0Z6d2hPVUp6NlJNdmd4TXZzN1pPb1U1UldXQ2xERmNRZVpkelFWVGZ6TzJ4b3NCS3l6QU0zU3VPWGM3T2xuRXNkb3V6eUQ5dUZZUEw3SGZESDFFOVllTzJKcGFtYlJFckI4a1pfN0dyWmRubEowa0Fsd25aaW1aZ3dRTVFxaTZreHhoS3RhTFZlMllaRzZIZ1NaTERmUTlmTmluWW5lQVdUMml4SGljbEN6THBSTG02X1dLRGhBLUctTmNsVE9USXRvcUxGRjZRRDhCQml1b0I4TTdF?oc=5" target="_blank" class="news-title">Valve added Baba with a bench to Deadlock and the shooter set a new record on Steam - iXBT.games</a>
+    <div class="news-snippet">Valve added Baba with a bench to Deadlock and the shooter set a new record on Steam&amp;nbsp;&amp;nbsp;iXBT.games</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxNNTAyeGdhYjkxSXIyc0dCUFkxUlZvejh2ajlKN2RJNjZuMjJQSk9OajJOUExZdW0yZ2N2bFBmVjk0WEQ3b1VsbHJvVm15d2ZxVVo0U0JzZjlqMTIyVVg2NWpOVFdNTE1YTWlubEQ4T1RBQVVtRG45STZyYzg0ZTlGUG50OGhEWmh5Wm9kbFl5dGFFc0ZxdEctQVh1WkFBVVZpeU9Dd3V2WnpsdGxOekRkd0U0dUUyai13VUlYbi0zT05qNEtuZlplTnB2bTRpOTZEeGYzVUhZdlpDZTdSbDZDc2p6TlllQdIB6wFBVV95cUxPNE5JWFhBQVJUbWNCVjVqc0Z6d2hPVUp6NlJNdmd4TXZzN1pPb1U1UldXQ2xERmNRZVpkelFWVGZ6TzJ4b3NCS3l6QU0zU3VPWGM3T2xuRXNkb3V6eUQ5dUZZUEw3SGZESDFFOVllTzJKcGFtYlJFckI4a1pfN0dyWmRubEowa0Fsd25aaW1aZ3dRTVFxaTZreHhoS3RhTFZlMllaRzZIZ1NaTERmUTlmTmluWW5lQVdUMml4SGljbEN6THBSTG02X1dLRGhBLUctTmNsVE9USXRvcUxGRjZRRDhCQml1b0I4TTdF?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">2</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">GosuGamers</span>
+      <span class="news-time">10-07</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTTUwZjcwLUZkSnZabkFLdlIyRjh5TGZSX0VMbjRMT05iX2J6TXZtdlptR3ljYjRXVEkwWWJoUm1ERldlMzhhbnpzc1lJVnRYVVozOFFxaTd1VEZ5cEYwckJmMkdHamk2MmdKWnU0YkN0OGFRMG9zUDEwcGtTUHdiSlFNOUhGNmRxVGViYWVybFZubVR0b0o5TWY2Sl9jZjRmcWFHemtpakdyWnNoTFVNc1pOOE5OWE9QYTV6N0YxRl9pLVE?oc=5" target="_blank" class="news-title">Baba becomes the second hero to join Deadlock in ‘City Never Sleeps’ update - GosuGamers</a>
+    <div class="news-snippet">Baba becomes the second hero to join Deadlock in ‘City Never Sleeps’ update&amp;nbsp;&amp;nbsp;GosuGamers</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTTUwZjcwLUZkSnZabkFLdlIyRjh5TGZSX0VMbjRMT05iX2J6TXZtdlptR3ljYjRXVEkwWWJoUm1ERldlMzhhbnpzc1lJVnRYVVozOFFxaTd1VEZ5cEYwckJmMkdHamk2MmdKWnU0YkN0OGFRMG9zUDEwcGtTUHdiSlFNOUhGNmRxVGViYWVybFZubVR0b0o5TWY2Sl9jZjRmcWFHemtpakdyWnNoTFVNc1pOOE5OWE9QYTV6N0YxRl9pLVE?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">3</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">ESPORTS</span>
+      <span class="news-source">PlayStation Universe</span>
+      <span class="news-time">10-07</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ2ZmRGkyVTRUaGtUUmVOd2pwV0VEazJXcW40MTNya252Szk4M0FCNlFSX0ZXLXo2Vm1acTZrbGFPS2VwQ0FrVndXU2xaYjJGR1JOVXRxUWFsQ1k5MjRIMVZTb2NoSjd3ZVFrZ3J3Z21Ca09JRTdSWDhxQVEtSFFKcmtmQQ?oc=5" target="_blank" class="news-title">Games That Could Become the Next Big Esports Titles - PlayStation Universe</a>
+    <div class="news-snippet">Games That Could Become the Next Big Esports Titles&amp;nbsp;&amp;nbsp;PlayStation Universe</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ2ZmRGkyVTRUaGtUUmVOd2pwV0VEazJXcW40MTNya252Szk4M0FCNlFSX0ZXLXo2Vm1acTZrbGFPS2VwQ0FrVndXU2xaYjJGR1JOVXRxUWFsQ1k5MjRIMVZTb2NoSjd3ZVFrZ3J3Z21Ca09JRTdSWDhxQVEtSFFKcmtmQQ?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">4</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Shacknews</span>
+      <span class="news-time">10-07</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOWUtJX1I2NU9rdTJfNFJFSWJ2Vmg0eFAydFVLNWdLci1qc3BvWENTTkwwVkRFXzNYUHVMR3Jxb1VId3dGQmJMX2ZJLW5xdEQ3bzV0WDRHMldmQUpodm1IZk55NGgyMGdXbHZaTk1IdGx3SENmaXhoNVM1UXN1d3JkLXQ0VkRmakpBU1RCeg?oc=5" target="_blank" class="news-title">Baba wins the second Deadlock City Never Sleeps update character vote - Shacknews</a>
+    <div class="news-snippet">Baba wins the second Deadlock City Never Sleeps update character vote&amp;nbsp;&amp;nbsp;Shacknews</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOWUtJX1I2NU9rdTJfNFJFSWJ2Vmg0eFAydFVLNWdLci1qc3BvWENTTkwwVkRFXzNYUHVMR3Jxb1VId3dGQmJMX2ZJLW5xdEQ3bzV0WDRHMldmQUpodm1IZk55NGgyMGdXbHZaTk1IdGx3SENmaXhoNVM1UXN1d3JkLXQ0VkRmakpBU1RCeg?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">5</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">HERO</span>
+      <span class="news-source">IGN</span>
+      <span class="news-time">10-06</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFA5NXF6MVJiOTNRZWZCVDN3dGwwQVBJTnROME02WGZ4ZTR1dnMxemszTXFtQ0NkN2dyX1BmbERaV3RybnMzLXRFazBTU3hJUWdQenBiRkRTOTdGdDZtazBTb0pxNk00MTVmS2c?oc=5" target="_blank" class="news-title">Deadlock New Characters: City Never Sleeps Oct 26 - IGN</a>
+    <div class="news-snippet">Deadlock New Characters: City Never Sleeps Oct 26&amp;nbsp;&amp;nbsp;IGN</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFA5NXF6MVJiOTNRZWZCVDN3dGwwQVBJTnROME02WGZ4ZTR1dnMxemszTXFtQ0NkN2dyX1BmbERaV3RybnMzLXRFazBTU3hJUWdQenBiRkRTOTdGdDZtazBTb0pxNk00MTVmS2c?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">6</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Mobalytics</span>
+      <span class="news-time">10-06</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9CUDA5U0RrT0FpcEdKMGJuM3pvOHoydGltNGd4MUl4cWo4bGtWQUdGYVlEUVJDV1VjS2Q5ZkExTTRVbVVhQnhtWTBpMFBITXVPelJac2pQM25JYjRKX0E?oc=5" target="_blank" class="news-title">Deadlock Patch Notes - Latest Buffs, Nerfs &amp; Changes - Mobalytics</a>
+    <div class="news-snippet">Deadlock Patch Notes - Latest Buffs, Nerfs &amp; Changes&amp;nbsp;&amp;nbsp;Mobalytics</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9CUDA5U0RrT0FpcEdKMGJuM3pvOHoydGltNGd4MUl4cWo4bGtWQUdGYVlEUVJDV1VjS2Q5ZkExTTRVbVVhQnhtWTBpMFBITXVPelJac2pQM25JYjRKX0E?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">7</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">HERO</span>
+      <span class="news-source">PC Gamer</span>
+      <span class="news-time">10-04</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNc3g1QjhJNElRSldQRjhJUUJvckluNFZFLWFtdGFFRmZqWDVHOUpMUzFRQVpqR281NDVWaEd5U0hSNjYzbThhODA3dzFPWm52eVNzNUF3dUJiN3pQVmtQeXBXU0dqZF96WWJFNG1NSkVKOG1hdXFoZDlBeDhLRWlVcmc0bm90N1JyUVJwX3pDbUpoVnhja1ZJSWNjMjVUOThvZEpwck5NbU5fa3hqdDB3VE1RQmVNcWZER2QtVVYwVldlLWlsS2tCcFlDdUlGWXdWclE?oc=5" target="_blank" class="news-title">Deadlock is the king of MOBA character designs, and it's all thanks to Valve's embrace of New Yorkyness - PC Gamer</a>
+    <div class="news-snippet">Deadlock is the king of MOBA character designs, and it's all thanks to Valve's embrace of New Yorkyness&amp;nbsp;&amp;nbsp;PC Gamer</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxNc3g1QjhJNElRSldQRjhJUUJvckluNFZFLWFtdGFFRmZqWDVHOUpMUzFRQVpqR281NDVWaEd5U0hSNjYzbThhODA3dzFPWm52eVNzNUF3dUJiN3pQVmtQeXBXU0dqZF96WWJFNG1NSkVKOG1hdXFoZDlBeDhLRWlVcmc0bm90N1JyUVJwX3pDbUpoVnhja1ZJSWNjMjVUOThvZEpwck5NbU5fa3hqdDB3VE1RQmVNcWZER2QtVVYwVldlLWlsS2tCcFlDdUlGWXdWclE?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">8</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">DailyCoin</span>
+      <span class="news-time">10-03</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY0RjRjRMVFNnSG9zMGxmSWdrWXBONm1EOHhBOW85TXZ2XzhJOE9TNUdLMFNEWmU1QzhYeE9Vc3daVXhCenlJOE1zdUhJU0NWVWJIZVhRWHdTVE1VcDRfYmdZaVRDUG9EOE9sUFhoVTJLS0pzb1RVSWIxb2RKMVlyUEpmOTF3UmNDUnpFb2M4ZWd1NzRSWENEX3lmQVBUV1JXbksxa0Ewenk2UFdsalpxa0NfanZJWjd4WENhT2tNbVo1emM?oc=5" target="_blank" class="news-title">Deadlock’s City Never Sleeps Update Sparks a Surge: 6 New Heroes and a Record Player Count - DailyCoin</a>
+    <div class="news-snippet">Deadlock’s City Never Sleeps Update Sparks a Surge: 6 New Heroes and a Record Player Count&amp;nbsp;&amp;nbsp;DailyCoin</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY0RjRjRMVFNnSG9zMGxmSWdrWXBONm1EOHhBOW85TXZ2XzhJOE9TNUdLMFNEWmU1QzhYeE9Vc3daVXhCenlJOE1zdUhJU0NWVWJIZVhRWHdTVE1VcDRfYmdZaVRDUG9EOE9sUFhoVTJLS0pzb1RVSWIxb2RKMVlyUEpmOTF3UmNDUnpFb2M4ZWd1NzRSWENEX3lmQVBUV1JXbksxa0Ewenk2UFdsalpxa0NfanZJWjd4WENhT2tNbVo1emM?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">9</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Shacknews</span>
+      <span class="news-time">10-03</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQN1BodWtzSFFwQTM3emlKeXN4WlVpQTJtT3VWYTA3aGZmM0JubjBGSnJJVlpXRnhHak9FZ21tT3d4ZHZEQWZPZXFZTUxBNjlvdE80dmNmTVdJRHAxY0xhSnQ3ZTBRNkpvZDJ2Nlk2cW1TQ2hSaVV3bnhwMGRIYmJPamRiNGJsUjhMUTNtOWZ0NNIBmwFBVV95cUxNdFFweG5vc2tYMGVKVElPSWpONjVxaW9FUFA5alk3Y2xWMnFVTG8zU05FUGZBT291TU5sQTNtNGNONU10aEF5QXJTZ2pFbTd1T3lPQUQ0VG5ocFJPVHp4UUVEOUd3V0dVbVBRZUROZGpycy1CZXlaNU9kTEYxYUQ3SWRZODFMMThSbEFxLWZySHdjeU1hcUFaUEFQTQ?oc=5" target="_blank" class="news-title">Deadlock's Rat King voted in as the first playable character of the City Never Sleeps update - Shacknews</a>
+    <div class="news-snippet">Deadlock's Rat King voted in as the first playable character of the City Never Sleeps update&amp;nbsp;&amp;nbsp;Shacknews</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQN1BodWtzSFFwQTM3emlKeXN4WlVpQTJtT3VWYTA3aGZmM0JubjBGSnJJVlpXRnhHak9FZ21tT3d4ZHZEQWZPZXFZTUxBNjlvdE80dmNmTVdJRHAxY0xhSnQ3ZTBRNkpvZDJ2Nlk2cW1TQ2hSaVV3bnhwMGRIYmJPamRiNGJsUjhMUTNtOWZ0NNIBmwFBVV95cUxNdFFweG5vc2tYMGVKVElPSWpONjVxaW9FUFA5alk3Y2xWMnFVTG8zU05FUGZBT291TU5sQTNtNGNONU10aEF5QXJTZ2pFbTd1T3lPQUQ0VG5ocFJPVHp4UUVEOUd3V0dVbVBRZUROZGpycy1CZXlaNU9kTEYxYUQ3SWRZODFMMThSbEFxLWZySHdjeU1hcUFaUEFQTQ?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">10</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Yahoo Tech</span>
+      <span class="news-time">10-03</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUi1iMndWLTJCcmNqOWhZX0dhRFlaS1oyQTItLTBNQUZGWVZ6NEJOSWJ1RzZhakFraGdlTHpvS0V0N3JlbDdRUEdlVUJLeDV4QWlwR2NUdWpWZ3BMbkRwTWtZZEo0dmFITXhwb2YyLWZXME9vaUhSOEJ2NlVVRVRNREpBOUR4ZHdO?oc=5" target="_blank" class="news-title">Valve's patch note supremacy - Yahoo Tech</a>
+    <div class="news-snippet">Valve's patch note supremacy&amp;nbsp;&amp;nbsp;Yahoo Tech</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUi1iMndWLTJCcmNqOWhZX0dhRFlaS1oyQTItLTBNQUZGWVZ6NEJOSWJ1RzZhakFraGdlTHpvS0V0N3JlbDdRUEdlVUJLeDV4QWlwR2NUdWpWZ3BMbkRwTWtZZEo0dmFITXhwb2YyLWZXME9vaUhSOEJ2NlVVRVRNREpBOUR4ZHdO?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">11</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">PC Gamer</span>
+      <span class="news-time">10-03</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOMl80cWk0cTFLeVNWOFVEY2JhNHNaTGlSMk5wVVJFYm5jRUIzWXROWnE3UW1BRlBIbkIyTVh2QTBsYmNITDUxYmlQQ1d4UnFzQjNlQkhtTkJnYWI0VGQ1X1VMOVVndHB4eDdDSkV1RkhwR3JWclk0Z1JhSENiUXY1dWd5cDNGekljUHhKWDBB?oc=5" target="_blank" class="news-title">Valve's patch note supremacy - PC Gamer</a>
+    <div class="news-snippet">Valve's patch note supremacy&amp;nbsp;&amp;nbsp;PC Gamer</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOMl80cWk0cTFLeVNWOFVEY2JhNHNaTGlSMk5wVVJFYm5jRUIzWXROWnE3UW1BRlBIbkIyTVh2QTBsYmNITDUxYmlQQ1d4UnFzQjNlQkhtTkJnYWI0VGQ1X1VMOVVndHB4eDdDSkV1RkhwR3JWclk0Z1JhSENiUXY1dWd5cDNGekljUHhKWDBB?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+<div class="news-item">
+  <div class="news-rank">12</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="news-tag">PATCH</span>
+      <span class="news-source">Tbreak UAE</span>
+      <span class="news-time">10-02</span>
+    </div>
+    <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE1hZGZKRWR1emZ3OXhQNVNIVUdoSGkzZmd3M0dudUtkM1lrb1VMX0ZTSDFaTDNXc2VQNzhQSkJwZXlzTm90OVB4UnI4d1RXQmluRXp6VEt2dVJzUXNyZGlYNTM2amtXS2drRFIwSHVhRmt0M3Fy?oc=5" target="_blank" class="news-title">Deadlock sets new Steam player record after City Never Sleeps update - Tbreak UAE</a>
+    <div class="news-snippet">Deadlock sets new Steam player record after City Never Sleeps update&amp;nbsp;&amp;nbsp;Tbreak UAE</div>
+  </div>
+  <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE1hZGZKRWR1emZ3OXhQNVNIVUdoSGkzZmd3M0dudUtkM1lrb1VMX0ZTSDFaTDNXc2VQNzhQSkJwZXlzTm90OVB4UnI4d1RXQmluRXp6VEt2dVJzUXNyZGlYNTM2amtXS2drRFIwSHVhRmt0M3Fy?oc=5" target="_blank" class="news-btn">原文</a>
+</div>
+  </div>
+</div>
+
+  <!-- Original AI News -->
+  <div class="news-card">
+  <div class="news-card-header">
+    <span class="news-icon">Deadlock Original</span>
+    <span></span>
+    <span class="news-date">2026-10-09 · Patch Updates</span>
+  </div>
+  <div class="news-list">
+<div class="orig-news-item">
+<div class="orig-thumb-wrap"><img src="news_1.png" alt="Deadlock Matchmaking Overhaul: Standard Mode Replaces Casual Queue" loading="lazy" /><a class="yt-badge" href="https://youtu.be/AqMkNTzTM8Y" target="_blank" rel="noopener">&#9654; YouTube</a></div>
+  <div class="orig-news-meta">
+    <span class="news-tag">PATCH</span>
+    <span class="orig-badge">Deadlock Original</span>
+  </div>
+  <h3 class="orig-news-title">Deadlock Matchmaking Overhaul: Standard Mode Replaces Casual Queue</h3>
+  <p class="orig-news-body">Valve has shipped a comprehensive rework of Deadlock&#39;s matchmaking system, introducing a brand-new ranked mode alongside a rebalanced Standard mode that replaces the legacy casual queue. The changes, announced in the July 31 update, represent the most significant structural shift to Deadlock&#39;s competitive environment since the game entered its open testing phase.<br><br>The new Standard mode offers a lower-pressure alternative for players who want to enjoy Deadlock with friends without the stress of rank-based matchmaking. The mode accommodates groups of varying skill levels without forcing rigid rank-matching that would otherwise penalise mixed-skill parties. According to community reporting, Standard mode specifically addresses the common complaint that playing with friends of different ranks often produced deeply unbalanced matches.<br><br>The ranked mode — also introduced in this update — formalises Deadlock&#39;s competitive ladder with a dedicated queue that uses a new matching algorithm. The overhaul brings the game&#39;s competitive infrastructure closer in line with what players have expected from Valve&#39;s previous titles, while preserving the unique hero-shooter + MOBA hybrid character that sets Deadlock apart.</p>
+</div>
+<div class="orig-news-item">
+<div class="orig-thumb-wrap"><img src="news_2.png" alt="AFK Detection Tightened: Threshold Reduced from 5 to 3 Minutes" loading="lazy" /><a class="yt-badge" href="https://youtu.be/RJOcxotlccs" target="_blank" rel="noopener">&#9654; YouTube</a></div>
+  <div class="orig-news-meta">
+    <span class="news-tag">PATCH</span>
+    <span class="orig-badge">Deadlock Original</span>
+  </div>
+  <h3 class="orig-news-title">AFK Detection Tightened: Threshold Reduced from 5 to 3 Minutes</h3>
+  <p class="orig-news-body">Deadlock&#39;s August 4 update has shortened the AFK detection threshold from five minutes to three, a change that directly addresses one of the most persistent complaints in the ranked player community. Players who remain inactive for more than three minutes in a ranked match will now face immediate penalties, including reduced rank points and a temporary matchmaking cooldown.<br><br>The change comes after widespread community criticism of players who exploited the five-minute window to AFK in low-stakes or losing games without consequence. Reddit threads documenting AFK abuse in ranked matches consistently received hundreds of upvotes, with players reporting multiple AFK teammates per session in the weeks following the ranked launch.<br><br>The three-minute threshold brings Deadlock in line with competitive standards across the hero-shooter genre, where faster penalty systems have become the norm. Community response to the change has been broadly positive, with ranked-mode discussion threads citing the update as evidence that Valve is actively monitoring and responding to player experience issues.</p>
+</div>
+  </div>
+</div>
+
+  <!-- Steam 综合讨论 · 评论露出机会 (bottom section) -->
+  
+
+  
+  <!-- Steam 艺术作品 · 每日 UV 观察 -->
+  <section class="art-section">
+    <div class="art-section-head">
+      <h2 class="art-h2">🎨 Steam 艺术作品 · 每日 UV 观察</h2>
+      <div class="art-summary">共 <b>12</b> 件近期作品 · 合计不重复访客 <b>60</b> · 当前收藏 <b>1</b></div>
+    </div>
+    <div class="art-grid">
+      
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815303244" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/11423533824734308252/6B7F52D126D849A7C2835285E53337F4C5BFEF28/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="UMMMMMMMMMM" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>9</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815303244" target="_blank" class="art-title">UMMMMMMMMMM</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561198705549938" target="_blank" class="art-author">ДЕПУТАТ РІВНОГО</a> · 10 月 7 日 上午 8:19</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815293356" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/10669797627231968699/10E79D789A07D2104CD14DD87EFFDAE33A0D2C96/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="humbling apollo" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>7</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815293356" target="_blank" class="art-title">humbling apollo</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561199042213954" target="_blank" class="art-author">lime</a> · 10 月 7 日 上午 8:01</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815277531" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/12993829686939279511/39FC34077E2595F7ED6F0AE0BC841351F0D2D2C3/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="This Rem is holding an April in its melt" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>7</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815277531" target="_blank" class="art-title">This Rem is holding an April in its melt</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/id/Hannya_man" target="_blank" class="art-author">\Hannya_Man/</a> · 10 月 7 日 上午 7:34</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815432276" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/17858960627177235324/40984779C59096321CE81A4AECB0797155659DCC/" alt="ㅤ" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>6</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815432276" target="_blank" class="art-title">ㅤ</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561198930745563" target="_blank" class="art-author">физик ядерщик</a> · 10 月 7 日 下午 12:15</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815424825" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/13602515404020784120/07E1355DED4CA46C690C96B779B60D97BABA4F99/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="ㅤ" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>6</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815424825" target="_blank" class="art-title">ㅤ</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561198930745563" target="_blank" class="art-author">физик ядерщик</a> · 10 月 7 日 下午 12:02</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815546968" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/10982512553907349549/8CACC2CA390983FF52A008C48274AF4E93905BB8/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="Holliday" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>5</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>1</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815546968" target="_blank" class="art-title">Holliday</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/id/AutisticHawke" target="_blank" class="art-author">Poison Flowers</a> · 10 月 7 日 下午 4:19</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815615096" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/16074517286544621048/F787F6E328F7897D2558A69E135945703B805E71/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="Jacob Lash BS 180 Kickflips the Cursed Apple 10 Stair" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>5</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815615096" target="_blank" class="art-title">Jacob Lash BS 180 Kickflips the Cursed Apple 10 Stair</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/id/TinyLilBug" target="_blank" class="art-author">Baba&#39;s B-Hole</a> · 10 月 7 日 下午 7:46</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815447650" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/14965567274240980538/F46A5E00F0FC225B42370E8E51129D81F8A822A1/" alt="dedloc" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>5</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815447650" target="_blank" class="art-title">dedloc</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/id/guynamedpancake" target="_blank" class="art-author">literal pancake on a computer</a> · 10 月 7 日 下午 12:43</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815524379" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/13846162046657128486/4D9033AEBC27143948FA7566A5FC50BC250F0BA0/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="Uhm Yoshi..." loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>4</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815524379" target="_blank" class="art-title">Uhm Yoshi...</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561199119905809" target="_blank" class="art-author">Myrvold</a> · 10 月 7 日 下午 3:21</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815473188" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/11815805857272616168/9EF59C691CB35E77CFD3EF635746FDECC1DE792A/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="кто же?" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>4</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815473188" target="_blank" class="art-title">кто же?</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561199040056027" target="_blank" class="art-author">Няштяяк</a> · 10 月 7 日 下午 1:31</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815619255" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/16728079540358626239/95BCE091C7DA35DCDD491FFC3F8FFE5B78512AD1/" alt="just look at victor in LA!" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>1</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815619255" target="_blank" class="art-title">just look at victor in LA!</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/id/sugarvine1009" target="_blank" class="art-author">yaoiluvr67</a> · 10 月 7 日 下午 8:02</div>
+        </div>
+      </div>
+      <div class="art-card">
+        
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815450387" target="_blank" class="art-thumb"><img src="https://images.steamusercontent.com/ugc/15477051019054873365/EA27875FD87E78634AED215DADC3C80C04828620/?imw=420&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" alt="does he know about the d o r e" loading="lazy"><div class="art-stats"><div class="art-stat"><span class="art-stat-val"><b>1</b></span><span class="art-stat-label">不重复访客(uv)</span></div><div class="art-stat"><span class="art-stat-val"><b>0</b></span><span class="art-stat-label">当前收藏</span></div></div></a>
+        <div class="art-meta">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3815450387" target="_blank" class="art-title">does he know about the d o r e</a>
+          <div class="art-sub"><a href="https://steamcommunity.com/profiles/76561199466636318" target="_blank" class="art-author">vermiParadox</a> · 10 月 7 日 下午 12:48</div>
+        </div>
+      </div>
+    </div>
+    <div class="art-foot">数据抓取自 Steam 社区「Deadlock · 艺术作品」近期更新列表（不重复访客数 uv / 当前收藏人数）· 抓取于 2026-10-08 15:45:55</div>
+  </section>
+
+  <style>
+  .art-section { margin-top: 8px; }
+  .art-section-head { margin-bottom: 16px; }
+  .art-h2 { font-size: 18px; font-weight: 800; color: var(--text); margin: 0 0 6px 0; letter-spacing: -0.3px; }
+  .art-summary { font-size: 12px; color: var(--text2); }
+  .art-summary b { color: var(--accent); font-weight: 800; }
+  .art-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+  .art-card { position: relative; background: var(--surface); border: 1px solid var(--border);
+              border-radius: 14px; overflow: hidden; display: flex; flex-direction: column;
+              transition: border-color .15s, transform .15s; }
+  .art-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .art-thumb { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3;
+               background: #000 center/cover no-repeat; overflow: hidden; text-decoration: none; }
+  .art-thumb img { width: 100%; height: 100%; object-fit: cover; display: block;
+                   transition: transform .2s; }
+  .art-card:hover .art-thumb img { transform: scale(1.04); }
+  .art-thumb-empty { background: var(--surface2); }
+  .art-badge-today { position: absolute; top: 8px; left: 8px; z-index: 2;
+                      background: var(--accent); color: #fff; font-size: 10px; font-weight: 800;
+                      padding: 2px 8px; border-radius: 999px; letter-spacing: .5px; }
+  .art-stats { position: absolute; right: 8px; bottom: 8px; z-index: 2;
+               display: flex; gap: 14px; padding: 6px 10px;
+               background: rgba(8,8,12,0.74); backdrop-filter: blur(4px);
+               border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; }
+  .art-stat { display: flex; flex-direction: column; align-items: center; min-width: 42px; }
+  .art-stat-val { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.1; }
+  .art-stat-label { font-size: 9px; color: rgba(255,255,255,0.72); margin-top: 2px; white-space: nowrap; }
+  .art-meta { padding: 10px 12px 12px; }
+  .art-title { display: block; font-size: 13px; font-weight: 600; color: var(--text);
+               line-height: 1.35; max-height: 2.7em; overflow: hidden;
+               text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2;
+               -webkit-box-orient: vertical; text-decoration: none; }
+  .art-title:hover { color: var(--accent); }
+  .art-sub { font-size: 11px; color: var(--text3); margin-top: 5px; }
+  .art-author { color: var(--text2); text-decoration: none; }
+  .art-author:hover { color: var(--accent); }
+  .art-foot { margin-top: 14px; font-size: 11px; color: var(--text3); text-align: right; }
+  @media (max-width: 560px) {
+    .art-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  }
+  </style>
+
+
+  <div class="footer">
+    由 <a href="https://openclaw.ai" target="_blank">QClaw</a> 自动生成 ·
+    数据来源: r/DeadlockTheGame · 更新于 2026-10-09T01:38:28+08:00
+  </div>
+</div>
+
+<script>
+// ── Theme Toggle ──
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  btn.textContent = isDark ? '☀️ 浅色' : '🌙 深色';
+  localStorage.setItem('dl-theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('dl-theme');
+  if (saved) { document.documentElement.setAttribute('data-theme', saved); }
+  if (saved === 'light') { document.getElementById('themeBtn').textContent = '☀️ 浅色'; }
+})();
+
+// ── Filter ──
+function applyFilter() {
+  const upMin = parseInt(document.getElementById('upSlider').value);
+  const cmMin = parseInt(document.getElementById('cmSlider').value);
+  document.getElementById('upVal').textContent = upMin;
+  document.getElementById('cmVal').textContent = cmMin;
+  let total = 0, shown = 0;
+  document.querySelectorAll('#top25Table tbody tr, #allTable tbody tr').forEach(row => {
+    const tds = row.querySelectorAll('td');
+    if (tds.length < 4) return;
+    total++;
+    const ups = parseInt(String(tds[3].textContent).replace(/,/g,'')) || 0;
+    const cm = parseInt(String(tds[4].textContent).replace(/,/g,'')) || 0;
+    const show = ups >= upMin && cm >= cmMin;
+    row.classList.toggle('hidden', !show);
+    if (show) shown++;
+  });
+  document.getElementById('filterCount').textContent = total > 0
+    ? `显示 ${shown} / ${total}`
+    : '';
+}
+applyFilter();
+
+// ── Date picker dropdown ──
+function toggleDateDropdown(e) {
+  e.stopPropagation();
+  const dp = document.getElementById('datePicker');
+  dp.classList.toggle('open');
+}
+document.addEventListener('click', (e) => {
+  const dp = document.getElementById('datePicker');
+  if (dp && !dp.contains(e.target)) dp.classList.remove('open');
+});
+</script>
+<script>
+// ── Scroll to top on page load/refresh ──
+window.addEventListener('load', function() {
+  window.scrollTo(0, 0);
+});
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+</script>
+</body>
+</html>
