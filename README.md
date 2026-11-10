@@ -21,6 +21,14 @@
 - **每日 10:00 AM 北京时间** 自动抓取并部署
 - 由 QClaw Agent 驱动
 
+## PogPog UGC 搬运量
+
+单独页面，统计每天从 Reddit r/DeadlockTheGame 搬运到 PogPog 的帖子数量。放在子目录里，避免被每日热点报告覆盖根目录的 `index.html`。
+
+- **页面：** https://1mmortalzzz.github.io/deadlock-daily/ugc/
+- **怎么更新：** 每次跑完后只改 `ugc/data.json`。页面从该文件读取每日搬运量、累计和帖子标题，不必改 `ugc/index.html`。
+- 日期按 **Asia/Shanghai（GMT+8）** 统计。不要把账号邮箱写进这个 JSON。
+
 ## 报告格式
 
 每份报告包含：

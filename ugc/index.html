@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PogPog UGC 搬运量</title>
+<meta name="description" content="统计 Reddit r/DeadlockTheGame 内容搬运到 PogPog 的每日发布量。时区 Asia/Shanghai（GMT+8）。">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #0e0f14;
+  --card: #171922;
+  --ink: #e8eaf0;
+  --sub: #9aa1b2;
+  --line: #2c3040;
+  --acc: #7d8cff;
+  --acc-bg: #2a3160;
+  --chip: #1c1f2b;
+  --hover: #222636;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+a { color: var(--acc); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button, input { font: inherit; }
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 64px; }
+.back { font-size: 14px; }
+h1 { font-size: 28px; line-height: 1.3; margin: 14px 0 8px; font-weight: 750; }
+.lead { margin: 0; color: var(--sub); font-size: 15px; max-width: 68ch; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0 8px;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px 16px;
+}
+.stat span { display: block; color: var(--sub); font-size: 13px; }
+.stat b {
+  display: block;
+  margin-top: 4px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+.stat b.small { font-size: 16px; letter-spacing: 0; font-weight: 650; line-height: 1.45; }
+.stat em { display: block; margin-top: 4px; color: var(--sub); font-style: normal; font-size: 12.5px; }
+.block { margin-top: 22px; }
+.block h2 { font-size: 15px; margin: 0 0 10px; font-weight: 680; }
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+}
+.chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 7px 10px 7px 12px;
+  cursor: pointer;
+}
+.chip.all { position: sticky; left: 0; z-index: 1; }
+.chip:hover { background: var(--hover); }
+.chip.on { background: var(--acc-bg); border-color: var(--acc); color: #f4f6ff; }
+.chip-n {
+  min-width: 1.6em;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 6px 16px 12px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+th {
+  text-align: left;
+  color: var(--sub);
+  font-weight: 600;
+  font-size: 12.5px;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--line);
+}
+td { padding: 11px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.num { font-variant-numeric: tabular-nums; font-weight: 680; }
+.date-btn {
+  background: none;
+  border: none;
+  color: var(--acc);
+  padding: 0;
+  cursor: pointer;
+  font-weight: 650;
+}
+.date-btn:hover { text-decoration: underline; }
+.meter {
+  height: 6px;
+  width: 120px;
+  max-width: 100%;
+  background: #2a2e3a;
+  border-radius: 99px;
+  margin-top: 6px;
+}
+.meter > span { display: block; height: 100%; background: var(--acc); border-radius: inherit; }
+.hint { color: var(--sub); font-size: 13.5px; margin: 10px 2px 0; }
+.day-head { padding: 16px 4px 8px; }
+.day-head p { margin: 0; color: var(--sub); font-size: 14px; }
+.day-count {
+  margin: 2px 0 0;
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+.posts { list-style: none; margin: 0; padding: 0; counter-reset: post; }
+.posts li {
+  counter-increment: post;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 2px 12px;
+  padding: 12px 4px;
+  border-top: 1px solid var(--line);
+}
+.posts li::before {
+  content: counter(post);
+  grid-row: 1 / span 2;
+  color: var(--sub);
+  font-variant-numeric: tabular-nums;
+  padding-top: 2px;
+}
+.title {
+  margin: 0;
+  font-size: 15px;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.pid { margin: 0; color: var(--sub); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.status { color: var(--sub); padding: 28px 0; }
+.status.error { color: #f0b4b4; }
+.note { color: var(--sub); font-size: 13.5px; margin: 8px 0 0; }
+footer { margin-top: 28px; color: var(--sub); font-size: 13px; }
+footer code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  color: var(--ink);
+}
+@media (max-width: 680px) {
+  .stats { grid-template-columns: 1fr; }
+  h1 { font-size: 24px; }
+  .meter { width: 88px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../">返回每日热点</a>
+  <h1>PogPog UGC 搬运量</h1>
+  <p class="lead">统计每天从 Reddit r/DeadlockTheGame 搬运到 PogPog 并发布的帖子。点选日期标签查看当天搬运量和帖子标题。日期按 Asia/Shanghai（GMT+8）计算，标题按数据文件原样显示。</p>
+  <div id="app" aria-live="polite">
+    <p class="status">正在读取数据…</p>
+  </div>
+  <footer>
+    <p>操作者更新数据时，只改本目录的 <code>data.json</code>，不必改这个页面。不要写入账号邮箱。</p>
+  </footer>
+</div>
+<noscript><p class="wrap">需要启用 JavaScript，才能从 data.json 读取搬运量。</p></noscript>
+<script>
+(function () {
+  var WEEK = ["日", "一", "二", "三", "四", "五", "六"];
+  var data = null;
+  var selectedDate = null;
+
+  function weekday(iso) {
+    var parts = String(iso).split("-");
+    var y = Number(parts[0]);
+    var m = Number(parts[1]);
+    var d = Number(parts[2]);
+    if (!y || !m || !d) return "";
+    return "周" + WEEK[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+  }
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function readHash() {
+    var hash = decodeURIComponent(location.hash.replace(/^#/, ""));
+    if (!hash || hash === "all") return null;
+    return hash;
+  }
+
+  function syncFromHash() {
+    selectedDate = readHash();
+  }
+
+  function selectDate(date) {
+    if (!date) {
+      if (location.hash) {
+        history.pushState(null, "", location.pathname + location.search);
+      }
+      selectedDate = null;
+      render();
+      return;
+    }
+    if (decodeURIComponent(location.hash.replace(/^#/, "")) === date) {
+      selectedDate = date;
+      render();
+      return;
+    }
+    location.hash = date;
+  }
+
+  function statCard(label, value, note, small) {
+    var card = el("div", "stat");
+    card.append(el("span", "", label));
+    card.append(el("b", small ? "small" : "", value));
+    if (note) card.append(el("em", "", note));
+    return card;
+  }
+
+  function render() {
+    var app = document.getElementById("app");
+    var days = Array.isArray(data.days) ? data.days.filter(function (d) { return d && d.date; }) : [];
+    var chrono = days.slice().sort(function (a, b) {
+      return String(a.date).localeCompare(String(b.date));
+    });
+    var running = new Map();
+    var sum = 0;
+    var maxCount = 1;
+    chrono.forEach(function (day) {
+      var count = Number(day.count) || 0;
+      sum += count;
+      running.set(day.date, sum);
+      if (count > maxCount) maxCount = count;
+    });
+    var recordedTotal = Number.isFinite(Number(data.total)) ? Number(data.total) : sum;
+    var byDate = new Map(chrono.map(function (day) { return [String(day.date), day]; }));
+    var day = selectedDate ? byDate.get(selectedDate) : null;
+    var known = !selectedDate || !!day;
+
+    var stats = el("section", "stats");
+    stats.append(statCard("累计搬运", String(recordedTotal), "全部已记录帖子"));
+    if (day) {
+      stats.append(statCard("当日搬运", String(Number(day.count) || 0), day.date + " " + weekday(day.date)));
+    } else if (selectedDate && !known) {
+      stats.append(statCard("当日搬运", "—", selectedDate + " 暂无记录"));
+    } else {
+      stats.append(statCard("记录天数", String(chrono.length), "有搬运数据的日期"));
+    }
+    stats.append(statCard("最近更新", data.updatedAt ? String(data.updatedAt) : "—", "Asia/Shanghai（GMT+8）", true));
+
+    var chipsWrap = el("section", "block");
+    chipsWrap.append(el("h2", "", "日期标签"));
+    var chips = el("div", "chips");
+    chips.setAttribute("role", "group");
+    chips.setAttribute("aria-label", "日期标签");
+    chips.append(makeChip("全部", null, recordedTotal, !selectedDate));
+    chrono.slice().reverse().forEach(function (item) {
+      chips.append(makeChip(item.date, item.date, Number(item.count) || 0, selectedDate === String(item.date)));
+    });
+    chipsWrap.append(chips);
+
+    var detail = el("section", "block");
+    if (day) {
+      detail.append(renderDay(day, running.get(day.date), recordedTotal));
+    } else if (selectedDate) {
+      detail.append(el("h2", "", selectedDate));
+      detail.append(el("p", "hint", "这一天还没有搬运记录。"));
+    } else {
+      detail.append(renderAll(chrono, running, maxCount));
+    }
+
+    var mismatch = el("p", "note");
+    if (Number(data.total) !== sum && Number.isFinite(Number(data.total))) {
+      mismatch.textContent = "各日搬运量相加为 " + sum + "，数据文件里的累计为 " + Number(data.total) + "。";
+    }
+
+    app.replaceChildren(stats, chipsWrap, detail);
+    if (mismatch.textContent) app.append(mismatch);
+  }
+
+  function makeChip(label, date, count, active) {
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "chip" + (date ? "" : " all") + (active ? " on" : "");
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+    var name = el("span", "", date ? (date + " " + weekday(date)) : label);
+    var badge = el("span", "chip-n", String(count));
+    button.append(name, badge);
+    button.addEventListener("click", function () { selectDate(date); });
+    return button;
+  }
+
+  function renderAll(chrono, running, maxCount) {
+    var wrap = document.createDocumentFragment();
+    wrap.append(el("h2", "", "每日搬运量"));
+    var panel = el("div", "panel");
+    var table = document.createElement("table");
+    var thead = document.createElement("thead");
+    var hr = document.createElement("tr");
+    ["日期", "当日搬运", "累计"].forEach(function (text) {
+      hr.append(el("th", "", text));
+    });
+    thead.append(hr);
+    var tbody = document.createElement("tbody");
+    chrono.forEach(function (day) {
+      var count = Number(day.count) || 0;
+      var tr = document.createElement("tr");
+      var dateCell = document.createElement("td");
+      var dateBtn = document.createElement("button");
+      dateBtn.type = "button";
+      dateBtn.className = "date-btn";
+      dateBtn.textContent = day.date + " " + weekday(day.date);
+      dateBtn.addEventListener("click", function () { selectDate(String(day.date)); });
+      dateCell.append(dateBtn);
+      var countCell = document.createElement("td");
+      countCell.append(el("div", "num", String(count)));
+      var meter = el("div", "meter");
+      meter.setAttribute("aria-hidden", "true");
+      var bar = document.createElement("span");
+      bar.style.width = Math.round((count / maxCount) * 100) + "%";
+      meter.append(bar);
+      countCell.append(meter);
+      tr.append(dateCell, countCell, el("td", "num", String(running.get(day.date))));
+      tbody.append(tr);
+    });
+    table.append(thead, tbody);
+    panel.append(table);
+    wrap.append(panel);
+    wrap.append(el("p", "hint", "选择一个日期标签，查看当天的搬运量和帖子标题。累计是截至该日的搬运总量。"));
+    return wrap;
+  }
+
+  function renderDay(day, runningTotal, recordedTotal) {
+    var wrap = document.createDocumentFragment();
+    var head = el("div", "day-head");
+    head.append(el("p", "", day.date + " " + weekday(day.date)));
+    head.append(el("p", "day-count", String(Number(day.count) || 0)));
+    head.append(el("p", "", "当日搬运量 · 截至该日累计 " + runningTotal + " · 全部累计 " + recordedTotal));
+    wrap.append(head);
+
+    var posts = Array.isArray(day.posts) ? day.posts : [];
+    wrap.append(el("h2", "", "帖子标题"));
+    if (posts.length !== (Number(day.count) || 0)) {
+      wrap.append(el("p", "note", "记录的搬运量为 " + (Number(day.count) || 0) + "，标题列表有 " + posts.length + " 条。"));
+    }
+    if (!posts.length) {
+      wrap.append(el("p", "hint", "这一天没有帖子标题。"));
+      return wrap;
+    }
+    var list = el("ol", "posts");
+    posts.forEach(function (post) {
+      var li = document.createElement("li");
+      var title = el("p", "title", post && post.title != null ? String(post.title) : "（无标题）");
+      var id = el("p", "pid", post && post.pogpog_id != null ? ("PogPog #" + post.pogpog_id) : "");
+      li.append(title, id);
+      list.append(li);
+    });
+    wrap.append(list);
+    return wrap;
+  }
+
+  window.addEventListener("hashchange", function () {
+    syncFromHash();
+    render();
+  });
+  window.addEventListener("popstate", function () {
+    syncFromHash();
+    render();
+  });
+
+  fetch("data.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (json) {
+      data = json || {};
+      syncFromHash();
+      render();
+    })
+    .catch(function () {
+      var app = document.getElementById("app");
+      app.replaceChildren(el("p", "status error", "无法读取 data.json。请确认它和本页面在同一目录。"));
+    });
+})();
+</script>
+</body>
+</html>
