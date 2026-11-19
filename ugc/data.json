@@ -1,4 +1,1411 @@
-[... earlier output omitted: 1408 lines, 38289 characters dropped from the start ...]
+{
+  "updatedAt": "2026-11-19 10:06:41 GMT+8",
+  "total": 587,
+  "days": [
+    {
+      "date": "2026-11-19",
+      "count": 100,
+      "posts": [
+        {
+          "title": "Ivy’s “Sorry” Line Change",
+          "pogpog_id": 14302
+        },
+        {
+          "title": "Your average McGinnis",
+          "pogpog_id": 14303
+        },
+        {
+          "title": "GTA 6 INFLATION HITTING ME HARD",
+          "pogpog_id": 14304
+        },
+        {
+          "title": "What do my Mains say about me?",
+          "pogpog_id": 14305
+        },
+        {
+          "title": "What am i doing wrong",
+          "pogpog_id": 14306
+        },
+        {
+          "title": "I already know what my mains say about me",
+          "pogpog_id": 14307
+        },
+        {
+          "title": "Rate the drifter build",
+          "pogpog_id": 14308
+        },
+        {
+          "title": "Late to the party, what do my mains say about me?",
+          "pogpog_id": 14309
+        },
+        {
+          "title": "Valve devs deciding which hero in this patch will ",
+          "pogpog_id": 14310
+        },
+        {
+          "title": "Oh boy, I sure hope the patch didn’t break anythin",
+          "pogpog_id": 14311
+        },
+        {
+          "title": "Joining in on the trend, what y'all think about my",
+          "pogpog_id": 14312
+        },
+        {
+          "title": "Trendhopping, mains, am I disgusting or what",
+          "pogpog_id": 14313
+        },
+        {
+          "title": "Why is the spirit/active item ivy build way less p",
+          "pogpog_id": 14314
+        },
+        {
+          "title": "What do my mains tell of me as a person?",
+          "pogpog_id": 14315
+        },
+        {
+          "title": "i got into a custody battle over rem in a game",
+          "pogpog_id": 14316
+        },
+        {
+          "title": "I have finally made a new perfectly balanced item",
+          "pogpog_id": 14317
+        },
+        {
+          "title": "Fighting Lady Geist",
+          "pogpog_id": 14318
+        },
+        {
+          "title": "Found Baba's Brick in Dota2",
+          "pogpog_id": 14319
+        },
+        {
+          "title": "about to reach ranked!",
+          "pogpog_id": 14320
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14321
+        },
+        {
+          "title": "Deadlock players be like",
+          "pogpog_id": 14322
+        },
+        {
+          "title": "Deadlock Card Project",
+          "pogpog_id": 14323
+        },
+        {
+          "title": "Was thinking about Grey Talon redesign and had an ",
+          "pogpog_id": 14324
+        },
+        {
+          "title": "Has anyone drawn the lash over this yet? (If no th",
+          "pogpog_id": 14325
+        },
+        {
+          "title": "Sendin' him back to whence he came",
+          "pogpog_id": 14326
+        },
+        {
+          "title": "what do my mains say about me?",
+          "pogpog_id": 14327
+        },
+        {
+          "title": "RATS",
+          "pogpog_id": 14328
+        },
+        {
+          "title": "Are my mains spread out from each other?",
+          "pogpog_id": 14329
+        },
+        {
+          "title": "You can’t be serious",
+          "pogpog_id": 14330
+        },
+        {
+          "title": "Is there any way I can \"appeal\" for this?",
+          "pogpog_id": 14331
+        },
+        {
+          "title": "How long before the mods kill us for posting our m",
+          "pogpog_id": 14332
+        },
+        {
+          "title": "My complaining regarding matchmaking, especially S",
+          "pogpog_id": 14333
+        },
+        {
+          "title": "Random 1.1 GIG update for some reason?",
+          "pogpog_id": 14334
+        },
+        {
+          "title": "Sending this to my partner rn",
+          "pogpog_id": 14335
+        },
+        {
+          "title": "Fill in the gaps",
+          "pogpog_id": 14336
+        },
+        {
+          "title": "It's so nice that City Never Sleeps gave Billy a f",
+          "pogpog_id": 14337
+        },
+        {
+          "title": "Had an inspiration for some shitposting",
+          "pogpog_id": 14338
+        },
+        {
+          "title": "Is this how paradox should be played?",
+          "pogpog_id": 14339
+        },
+        {
+          "title": "What a time to play apollo",
+          "pogpog_id": 14340
+        },
+        {
+          "title": "Hero idea: human or ixia soldier from the ixian wa",
+          "pogpog_id": 14341
+        },
+        {
+          "title": "The Default Celeste Build, Is Wrong",
+          "pogpog_id": 14342
+        },
+        {
+          "title": "What do my mains say about me? Also, any tips on t",
+          "pogpog_id": 14343
+        },
+        {
+          "title": "Things were about to go down",
+          "pogpog_id": 14344
+        },
+        {
+          "title": "I want to try it too. What do my mains say about m",
+          "pogpog_id": 14345
+        },
+        {
+          "title": "This game has been reminding me of my first tf2 ex",
+          "pogpog_id": 14346
+        },
+        {
+          "title": "From a seething Lash player",
+          "pogpog_id": 14347
+        },
+        {
+          "title": "What do my mains say about me",
+          "pogpog_id": 14348
+        },
+        {
+          "title": "What is happening with the game",
+          "pogpog_id": 14349
+        },
+        {
+          "title": "What do my Deadlock mains say about me (in order o",
+          "pogpog_id": 14350
+        },
+        {
+          "title": "Imagine if Luna Snow Was An Actual Character. Like",
+          "pogpog_id": 14351
+        },
+        {
+          "title": "What do my mains say about me? In order based on h",
+          "pogpog_id": 14352
+        },
+        {
+          "title": "Wish for a second chance: So what if Grey Talon ju",
+          "pogpog_id": 14353
+        },
+        {
+          "title": "Is there any hero who is considered fine or powerf",
+          "pogpog_id": 14354
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14355
+        },
+        {
+          "title": "Warden is a freight train with the legs",
+          "pogpog_id": 14356
+        },
+        {
+          "title": "My proposition for Wraith's ult rework \"HOLD EM'\"",
+          "pogpog_id": 14357
+        },
+        {
+          "title": "Am I too late to the “what do my mains say about m",
+          "pogpog_id": 14358
+        },
+        {
+          "title": "Net positive",
+          "pogpog_id": 14359
+        },
+        {
+          "title": "Cultist Sacrifice Scares me",
+          "pogpog_id": 14360
+        },
+        {
+          "title": "Rotation speeds, map layout, character balancing, ",
+          "pogpog_id": 14361
+        },
+        {
+          "title": "20hs in, what do my mains say about me?",
+          "pogpog_id": 14362
+        },
+        {
+          "title": "Literally Unplayable",
+          "pogpog_id": 14363
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14364
+        },
+        {
+          "title": "Ngl a lot of character complaints just sound like ",
+          "pogpog_id": 14365
+        },
+        {
+          "title": "What do my mains say about me? (Everyone is doing ",
+          "pogpog_id": 14366
+        },
+        {
+          "title": "We have Ixian expat, immigrant, and royal. How far",
+          "pogpog_id": 14367
+        },
+        {
+          "title": "Viper is 6,1",
+          "pogpog_id": 14368
+        },
+        {
+          "title": "I hope your in here somewhere Billy",
+          "pogpog_id": 14369
+        },
+        {
+          "title": "JesusChristSheriff.jpeg",
+          "pogpog_id": 14370
+        },
+        {
+          "title": "This was genuinely the funniest outcome",
+          "pogpog_id": 14371
+        },
+        {
+          "title": "Hypothetically, whats the max amount of damage a s",
+          "pogpog_id": 14372
+        },
+        {
+          "title": "100 match into the game and asking for newbie stat",
+          "pogpog_id": 14373
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14374
+        },
+        {
+          "title": "How do you accept that weapon heroes just arent fo",
+          "pogpog_id": 14375
+        },
+        {
+          "title": "I compared ~195k Haze games one rank apart. The di",
+          "pogpog_id": 14376
+        },
+        {
+          "title": "So I tried Drifter",
+          "pogpog_id": 14377
+        },
+        {
+          "title": "These food cart stands on Broadway look a lot like",
+          "pogpog_id": 14378
+        },
+        {
+          "title": "Simple tip for a 100% winrate",
+          "pogpog_id": 14379
+        },
+        {
+          "title": "Noticed this this morning",
+          "pogpog_id": 14380
+        },
+        {
+          "title": "VenatorsPlanB.jpeg",
+          "pogpog_id": 14381
+        },
+        {
+          "title": "My MVP self-imposed challenge",
+          "pogpog_id": 14382
+        },
+        {
+          "title": "Judge my mains i am new be brutal (i slap my belly",
+          "pogpog_id": 14383
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14384
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14385
+        },
+        {
+          "title": "How powerfull this hero ?",
+          "pogpog_id": 14386
+        },
+        {
+          "title": "I Lowkey Forgor Shops Exist",
+          "pogpog_id": 14387
+        },
+        {
+          "title": "The enemy is closer than you think",
+          "pogpog_id": 14388
+        },
+        {
+          "title": "Im joining this, what do my mains say about me",
+          "pogpog_id": 14389
+        },
+        {
+          "title": "major glitch",
+          "pogpog_id": 14390
+        },
+        {
+          "title": "do character's colour grouping have any meaning?",
+          "pogpog_id": 14391
+        },
+        {
+          "title": "Raid Boss Billy, chased Doorman into his spawn thr",
+          "pogpog_id": 14392
+        },
+        {
+          "title": "Is Rapid Recharge a good item or wasted slot on La",
+          "pogpog_id": 14393
+        },
+        {
+          "title": "Characters I like to play in deadlock (35 hrs in),",
+          "pogpog_id": 14394
+        },
+        {
+          "title": "so this happened on my first game on silver",
+          "pogpog_id": 14395
+        },
+        {
+          "title": "Some people in this game",
+          "pogpog_id": 14396
+        },
+        {
+          "title": "How does rem know what blood smells like??",
+          "pogpog_id": 14397
+        },
+        {
+          "title": "The most disgusting round of Rem I've ever had (as",
+          "pogpog_id": 14398
+        },
+        {
+          "title": "how many of y'all have less then 3 mains? (and wha",
+          "pogpog_id": 14399
+        },
+        {
+          "title": "When lane is won/in when i can leave it? (Image un",
+          "pogpog_id": 14400
+        },
+        {
+          "title": "How it feels hearing people complain about Kinetic",
+          "pogpog_id": 14401
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "count": 100,
+      "posts": [
+        {
+          "title": "Mod Request: Labeled Rem Tunnel Map",
+          "pogpog_id": 14087
+        },
+        {
+          "title": "How did I get MVP?!",
+          "pogpog_id": 14088
+        },
+        {
+          "title": "I made another item concept: Damage Mirror",
+          "pogpog_id": 14089
+        },
+        {
+          "title": "Another item concept: Damage Mirror",
+          "pogpog_id": 14090
+        },
+        {
+          "title": "How about a Captain Ahab type of Hero? (Moby Dick)",
+          "pogpog_id": 14091
+        },
+        {
+          "title": "Items in disguise",
+          "pogpog_id": 14092
+        },
+        {
+          "title": "Captain Ahab type Hero",
+          "pogpog_id": 14093
+        },
+        {
+          "title": "EVIL GRAPPLEBOP",
+          "pogpog_id": 14094
+        },
+        {
+          "title": "DLSS doesn't have a sharpness slide",
+          "pogpog_id": 14095
+        },
+        {
+          "title": "am i doing boxes wrong?",
+          "pogpog_id": 14096
+        },
+        {
+          "title": "Who's the worst character to against right now?",
+          "pogpog_id": 14097
+        },
+        {
+          "title": "My take on which musical instruments fit which her",
+          "pogpog_id": 14098
+        },
+        {
+          "title": "Why is Wraith basically the only woman Lash doesnt",
+          "pogpog_id": 14099
+        },
+        {
+          "title": "What do you guys think of my warden build?",
+          "pogpog_id": 14100
+        },
+        {
+          "title": "Danny isn’t op at all ;)",
+          "pogpog_id": 14101
+        },
+        {
+          "title": "Anyone got any build suggestions/ID’s for Baba?",
+          "pogpog_id": 14102
+        },
+        {
+          "title": "Venator is not a M1 Frontliner‼️⚠️",
+          "pogpog_id": 14103
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14104
+        },
+        {
+          "title": "Popularity of ships for Deadlock on Archive of our",
+          "pogpog_id": 14105
+        },
+        {
+          "title": "Is this normal?",
+          "pogpog_id": 14106
+        },
+        {
+          "title": "bebop: beep bop",
+          "pogpog_id": 14107
+        },
+        {
+          "title": "A totally original character idea",
+          "pogpog_id": 14108
+        },
+        {
+          "title": "Can they please fix the match making on this stupi",
+          "pogpog_id": 14109
+        },
+        {
+          "title": "I guess it's just part of the quintessential Deadl",
+          "pogpog_id": 14110
+        },
+        {
+          "title": "Comfort Characters | Art (and title) by @Whippyber",
+          "pogpog_id": 14111
+        },
+        {
+          "title": "I guess its just apart of the quintessential Deadl",
+          "pogpog_id": 14112
+        },
+        {
+          "title": "Tier List of Who Would Help Viscous Defeat The Adv",
+          "pogpog_id": 14113
+        },
+        {
+          "title": "Ghost rider infernus skin",
+          "pogpog_id": 14114
+        },
+        {
+          "title": "Before getting into the lore I thought Graves and ",
+          "pogpog_id": 14115
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14116
+        },
+        {
+          "title": "Vypers screwjab dagger needs a redesign",
+          "pogpog_id": 14117
+        },
+        {
+          "title": "Poor Seven misplaced his Skin )",
+          "pogpog_id": 14118
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14119
+        },
+        {
+          "title": "Arguing with a friend, who do you think has the mo",
+          "pogpog_id": 14120
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14121
+        },
+        {
+          "title": "When I realize that I suck dick at the character I",
+          "pogpog_id": 14122
+        },
+        {
+          "title": "1000 Birbs",
+          "pogpog_id": 14123
+        },
+        {
+          "title": "Venator cant be gentle",
+          "pogpog_id": 14124
+        },
+        {
+          "title": "According to the new kill lines added, Danny’s exi",
+          "pogpog_id": 14125
+        },
+        {
+          "title": "Okay, In magic is now a common tool, field of life",
+          "pogpog_id": 14126
+        },
+        {
+          "title": "Im Struggling",
+          "pogpog_id": 14127
+        },
+        {
+          "title": "Ruined my day afterwork 😞",
+          "pogpog_id": 14128
+        },
+        {
+          "title": "Please return the feedback collection from experie",
+          "pogpog_id": 14129
+        },
+        {
+          "title": "Am I focusing on healing too much?",
+          "pogpog_id": 14130
+        },
+        {
+          "title": "Me after discovering the genius that spirit Vyper ",
+          "pogpog_id": 14131
+        },
+        {
+          "title": "What would be the best team of 6 to win the ritual",
+          "pogpog_id": 14132
+        },
+        {
+          "title": "Can someone help me why I fall off so hard lategam",
+          "pogpog_id": 14133
+        },
+        {
+          "title": "A newcomer's experience with MOBA games in Deadloc",
+          "pogpog_id": 14134
+        },
+        {
+          "title": "MOD CREATORS, make a mod that adds back Abrams’s o",
+          "pogpog_id": 14135
+        },
+        {
+          "title": "Is an Abathur like hero possible in Deadlock?",
+          "pogpog_id": 14136
+        },
+        {
+          "title": "Help me with my Moe & Krill Magic the Gathering Ca",
+          "pogpog_id": 14137
+        },
+        {
+          "title": "can abrams outmog the doorman or lash",
+          "pogpog_id": 14138
+        },
+        {
+          "title": "had four people on the enemy team disconnect. that",
+          "pogpog_id": 14139
+        },
+        {
+          "title": "How important is it to max out the 3 investments i",
+          "pogpog_id": 14140
+        },
+        {
+          "title": "Is it reasonable to pause game to pee?",
+          "pogpog_id": 14141
+        },
+        {
+          "title": "@Billy players. I adapted Jamlex's Generic 70/70 r",
+          "pogpog_id": 14142
+        },
+        {
+          "title": "What's Rem doing out there?",
+          "pogpog_id": 14143
+        },
+        {
+          "title": "A proper guide to Venators Trap, so you can stop f",
+          "pogpog_id": 14144
+        },
+        {
+          "title": "playing around with bots and commands in the hideo",
+          "pogpog_id": 14145
+        },
+        {
+          "title": "I support the team by killing everyone ah characte",
+          "pogpog_id": 14146
+        },
+        {
+          "title": "Deadlock Tierlist based on which characters would ",
+          "pogpog_id": 14191
+        },
+        {
+          "title": "Apollo seems to be the only character that can blo",
+          "pogpog_id": 14192
+        },
+        {
+          "title": "Favorite Deadlock character?",
+          "pogpog_id": 14193
+        },
+        {
+          "title": "Welp",
+          "pogpog_id": 14194
+        },
+        {
+          "title": "any guide fighting apollo ?",
+          "pogpog_id": 14195
+        },
+        {
+          "title": "Wait i actually made this image as joke, but reall",
+          "pogpog_id": 14196
+        },
+        {
+          "title": "Only week in the game. What do my mains say about ",
+          "pogpog_id": 14197
+        },
+        {
+          "title": "Billy Ult Change",
+          "pogpog_id": 14198
+        },
+        {
+          "title": "newish, the skeleton FUCKS",
+          "pogpog_id": 14199
+        },
+        {
+          "title": "It's always the rem players",
+          "pogpog_id": 14200
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14201
+        },
+        {
+          "title": "how modded is your deadlock",
+          "pogpog_id": 14202
+        },
+        {
+          "title": "r/DeadlockTheGame",
+          "pogpog_id": 14203
+        },
+        {
+          "title": "Why does Jacob Lash (almost) always have his eyes ",
+          "pogpog_id": 14204
+        },
+        {
+          "title": "The New Batch of Heroes Are The Worst To Be Added ",
+          "pogpog_id": 14205
+        },
+        {
+          "title": "Lady Geist highest win rate in tournaments",
+          "pogpog_id": 14206
+        },
+        {
+          "title": "👑",
+          "pogpog_id": 14207
+        },
+        {
+          "title": "Found this nice billy pfp, anyone have the origina",
+          "pogpog_id": 14208
+        },
+        {
+          "title": ">beats you early game >beats you mid game >beats y",
+          "pogpog_id": 14209
+        },
+        {
+          "title": "Some danny when I go help the team push a walker i",
+          "pogpog_id": 14210
+        },
+        {
+          "title": "Character that's a 3-in-1",
+          "pogpog_id": 14211
+        },
+        {
+          "title": "Deadlock Take: Apollo changes weren't a buff, Peop",
+          "pogpog_id": 14212
+        },
+        {
+          "title": "What Do My Mains Say About Me?",
+          "pogpog_id": 14213
+        },
+        {
+          "title": "What do my mains say about me?",
+          "pogpog_id": 14214
+        },
+        {
+          "title": "Now THIS is some proper Agenda Posting i can get b",
+          "pogpog_id": 14215
+        },
+        {
+          "title": "what do my mains say about me? (you're comin' with",
+          "pogpog_id": 14216
+        },
+        {
+          "title": "Deadlock Employment Tier List",
+          "pogpog_id": 14217
+        },
+        {
+          "title": "New to pc and deadlock",
+          "pogpog_id": 14218
+        },
+        {
+          "title": "Great matchmaking, thanks Yoshi!",
+          "pogpog_id": 14219
+        },
+        {
+          "title": "Venator Trap Rework idea: Rosary Chain",
+          "pogpog_id": 14220
+        },
+        {
+          "title": "Why We Should Make The Blue Cart Steerable",
+          "pogpog_id": 14221
+        },
+        {
+          "title": "Idea of a Hero Character that my GF just had",
+          "pogpog_id": 14222
+        },
+        {
+          "title": "I lose every game against geist and and bepob",
+          "pogpog_id": 14223
+        },
+        {
+          "title": "A dude on discord called me \"one of those\" when I ",
+          "pogpog_id": 14224
+        },
+        {
+          "title": "Trying out this new character Seven",
+          "pogpog_id": 14225
+        },
+        {
+          "title": "The existence of Shadow Weave implies the existenc",
+          "pogpog_id": 14226
+        },
+        {
+          "title": "Its a team game…",
+          "pogpog_id": 14227
+        },
+        {
+          "title": "Apollo",
+          "pogpog_id": 14228
+        },
+        {
+          "title": "Solo-ulting Wraith brings me comfort",
+          "pogpog_id": 14229
+        },
+        {
+          "title": "Doorman x Paige",
+          "pogpog_id": 14230
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "count": 60,
+      "posts": [
+        {
+          "title": "A story with a nice ending for once",
+          "pogpog_id": 13945
+        },
+        {
+          "title": "something something the jokes write themselves",
+          "pogpog_id": 13946
+        },
+        {
+          "title": "FOR DJIIIIINNNNN",
+          "pogpog_id": 13947
+        },
+        {
+          "title": "add meepo",
+          "pogpog_id": 13948
+        },
+        {
+          "title": "You ever notice how the lock looks like a happy li",
+          "pogpog_id": 13949
+        },
+        {
+          "title": "Can someone calculate my winrate please?",
+          "pogpog_id": 13950
+        },
+        {
+          "title": "Any guesses how this went?",
+          "pogpog_id": 13951
+        },
+        {
+          "title": "Character tier list based on how they would react ",
+          "pogpog_id": 13952
+        },
+        {
+          "title": "Just won a 69 minute game",
+          "pogpog_id": 13953
+        },
+        {
+          "title": "Help",
+          "pogpog_id": 13954
+        },
+        {
+          "title": "beat a deadlock bot match doing nothing",
+          "pogpog_id": 13955
+        },
+        {
+          "title": "How it feels to play Paige",
+          "pogpog_id": 13956
+        },
+        {
+          "title": "Always selling something",
+          "pogpog_id": 13957
+        },
+        {
+          "title": "The thrilling sequel; Bebop, Seven, and Rem explai",
+          "pogpog_id": 13958
+        },
+        {
+          "title": "Is this item lore accurate?",
+          "pogpog_id": 13959
+        },
+        {
+          "title": "what do you even do to win against this comp, this",
+          "pogpog_id": 13960
+        },
+        {
+          "title": "What's the match you're most proud of?",
+          "pogpog_id": 13961
+        },
+        {
+          "title": "I think it will be really cool to imagine how Over",
+          "pogpog_id": 13962
+        },
+        {
+          "title": "Average Early Game Victor (Art made by me!)",
+          "pogpog_id": 13963
+        },
+        {
+          "title": "Victorious! Wait....what?!?",
+          "pogpog_id": 13964
+        },
+        {
+          "title": "Discombobulate Me",
+          "pogpog_id": 13965
+        },
+        {
+          "title": "Screw it, why not join in; my mains, tell me whatc",
+          "pogpog_id": 13966
+        },
+        {
+          "title": "Calico skin update?",
+          "pogpog_id": 13967
+        },
+        {
+          "title": "artifact of nondescript evil bullshit",
+          "pogpog_id": 13968
+        },
+        {
+          "title": "Can anyone tell me how good this build is for spir",
+          "pogpog_id": 13969
+        },
+        {
+          "title": "Ranked is so demoralizing",
+          "pogpog_id": 13970
+        },
+        {
+          "title": "Since this seems to be a sudden meme trend, What d",
+          "pogpog_id": 13971
+        },
+        {
+          "title": "Part 3: melee that actually lands on heroes, when ",
+          "pogpog_id": 13972
+        },
+        {
+          "title": "what do you guys think of me based on my mains",
+          "pogpog_id": 13973
+        },
+        {
+          "title": "Whatre my vibes based on my mains?",
+          "pogpog_id": 13974
+        },
+        {
+          "title": "Pov: my reaction to the fed enemy Bebop",
+          "pogpog_id": 13975
+        },
+        {
+          "title": "The longest Deadlock match I've ever played",
+          "pogpog_id": 13976
+        },
+        {
+          "title": "Witness me",
+          "pogpog_id": 13977
+        },
+        {
+          "title": "What kind of person am I based off my mains",
+          "pogpog_id": 13978
+        },
+        {
+          "title": "According to lore Abrams, Apollo and Infernus from",
+          "pogpog_id": 13979
+        },
+        {
+          "title": "Cast ranked by material wealth",
+          "pogpog_id": 13980
+        },
+        {
+          "title": "Could a US army soldier canonically fight for in t",
+          "pogpog_id": 13981
+        },
+        {
+          "title": "character tier list based on how much Main Charact",
+          "pogpog_id": 13982
+        },
+        {
+          "title": "what is the game state of silver?",
+          "pogpog_id": 13983
+        },
+        {
+          "title": "Just shut down the wraith bro",
+          "pogpog_id": 13984
+        },
+        {
+          "title": "i love you viscous",
+          "pogpog_id": 13985
+        },
+        {
+          "title": "I HATE Silver's hair in her werewolf form",
+          "pogpog_id": 13986
+        },
+        {
+          "title": "Doorman aura farming",
+          "pogpog_id": 13987
+        },
+        {
+          "title": "Smelting",
+          "pogpog_id": 13988
+        },
+        {
+          "title": "You should be able to throw Rem",
+          "pogpog_id": 13989
+        },
+        {
+          "title": "We need bayou green gremlins",
+          "pogpog_id": 13990
+        },
+        {
+          "title": "Why do people cope so hard about certain character",
+          "pogpog_id": 13991
+        },
+        {
+          "title": "Creating a companion with counter items",
+          "pogpog_id": 13992
+        },
+        {
+          "title": "can we just finally nerf silver?",
+          "pogpog_id": 13993
+        },
+        {
+          "title": "I hate Wraith players",
+          "pogpog_id": 13994
+        },
+        {
+          "title": "Is this good for a Warden build?",
+          "pogpog_id": 13995
+        },
+        {
+          "title": "Need help for a project!",
+          "pogpog_id": 13996
+        },
+        {
+          "title": "A love letter to Carbine Paradox",
+          "pogpog_id": 13997
+        },
+        {
+          "title": "My first MVP!",
+          "pogpog_id": 13998
+        },
+        {
+          "title": "First post here! Jumping on the trend: what do my ",
+          "pogpog_id": 13999
+        },
+        {
+          "title": "What do you think of me based on my mains?",
+          "pogpog_id": 14000
+        },
+        {
+          "title": "I got bored",
+          "pogpog_id": 14001
+        },
+        {
+          "title": "\"Yeah man my game looks pretty normal, just a few ",
+          "pogpog_id": 14002
+        },
+        {
+          "title": "Why do people cope so hard about some characters t",
+          "pogpog_id": 14003
+        },
+        {
+          "title": "Why do people make fun of my mains?",
+          "pogpog_id": 14004
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "count": 60,
+      "posts": [
+        {
+          "title": "The age of Venator Agenda posting X Yuri Corner po",
+          "pogpog_id": 13771
+        },
+        {
+          "title": "Billy's hustle to fund his stuff",
+          "pogpog_id": 13772
+        },
+        {
+          "title": "A slight disparity",
+          "pogpog_id": 13773
+        },
+        {
+          "title": "Bros praying to the wrong lord",
+          "pogpog_id": 13774
+        },
+        {
+          "title": "Copa America (Deadlock Premier) Hero Priority and ",
+          "pogpog_id": 13775
+        },
+        {
+          "title": "Average murder hobo pov",
+          "pogpog_id": 13776
+        },
+        {
+          "title": "I’m going to fucking cry",
+          "pogpog_id": 13777
+        },
+        {
+          "title": "An encapsulation of how my day's are going right n",
+          "pogpog_id": 13778
+        },
+        {
+          "title": "VenatorsMistake.jpeg",
+          "pogpog_id": 13779
+        },
+        {
+          "title": "100% win rate with Wraith and 100% lose rate again",
+          "pogpog_id": 13780
+        },
+        {
+          "title": "Drifter should be able to unlock Jacket cosmetics ",
+          "pogpog_id": 13781
+        },
+        {
+          "title": "A mod I like got trashed and paywalled. Is it ethi",
+          "pogpog_id": 13782
+        },
+        {
+          "title": "Why did Nurse Harrow say this when I went to China",
+          "pogpog_id": 13783
+        },
+        {
+          "title": "VenatorsGameChangingBuy.jpeg",
+          "pogpog_id": 13784
+        },
+        {
+          "title": "Just found out lore-wise silver 2v1'ed drifter + s",
+          "pogpog_id": 13785
+        },
+        {
+          "title": "I can't escape Her",
+          "pogpog_id": 13786
+        },
+        {
+          "title": "Ivy likes Yuri apparently",
+          "pogpog_id": 13787
+        },
+        {
+          "title": "Haze is a little bit too strong",
+          "pogpog_id": 13788
+        },
+        {
+          "title": "seven left and we still won",
+          "pogpog_id": 13789
+        },
+        {
+          "title": "Highest and Lowest winrates in Phantom+ since the ",
+          "pogpog_id": 13790
+        },
+        {
+          "title": "Suggestion: Add a troll toll to get any character ",
+          "pogpog_id": 13791
+        },
+        {
+          "title": "Suggestion: Add a troll toll to get any character ",
+          "pogpog_id": 13792
+        },
+        {
+          "title": "Champs ranked by SFX quality(NO VA)",
+          "pogpog_id": 13793
+        },
+        {
+          "title": "Unironically I actually want Father payne to be ad",
+          "pogpog_id": 13794
+        },
+        {
+          "title": "I've hit the big 2000 games played! Should I go ou",
+          "pogpog_id": 13795
+        },
+        {
+          "title": "Is the returned dmg 65% of the dmg you would recei",
+          "pogpog_id": 13796
+        },
+        {
+          "title": "VenatorsGameChangingBuy",
+          "pogpog_id": 13797
+        },
+        {
+          "title": "How Ven looks at you after dying 12 times in lane",
+          "pogpog_id": 13798
+        },
+        {
+          "title": "My game bugged out and Ivy turned into middle age ",
+          "pogpog_id": 13799
+        },
+        {
+          "title": "Hello does anyone have the image of dwifta asking ",
+          "pogpog_id": 13800
+        },
+        {
+          "title": "Ranking of each hero's light melee",
+          "pogpog_id": 13801
+        },
+        {
+          "title": "Somehow achieved 24 kills with 0 assists",
+          "pogpog_id": 13802
+        },
+        {
+          "title": "Somehow achieved 24 kills with 0 assists",
+          "pogpog_id": 13803
+        },
+        {
+          "title": "24 kills and somehow 0 assists",
+          "pogpog_id": 13804
+        },
+        {
+          "title": "I can't be the only one that does this as totem fo",
+          "pogpog_id": 13805
+        },
+        {
+          "title": "How does Mina boot work?",
+          "pogpog_id": 13806
+        },
+        {
+          "title": "Quick Question about the game",
+          "pogpog_id": 13807
+        },
+        {
+          "title": "How is this supposed to be fun?",
+          "pogpog_id": 13808
+        },
+        {
+          "title": "How is this supposed to be fun?",
+          "pogpog_id": 13809
+        },
+        {
+          "title": "8 Loss Streak? One More",
+          "pogpog_id": 13810
+        },
+        {
+          "title": "Guess my favorite character",
+          "pogpog_id": 13811
+        },
+        {
+          "title": "Man vindicta is not fun to fight again",
+          "pogpog_id": 13812
+        },
+        {
+          "title": "Who would be a better babysitter? Silver or Victor",
+          "pogpog_id": 13813
+        },
+        {
+          "title": "Why does this sub hate Wraith so much when she has",
+          "pogpog_id": 13814
+        },
+        {
+          "title": "So, do Ixians have races like humans do?",
+          "pogpog_id": 13815
+        },
+        {
+          "title": "So, what if Ixians have races just like human?",
+          "pogpog_id": 13816
+        },
+        {
+          "title": "I think I hate towers a little too much",
+          "pogpog_id": 13817
+        },
+        {
+          "title": "Walk out da crib",
+          "pogpog_id": 13818
+        },
+        {
+          "title": "VenatorsCoreDispelGame.jpeg",
+          "pogpog_id": 13819
+        },
+        {
+          "title": "the ocean is full of wonderful creatures, such as ",
+          "pogpog_id": 13820
+        },
+        {
+          "title": "Fuck paid mods. DM me if you want Clown Celeste",
+          "pogpog_id": 13821
+        },
+        {
+          "title": "Madam?!!!!",
+          "pogpog_id": 13822
+        },
+        {
+          "title": "Why Rat king's winrate falls off so much in higher",
+          "pogpog_id": 13823
+        },
+        {
+          "title": "Confused on how Mirage scales",
+          "pogpog_id": 13824
+        },
+        {
+          "title": "Help me finding a better picture pls",
+          "pogpog_id": 13825
+        },
+        {
+          "title": "What is that or who is that?",
+          "pogpog_id": 13826
+        },
+        {
+          "title": "Are these jewish?",
+          "pogpog_id": 13827
+        },
+        {
+          "title": "As an M1 main struggling to learn support. Games l",
+          "pogpog_id": 13828
+        },
+        {
+          "title": "I was today years old when I figured out these whi",
+          "pogpog_id": 13829
+        },
+        {
+          "title": "Follow-up to my headshot post: you were right abou",
+          "pogpog_id": 13830
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "count": 60,
+      "posts": [
+        {
+          "title": "I've been asked to publish my drifter build",
+          "pogpog_id": 13265
+        },
+        {
+          "title": "101K damage",
+          "pogpog_id": 13266
+        },
+        {
+          "title": "Venator should be able to see with his ult during ",
+          "pogpog_id": 13267
+        },
+        {
+          "title": "How It Feels to Play Shiv ( a playlist)",
+          "pogpog_id": 13268
+        },
+        {
+          "title": "Melee Calico build thoughts & suggestions",
+          "pogpog_id": 13269
+        },
+        {
+          "title": "Vindicta is ever so slightly right of center",
+          "pogpog_id": 13270
+        },
+        {
+          "title": "It was funnier in my head",
+          "pogpog_id": 13271
+        },
+        {
+          "title": "A guide to Marketing your hero shooter in the big ",
+          "pogpog_id": 13272
+        },
+        {
+          "title": "Sinclair Slander",
+          "pogpog_id": 13273
+        },
+        {
+          "title": "I love Shiv man but he looks like a monkey and I c",
+          "pogpog_id": 13274
+        },
+        {
+          "title": "\"Silver survived Shiv and Drifter years ago so she",
+          "pogpog_id": 13275
+        },
+        {
+          "title": "Mina Ha's bedtime stories",
+          "pogpog_id": 13276
+        },
+        {
+          "title": "How Seven can counter Solomon's wish canceling wis",
+          "pogpog_id": 13277
+        },
+        {
+          "title": "Fun fact, Matthew Mercer is now the only VA who vo",
+          "pogpog_id": 13278
+        },
+        {
+          "title": "Im certain some of yall dont even watch NS, just u",
+          "pogpog_id": 13279
+        },
+        {
+          "title": "These two are so cursed like no matter how mid and",
+          "pogpog_id": 13280
+        },
+        {
+          "title": "The Grand Baroness Hotel",
+          "pogpog_id": 13281
+        },
+        {
+          "title": "I tracked every ranked match of Season 1. Here’s h",
+          "pogpog_id": 13282
+        },
+        {
+          "title": "Any way to remove the healthbar?",
+          "pogpog_id": 13283
+        },
+        {
+          "title": "I had worst match ever",
+          "pogpog_id": 13284
+        },
+        {
+          "title": "Com bans",
+          "pogpog_id": 13285
+        },
+        {
+          "title": "any recomendations to improve this mina build?",
+          "pogpog_id": 13286
+        },
+        {
+          "title": "what flashes into my head every time someone attac",
+          "pogpog_id": 13287
+        },
+        {
+          "title": "Me when my friends won't play Deadlock because the",
+          "pogpog_id": 13288
+        },
         {
           "title": "Help understand builds",
           "pogpog_id": 13289
