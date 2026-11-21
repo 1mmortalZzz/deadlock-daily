@@ -5,6 +5,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# One Pages deployment at a time. A newer push cancels the in-flight
+# run so deploys do not pile up on the Pages lock or a stuck CDN purge.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
